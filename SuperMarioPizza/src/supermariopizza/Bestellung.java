@@ -1,7 +1,6 @@
 package supermariopizza;
 
-public class Bestellung {
-	String name;
+public class Bestellung{
 	int preis;
-	
+		
 }

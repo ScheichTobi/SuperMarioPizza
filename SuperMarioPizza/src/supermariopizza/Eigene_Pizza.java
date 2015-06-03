@@ -1,10 +1,32 @@
 package supermariopizza;
 
+
 public class Eigene_Pizza extends Pizza{
 
-	Eigene_Pizza(String name, double preis) {
-		super(name, preis);
-		// TODO Auto-generated constructor stub
+	public Eigene_Pizza(String name, double preis, int menge) {
+		super(name, preis, menge);
 	}
+	
+	public String[] ZutatenErmitteln(){
+		String[] zutaten;
+		zutaten = new String [0];//TODO Anzahl der Zutaten ermitteln
+		
+		for (int i = 0; i < zutaten.length; i++) {
+			
+			String string = zutaten[i]; //TODO Zutaten von Checkboxen dem ZutatenArray hinzufügen
+			
+		}
+		return zutaten;
+	}
+	public int MengeErmitteln(){
+		int menge = 0;
+		//TODO Menge aus DropList ermitteln
+		return menge;
+	}
+	public void NameErmitteln(){
+		//TODO Name aus Textfeld ermitteln
+		
+	}
+	
 
 }

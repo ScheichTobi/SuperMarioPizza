@@ -16,20 +16,28 @@ public class GUI {
 	static void erstellungSpeisekarte(){
 		ArrayList <Bestellung> li_speisekarte = new ArrayList <Bestellung>();
 		
-		Bestellung Test1 = new Bestellung("Test1", 10);
-		li_speisekarte.add(Test1);
-		System.out.println(li_speisekarte.get(0).name);
-		System.out.println(li_speisekarte.get(0).preis);
+		Bestellung Funghi = new Bestellung("Funghi", 7);
+		li_speisekarte.add(Funghi);
+		
+		Bestellung Tonno = new Bestellung("Tonno", 8);
+		li_speisekarte.add(Tonno);
+		
+		//Test der enthaltenen Elemente
+		for (int i = 0; i < li_speisekarte.size(); i++){
+			System.out.println(li_speisekarte.get(i).name);
+		}
 	}
 
 	//Erstellung der ArrayList in der die Getränke stehen
 	static void erstellungGetraenkekarte(){
 		ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
 		
-		Getränke Test = new Getränke("Test2", 15, 0.5F);
+		Getränke Test = new Getränke("Test2", 15, 0.5);
 		li_getraenkekarte.add(Test);
-		System.out.println(li_getraenkekarte.get(0).name);
-		System.out.println(li_getraenkekarte.get(0).preis);
-		System.out.println(li_getraenkekarte.get(0).menge);
+		
+		//Test der enthaltenen Elemente
+		for (int i = 0; i < li_getraenkekarte.size(); i++){
+			System.out.println(li_getraenkekarte.get(i).name);
+		}
 	}
 }

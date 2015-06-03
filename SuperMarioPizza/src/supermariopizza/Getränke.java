@@ -1,9 +1,9 @@
 package supermariopizza;
 
 public class Getränke extends Bestellung{
-	float menge;
+	double menge;
 	
-	Getränke(String name, int preis, float menge) {
+	Getränke(String name, double preis, double menge) {
 		super(name, preis);
 		this.menge = menge;
 	}

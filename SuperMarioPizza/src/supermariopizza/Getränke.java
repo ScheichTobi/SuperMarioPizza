@@ -1,10 +1,11 @@
 package supermariopizza;
 
 public class Getränke extends Bestellung{
-
-	Getränke(String name, int preis) {
+	float menge;
+	
+	Getränke(String name, int preis, float menge) {
 		super(name, preis);
-		// TODO Auto-generated constructor stub
+		this.menge = menge;
 	}
 
 }

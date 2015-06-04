@@ -18,7 +18,7 @@ public class Eigene_Pizza extends Pizza{
 		}
 		return zutaten;
 	}
-	public int MengeErmitteln(){
+	public int AnzahlErmitteln(){
 		int anzahl = 0;
 		//TODO Menge aus DropList ermitteln
 		return anzahl;

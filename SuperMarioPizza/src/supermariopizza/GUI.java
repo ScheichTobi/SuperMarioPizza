@@ -70,7 +70,7 @@ public class GUI {
 		li_Zutaten = Pizza.ZutatenErmitteln();
 		
 		//TODO ausgewählte Menge ermitteln
-		Pizza.MengeErmitteln();
+		Pizza.AnzahlErmitteln();
 		
 		//TODO ausgewählten Namen ermitteln
 		Pizza.NameErmitteln();

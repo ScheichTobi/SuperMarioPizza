@@ -1,5 +1,11 @@
 package supermariopizza;
 
+/**Bestellung
+ * Klasse für die Bestellungen aller Art.
+ * @param double preis, String name, int menge
+ * @author Yannik
+ *
+ */
 public class Bestellung{
 	double preis;
 	String name;

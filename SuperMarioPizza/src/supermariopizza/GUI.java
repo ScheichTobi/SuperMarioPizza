@@ -11,7 +11,12 @@ public class GUI {
 		erstellungSpeisekarte();
 		erstellungGetraenkekarte();
 	}
-	
+	/**
+	 * erstellungSpeisekarte()
+	 * Erstellung einer ArrayList, in der die verfügbaren Pizzen stehen.
+	 * Dafür sind keine Parameter notwendig
+	 * @author Yannik
+	 */
 	//Erstellung der ArrayList in der die Gerichte stehen
 	static void erstellungSpeisekarte(){
 		ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
@@ -30,7 +35,13 @@ public class GUI {
 			
 		}
 	}
-
+	
+	/**
+	 * erstellungGetraenkekarte()
+	 * Erstellung einer ArrayList, in der die verfügbaren Getränke stehen.
+	 * Dafür sind keine Parameter notwendig.
+	 * @author Yannik
+	 */
 	//Erstellung der ArrayList in der die Getränke stehen
 	static void erstellungGetraenkekarte(){
 		ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();

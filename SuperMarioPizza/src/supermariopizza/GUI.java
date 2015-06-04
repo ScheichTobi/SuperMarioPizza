@@ -14,6 +14,7 @@ public class GUI {
 	/**
 	 * erstellungSpeisekarte()
 	 * Erstellung einer ArrayList, in der die verfügbaren Pizzen stehen.
+	 * Einfügen der Standart Pizzen.
 	 * Dafür sind keine Parameter notwendig
 	 * @author Yannik
 	 */
@@ -27,11 +28,14 @@ public class GUI {
 		Pizza Tonno = new Pizza("Tonno", 8, 1);
 		li_speisekarte.add(Tonno);
 		
+		Pizza Margherita = new Pizza("Margherita", 7.50, 1);
+		li_speisekarte.add(Margherita);
+		
 		//Test der enthaltenen Elemente
 		for (int i = 0; i < li_speisekarte.size(); i++){
 			System.out.println(li_speisekarte.get(i).name);
 			System.out.println(li_speisekarte.get(i).preis);
-			System.out.println(li_speisekarte.get(i).menge);
+			System.out.println(li_speisekarte.get(i).anzahl);
 			
 		}
 	}
@@ -40,6 +44,7 @@ public class GUI {
 	 * erstellungGetraenkekarte()
 	 * Erstellung einer ArrayList, in der die verfügbaren Getränke stehen.
 	 * Dafür sind keine Parameter notwendig.
+	 * Einfügen der Getränke.
 	 * @author Yannik
 	 */
 	//Erstellung der ArrayList in der die Getränke stehen

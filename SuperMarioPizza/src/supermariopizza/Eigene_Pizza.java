@@ -3,8 +3,8 @@ package supermariopizza;
 
 public class Eigene_Pizza extends Pizza{
 
-	public Eigene_Pizza(String name, double preis, int menge) {
-		super(name, preis, menge);
+	public Eigene_Pizza(String name, double preis, int anzahl) {
+		super(name, preis, anzahl);
 	}
 	
 	public String[] ZutatenErmitteln(){
@@ -19,9 +19,9 @@ public class Eigene_Pizza extends Pizza{
 		return zutaten;
 	}
 	public int MengeErmitteln(){
-		int menge = 0;
+		int anzahl = 0;
 		//TODO Menge aus DropList ermitteln
-		return menge;
+		return anzahl;
 	}
 	public void NameErmitteln(){
 		//TODO Name aus Textfeld ermitteln

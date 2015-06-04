@@ -12,5 +12,5 @@ public class Pizza extends Bestellung {
 		super(name, preis);
 		this.anzahl = anzahl;
 	}
-
+	
 }

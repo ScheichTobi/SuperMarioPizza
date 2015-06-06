@@ -8,7 +8,8 @@ import java.util.*;
 import java.io.File;
 public class GUI {
 	
-	public static Clip myClip;
+	public static Clip Musik;
+	
 	public static void main(String[] args) throws Exception {
 		//Erstellung der GUI_Hauptfenster
 		EventQueue.invokeLater(new Runnable() {
@@ -93,33 +94,15 @@ public class GUI {
 		
 	
 	}
-	public static void musik(){
-		/*/
-		try{
-			File MarioMusik = new File("SuperMarioSound.WAV");
-			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(MarioMusik));
-			clip.start();
-			
-			
-			
-			}catch(Exception e)
-		{
-		}
-		/*/
-	}
 	public static void sound() throws Exception{
             try {
                 File MarioMusik = new File("SuperMarioSound.wav");
           
-                myClip = AudioSystem.getClip();
-                myClip.open(AudioSystem.getAudioInputStream(MarioMusik));
-                myClip.loop(Clip.LOOP_CONTINUOUSLY);
+                Musik = AudioSystem.getClip();
+                Musik.open(AudioSystem.getAudioInputStream(MarioMusik));
+                Musik.loop(Clip.LOOP_CONTINUOUSLY);
                     
-                }catch (IOException e){} 
-              
-           
-            
+                }catch (IOException e){}      
 	}	
 }
 

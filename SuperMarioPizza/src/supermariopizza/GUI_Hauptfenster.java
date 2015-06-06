@@ -22,15 +22,27 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JButton btnMusikStoppen = new JButton("Musik stoppen");
+		btnMusikStoppen.setBounds(10, 11, 165, 46);
 		btnMusikStoppen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				GUI.myClip.stop();
 			}
 		});
+		contentPane.setLayout(null);
 		contentPane.add(btnMusikStoppen);
+		
+		JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
+		btnMusikNeuAbspielen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					GUI.sound();
+				} catch (Exception e1) {}
+			}
+		});
+		btnMusikNeuAbspielen.setBounds(199, 11, 200, 50);
+		contentPane.add(btnMusikNeuAbspielen);
 		
 		
 	}

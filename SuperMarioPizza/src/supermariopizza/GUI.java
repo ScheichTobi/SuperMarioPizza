@@ -1,16 +1,14 @@
 package supermariopizza;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.*;
-
 import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 import java.io.File;
 public class GUI {
 	
-	
+	public static Clip myClip;
 	public static void main(String[] args) throws Exception {
 		//Erstellung der GUI_Hauptfenster
 		EventQueue.invokeLater(new Runnable() {
@@ -24,7 +22,7 @@ public class GUI {
 			}
 		});
 		//Musik abspielen
-		musik();
+		sound();
 		
 		erstellungSpeisekarte();
 		erstellungGetraenkekarte();
@@ -96,7 +94,7 @@ public class GUI {
 	
 	}
 	public static void musik(){
-		
+		/*/
 		try{
 			File MarioMusik = new File("SuperMarioSound.WAV");
 			Clip clip = AudioSystem.getClip();
@@ -108,9 +106,20 @@ public class GUI {
 			}catch(Exception e)
 		{
 		}
-		
-		
-
+		/*/
 	}
+	public static void sound() throws Exception{
+            try {
+                File MarioMusik = new File("SuperMarioSound.wav");
+          
+                myClip = AudioSystem.getClip();
+                myClip.open(AudioSystem.getAudioInputStream(MarioMusik));
+                myClip.loop(Clip.LOOP_CONTINUOUSLY);
+                    
+                }catch (IOException e){} 
+              
+           
+            
+	}	
 }
 

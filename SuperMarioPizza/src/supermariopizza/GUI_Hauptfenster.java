@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class GUI_Hauptfenster extends JFrame {
-
+	private static final long serialVersionUID = 1L;
+	
 	private JPanel contentPane;
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");

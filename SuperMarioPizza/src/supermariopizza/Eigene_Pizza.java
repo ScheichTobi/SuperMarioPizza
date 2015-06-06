@@ -13,7 +13,7 @@ public class Eigene_Pizza extends Pizza{
 		
 		for (int i = 0; i < zutaten.length; i++) {
 			
-			String string = zutaten[i]; //TODO Zutaten von Checkboxen dem ZutatenArray hinzufügen
+			//String string = zutaten[i]; //TODO Zutaten von Checkboxen dem ZutatenArray hinzufügen
 			
 		}
 		return zutaten;

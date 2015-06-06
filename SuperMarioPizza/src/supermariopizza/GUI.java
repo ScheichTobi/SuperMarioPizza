@@ -86,8 +86,8 @@ public class GUI {
 		Eigene_Pizza Pizza = new Eigene_Pizza(null, 0, 0);
 		
 		//TODO ausgewählte Zutaten ermitteln
-		String[] li_Zutaten;
-		li_Zutaten = Pizza.ZutatenErmitteln();
+		//String[] li_Zutaten;
+		//li_Zutaten = Pizza.ZutatenErmitteln();
 		
 		//TODO ausgewählte Menge ermitteln
 		Pizza.AnzahlErmitteln();

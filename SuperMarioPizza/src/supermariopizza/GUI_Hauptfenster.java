@@ -27,7 +27,7 @@ public class GUI_Hauptfenster extends JFrame {
 		btnMusikStoppen.setBounds(10, 11, 165, 46);
 		btnMusikStoppen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GUI.myClip.stop();
+				GUI.Musik.stop();
 			}
 		});
 		contentPane.setLayout(null);

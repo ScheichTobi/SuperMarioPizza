@@ -9,9 +9,6 @@ import java.io.File;
 public class GUI {
 	
 	public static Clip Mario;
-	public static Clip Money;
-	public static Clip Spongy;
-	static int counter = 0;
 	
 	public static void main(String[] args) throws Exception {
 		//Erstellung der GUI_Hauptfenster
@@ -100,28 +97,10 @@ public class GUI {
 	public static void sound() throws Exception{
             try {
                 File MarioMusik = new File("SuperMarioSound.wav");
-                File Moneyboy = new File("Moneyboy.wav");
-                File Spongebob = new File("Spongebob.wav");
-            
-          if(counter == 0){
                 Mario = AudioSystem.getClip();
-                Mario.loop(Clip.LOOP_CONTINUOUSLY);
                 Mario.open(AudioSystem.getAudioInputStream(MarioMusik));
-                Mario.start();
-                counter ++;
-          }else if(counter == 1){
-                Money = AudioSystem.getClip();
-                Money.loop(Clip.LOOP_CONTINUOUSLY);
-                Money.open(AudioSystem.getAudioInputStream(Moneyboy));
-                Money.start();
-                counter ++;
-          }else if(counter == 2){
-        	    Spongy = AudioSystem.getClip();
-                Spongy.open(AudioSystem.getAudioInputStream(Spongebob));
-                Spongy.loop(Clip.LOOP_CONTINUOUSLY);
-                Spongy.start();
-                counter ++;
-          }          
+                Mario.loop(Clip.LOOP_CONTINUOUSLY);
+               
                 }catch (IOException e){}      
 	}	
 }

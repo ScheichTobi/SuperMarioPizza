@@ -2,12 +2,12 @@ package supermariopizza;
 
 /**Getränke
  * Klasse für Getränke im speziellen.
- * @param String name, double preis, double menge
+ * @param String name, double preis, double menge (in l)
  * @author Yannik
  *
  */
 public class Getränke extends Bestellung{
-	double menge;
+	double menge;										// Angabe des Getränke Vollumens
 	
 	Getränke(String name, double preis, double menge) {
 		super(name, preis);

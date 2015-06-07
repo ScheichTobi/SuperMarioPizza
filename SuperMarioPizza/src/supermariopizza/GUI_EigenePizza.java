@@ -11,14 +11,27 @@ import javax.swing.JButton;
 import javax.swing.JSpinner;
 import java.awt.Font;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_EigenePizza extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel EigenePizzaGui;
-	private JTextField textField;
+	private JTextField txt_pizzaname;
 
 
+	static JCheckBox chb_zwiebeln = new JCheckBox("Zwiebeln");
+	static JCheckBox chb_pilze = new JCheckBox("Pilze");
+	static JCheckBox chb_schinken = new JCheckBox("Schinken");
+	static JCheckBox chb_salami = new JCheckBox("Salami");
+	static JCheckBox chb_sardellen = new JCheckBox("Sardellen");
+	static JCheckBox chb_paprika = new JCheckBox("Paprika");
+	static JCheckBox chb_meeresfrüchte = new JCheckBox("Meeresfr\u00FCchte");
+	static JCheckBox chb_peperoni = new JCheckBox("Peperoni");
+	static JCheckBox chb_ananas = new JCheckBox("Ananas");
+	static JCheckBox chb_rucola = new JCheckBox("Rucola");
+	
 	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 538);
@@ -27,89 +40,94 @@ public class GUI_EigenePizza extends JFrame {
 		setContentPane(EigenePizzaGui);
 		EigenePizzaGui.setLayout(null);
 		
-		JCheckBox chb_Zwiebeln = new JCheckBox("Zwiebeln");
-		chb_Zwiebeln.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Zwiebeln.setBounds(94, 119, 144, 23);
-		EigenePizzaGui.add(chb_Zwiebeln);
 		
-		JCheckBox chb_Pilze = new JCheckBox("Pilze");
-		chb_Pilze.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Pilze.setBounds(94, 159, 97, 23);
-		EigenePizzaGui.add(chb_Pilze);
+		chb_zwiebeln.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_zwiebeln.setBounds(94, 119, 144, 23);
+		EigenePizzaGui.add(chb_zwiebeln);
 		
-		JCheckBox chb_Schinken = new JCheckBox("Schinken");
-		chb_Schinken.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Schinken.setBounds(94, 205, 144, 23);
-		EigenePizzaGui.add(chb_Schinken);
 		
-		JCheckBox chb_Salami = new JCheckBox("Salami");
-		chb_Salami.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Salami.setBounds(94, 251, 97, 23);
-		EigenePizzaGui.add(chb_Salami);
+		chb_pilze.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_pilze.setBounds(94, 159, 97, 23);
+		EigenePizzaGui.add(chb_pilze);
 		
-		JCheckBox chb_Sardellen = new JCheckBox("Sardellen");
-		chb_Sardellen.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Sardellen.setBounds(94, 302, 122, 23);
-		EigenePizzaGui.add(chb_Sardellen);
 		
-		JCheckBox chb_Paprika = new JCheckBox("Paprika");
-		chb_Paprika.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Paprika.setBounds(495, 119, 97, 23);
-		EigenePizzaGui.add(chb_Paprika);
+		chb_schinken.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_schinken.setBounds(94, 205, 144, 23);
+		EigenePizzaGui.add(chb_schinken);
 		
-		JCheckBox chb_Meeresfrüchte = new JCheckBox("Meeresfr\u00FCchte");
-		chb_Meeresfrüchte.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Meeresfrüchte.setBounds(495, 159, 180, 23);
-		EigenePizzaGui.add(chb_Meeresfrüchte);
 		
-		JCheckBox chb_Peperoni = new JCheckBox("Peperoni");
-		chb_Peperoni.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Peperoni.setBounds(495, 205, 161, 23);
-		EigenePizzaGui.add(chb_Peperoni);
+		chb_salami.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_salami.setBounds(94, 251, 97, 23);
+		EigenePizzaGui.add(chb_salami);
 		
-		JCheckBox chb_Ananas = new JCheckBox("Ananas");
-		chb_Ananas.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Ananas.setBounds(495, 251, 97, 23);
-		EigenePizzaGui.add(chb_Ananas);
 		
-		JCheckBox chb_Rucola = new JCheckBox("Rucola");
-		chb_Rucola.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_Rucola.setBounds(495, 302, 97, 23);
-		EigenePizzaGui.add(chb_Rucola);
+		chb_sardellen.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_sardellen.setBounds(94, 302, 122, 23);
+		EigenePizzaGui.add(chb_sardellen);
 		
-		JLabel lblGrundprei = new JLabel("Grundpreis  5,-\u20AC + 0,30 \u20AC je Zutat");
-		lblGrundprei.setFont(new Font("Constantia", Font.ITALIC, 20));
-		lblGrundprei.setForeground(Color.RED);
-		lblGrundprei.setBounds(152, 39, 360, 23);
-		EigenePizzaGui.add(lblGrundprei);
 		
-		textField = new JTextField();
-		textField.setBounds(24, 377, 214, 20);
-		EigenePizzaGui.add(textField);
-		textField.setColumns(10);
+		chb_paprika.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_paprika.setBounds(495, 119, 97, 23);
+		EigenePizzaGui.add(chb_paprika);
 		
-		JLabel lblNameFrIhre = new JLabel("Name f\u00FCr ihre Pizza eingeben:");
-		lblNameFrIhre.setFont(new Font("Constantia", Font.ITALIC, 11));
-		lblNameFrIhre.setBounds(52, 343, 214, 23);
-		EigenePizzaGui.add(lblNameFrIhre);
 		
-		JLabel lblAktuellerPrei = new JLabel("Aktueller Preis");
-		lblAktuellerPrei.setFont(new Font("Constantia", Font.ITALIC, 11));
-		lblAktuellerPrei.setBounds(510, 376, 180, 23);
-		EigenePizzaGui.add(lblAktuellerPrei);
+		chb_meeresfrüchte.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_meeresfrüchte.setBounds(495, 159, 180, 23);
+		EigenePizzaGui.add(chb_meeresfrüchte);
 		
-		JButton btnWeiter = new JButton("Hinzuf\u00FCgen");
-		btnWeiter.setFont(new Font("Constantia", Font.ITALIC, 15));
-		btnWeiter.setBounds(586, 415, 224, 56);
-		EigenePizzaGui.add(btnWeiter);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setBounds(263, 377, 29, 20);
-		EigenePizzaGui.add(spinner);
+		chb_peperoni.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_peperoni.setBounds(495, 205, 161, 23);
+		EigenePizzaGui.add(chb_peperoni);
 		
-		JLabel lblMenge = new JLabel("Menge");
-		lblMenge.setFont(new Font("Constantia", Font.ITALIC, 11));
-		lblMenge.setBounds(264, 347, 46, 14);
-		EigenePizzaGui.add(lblMenge);
+		
+		chb_ananas.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_ananas.setBounds(495, 251, 97, 23);
+		EigenePizzaGui.add(chb_ananas);
+		
+		
+		chb_rucola.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_rucola.setBounds(495, 302, 97, 23);
+		EigenePizzaGui.add(chb_rucola);
+		
+		JLabel lbl_ueberschrift = new JLabel("Grundpreis  5,-\u20AC + 0,30 \u20AC je Zutat");
+		lbl_ueberschrift.setFont(new Font("Constantia", Font.ITALIC, 20));
+		lbl_ueberschrift.setForeground(Color.RED);
+		lbl_ueberschrift.setBounds(152, 39, 360, 23);
+		EigenePizzaGui.add(lbl_ueberschrift);
+		
+		txt_pizzaname = new JTextField();
+		txt_pizzaname.setBounds(24, 377, 214, 20);
+		EigenePizzaGui.add(txt_pizzaname);
+		txt_pizzaname.setColumns(10);
+		
+		JLabel lbl_pizzaname = new JLabel("Name f\u00FCr ihre Pizza eingeben:");
+		lbl_pizzaname.setFont(new Font("Constantia", Font.ITALIC, 11));
+		lbl_pizzaname.setBounds(52, 343, 214, 23);
+		EigenePizzaGui.add(lbl_pizzaname);
+		
+		JLabel lbl_pizzapreis = new JLabel("Aktueller Preis");
+		lbl_pizzapreis.setFont(new Font("Constantia", Font.ITALIC, 11));
+		lbl_pizzapreis.setBounds(510, 376, 180, 23);
+		EigenePizzaGui.add(lbl_pizzapreis);
+		
+		JButton btn_hinzufuegen = new JButton("Hinzuf\u00FCgen");
+		btn_hinzufuegen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Eigene_Pizza.ZutatenErmitteln();
+			}
+		});
+		btn_hinzufuegen.setFont(new Font("Constantia", Font.ITALIC, 15));
+		btn_hinzufuegen.setBounds(586, 415, 224, 56);
+		EigenePizzaGui.add(btn_hinzufuegen);
+		
+		JSpinner sp_pizzamenge = new JSpinner();
+		sp_pizzamenge.setBounds(263, 377, 29, 20);
+		EigenePizzaGui.add(sp_pizzamenge);
+		
+		JLabel lbl_pizzamenge = new JLabel("Menge");
+		lbl_pizzamenge.setFont(new Font("Constantia", Font.ITALIC, 11));
+		lbl_pizzamenge.setBounds(264, 347, 46, 14);
+		EigenePizzaGui.add(lbl_pizzamenge);
 	}
 }

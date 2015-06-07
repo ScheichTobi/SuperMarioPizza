@@ -8,9 +8,27 @@ public class Eigene_Pizza extends Pizza{
 	}
 	
 	//Zutaten ermitteln
-	public String[] ZutatenErmitteln(){
-		String[] zutaten;
-		zutaten = new String [0];//TODO Anzahl der Zutaten ermitteln
+	public static String[] ZutatenErmitteln(){
+		int zutatenmenge = 0;
+		
+		if(GUI_EigenePizza.chb_ananas.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_pilze.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_schinken.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_salami.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_sardellen.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_peperoni.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_rucola.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_paprika.isSelected()== true)zutatenmenge ++;
+			
+		System.out.println(zutatenmenge);
+		
+		
+		
+		
+		
+		String[] zutaten = new String [zutatenmenge];//TODO Anzahl der Zutaten ermitteln
 		
 		for (int i = 0; i < zutaten.length; i++) {
 			

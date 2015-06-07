@@ -5,33 +5,25 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
-import java.awt.Choice;
 import java.awt.EventQueue;
 import java.awt.Font;
-
-import javax.swing.ComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
-import javax.swing.JList;
-import java.awt.Color;
-import javax.swing.border.CompoundBorder;
 import javax.swing.ListSelectionModel;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
+	static GUI_EigenePizza frame;
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
-	private JTable table;
+	static JTable table;
 	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
 	public GUI_Hauptfenster() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,42 +60,23 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnMusikNeuAbspielen);
 		
 		table = new JTable();
-		String Name;
-		String Stückzahl;
-		String Preis;
-		
-		Name="Name";
-		Stückzahl="Stückzahl";
-		Preis="Preis";
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DefaultTableModel(
-				
-				
 			new Object[][] {
-				{Name, Stückzahl, Preis},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
+				{"Name", "St\u00FCckzahl", "Preis"},
 			},
 			new String[] {
 				"Name", "St\u00FCckzahl", "Preis"
 			}
-		));
+		) {
+			private static final long serialVersionUID = 1L;
+			boolean[] columnEditables = new boolean[] {
+				false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.setBounds(22, 224, 772, 320);
 		contentPane.add(table);
@@ -135,7 +108,7 @@ public class GUI_Hauptfenster extends JFrame {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							GUI_EigenePizza frame = new GUI_EigenePizza();
+							frame = new GUI_EigenePizza();
 							frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();

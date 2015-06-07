@@ -3,6 +3,7 @@ package supermariopizza;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -10,7 +11,6 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
 import java.awt.Font;
-import javax.swing.UIManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -118,7 +118,7 @@ public class GUI_EigenePizza extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				int anzahl = 0;
 				String[] zutaten;
-				double preis = 0;
+				String preis = null;
 				String name = null;
 				
 				anzahl = Eigene_Pizza.AnzahlErmitteln();
@@ -127,6 +127,12 @@ public class GUI_EigenePizza extends JFrame {
 				name = Eigene_Pizza.NameErmitteln();
 				
 				Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
+				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
+				model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
+				
+				GUI_Hauptfenster.frame.setVisible(false);
+				GUI_Hauptfenster.frame.dispose();
+				
 			}
 		});
 		

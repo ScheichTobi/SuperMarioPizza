@@ -45,34 +45,34 @@ public class GUI {
 	static void erstellungSpeisekarte(){
 		
 		
-		Pizza Funghi = new Pizza("Funghi", 7, 1);
+		Pizza Funghi = new Pizza("Funghi", "7", 1);
 		li_speisekarte.add(Funghi);
 		
-		Pizza Tonno = new Pizza("Tonno", 8, 1);
+		Pizza Tonno = new Pizza("Tonno", "8", 1);
 		li_speisekarte.add(Tonno);
 				
-		Pizza Margherita = new Pizza("Margherita", 5, 1);
+		Pizza Margherita = new Pizza("Margherita", "5", 1);
 		li_speisekarte.add(Margherita);
 		
-		Pizza Mozzarella = new Pizza("Mozzarella", 8.20, 1);
+		Pizza Mozzarella = new Pizza("Mozzarella", "8.20", 1);
 		li_speisekarte.add(Mozzarella);
 		
-		Pizza Prosciutto = new Pizza("Prosciutto", 13.50, 1);
+		Pizza Prosciutto = new Pizza("Prosciutto", "13.50", 1);
 		li_speisekarte.add(Prosciutto);
 
-		Pizza Vegetarier = new Pizza("Vegetarier", 7.50, 1);
+		Pizza Vegetarier = new Pizza("Vegetarier", "7.50", 1);
 		li_speisekarte.add(Vegetarier);
 		
-		Pizza Hawaii = new Pizza("Hawaii", 9.70, 1);
+		Pizza Hawaii = new Pizza("Hawaii", "9.70", 1);
 		li_speisekarte.add(Hawaii);
 		
-		Pizza Siciliana  = new Pizza("Siciliana ", 7.50, 1);
+		Pizza Siciliana  = new Pizza("Siciliana ", "7.50", 1);
 		li_speisekarte.add(Siciliana );
 		
-		Pizza Salami = new Pizza("Salami", 9.20, 1);
+		Pizza Salami = new Pizza("Salami", "9.20", 1);
 		li_speisekarte.add(Salami);
 		
-		Pizza Peperoni = new Pizza("Peperoni", 8.90, 1);
+		Pizza Peperoni = new Pizza("Peperoni", "8.90", 1);
 		li_speisekarte.add(Peperoni);
 		
 				
@@ -88,28 +88,28 @@ public class GUI {
 	//Erstellung der ArrayList in der die Getränke stehen
 	static void erstellungGetraenkekarte(){
 				
-		Getränke Hefeweizen  = new Getränke("Hefeweizen ", 2.70, 1);
+		Getränke Hefeweizen  = new Getränke("Hefeweizen ", "2.70", 1);
 		li_getraenkekarte.add(Hefeweizen );
 		
-		Getränke Radler   = new Getränke("Radler  ", 2.70, 1);
+		Getränke Radler   = new Getränke("Radler  ", "2.70", 1);
 		li_getraenkekarte.add(Radler  );
 		
-		Getränke Corona  = new Getränke("Corona ", 3.20, 1);
+		Getränke Corona  = new Getränke("Corona ", "3.20", 1);
 		li_getraenkekarte.add(Corona );
 		
-		Getränke Apfelschorle   = new Getränke("Apfelschorle  ", 2.20, 1);
+		Getränke Apfelschorle   = new Getränke("Apfelschorle  ", "2.20", 1);
 		li_getraenkekarte.add(Apfelschorle  );
 		
-		Getränke Cola  = new Getränke("Cola ", 2.20, 1);
+		Getränke Cola  = new Getränke("Cola ", "2.20", 1);
 		li_getraenkekarte.add(Cola );
 		
-		Getränke Weinschorle   = new Getränke("Weinschorle  ", 4.20, 1);
+		Getränke Weinschorle   = new Getränke("Weinschorle  ", "4.20", 1);
 		li_getraenkekarte.add(Weinschorle  );
 		
-		Getränke Fanta   = new Getränke("Fanta  ", 2.20, 1);
+		Getränke Fanta   = new Getränke("Fanta  ", "2.20", 1);
 		li_getraenkekarte.add(Fanta  );
 		
-		Getränke Sprite  = new Getränke("Sprite ", 2.20, 1);
+		Getränke Sprite  = new Getränke("Sprite ", "2.20", 1);
 		li_getraenkekarte.add(Sprite );
 		
 	}

@@ -7,10 +7,10 @@ package supermariopizza;
  *
  */
 public class Bestellung{
-	double preis;
+	String preis;
 	String name;
 		
-	Bestellung(String name, double preis){
+	Bestellung(String name, String preis){
 		this.name = name;
 		this.preis = preis;
 	}

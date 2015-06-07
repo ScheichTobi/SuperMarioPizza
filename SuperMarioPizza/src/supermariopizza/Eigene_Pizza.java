@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 
 public class Eigene_Pizza extends Pizza{
 	//Konstruktor
-	public Eigene_Pizza(String name, double preis, int anzahl, String[] zutaten) {
+	public Eigene_Pizza(String name, String preis, int anzahl, String[] zutaten) {
 		super(name, preis, anzahl);
 	}
 	
@@ -102,7 +102,7 @@ public class Eigene_Pizza extends Pizza{
 		return name;
 	}
 	//Preis der eigenen Pizze ermitteln
-	public static double PreisErmitteln(){
+	public static String PreisErmitteln(){
 		double preis = 5.0;
 		if(GUI_EigenePizza.chb_ananas.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)preis += 0.5;
@@ -119,7 +119,9 @@ public class Eigene_Pizza extends Pizza{
 		preis2 = format(preis);
 		
 		GUI_EigenePizza.lbl_pizzapreisanzeige.setText(preis2 + "€");
-		return preis;
+		
+		
+		return preis2;
 	}
 	public static String format(double i)
 	{

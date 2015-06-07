@@ -1,12 +1,3 @@
-package supermariopizza;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 package supermariopizza;
 
@@ -135,6 +126,11 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnEigenePizzaErstellen);
 		
 		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
+		btnBetellungAbgeben.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
 		contentPane.add(btnBetellungAbgeben);
 		

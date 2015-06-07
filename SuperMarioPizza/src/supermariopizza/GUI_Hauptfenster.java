@@ -8,21 +8,42 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+package supermariopizza;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.JList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import java.awt.Choice;
+import java.awt.Button;
+import java.awt.Font;
+import java.awt.SystemColor;
+import javax.swing.JSpinner;
+
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
+	private JTable table;
+	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
 	public GUI_Hauptfenster() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		
-		btnMusikStoppen.setBounds(10, 11, 165, 46);
+		btnMusikStoppen.setBounds(158, 646, 150, 15);
 		btnMusikStoppen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				GUI.Mario.close();
@@ -45,8 +66,95 @@ public class GUI_Hauptfenster extends JFrame {
 				} catch (Exception e1) {}
 			}
 		});
-		btnMusikNeuAbspielen.setBounds(199, 11, 200, 50);
+		btnMusikNeuAbspielen.setBounds(0, 646, 150, 15);
 		contentPane.add(btnMusikNeuAbspielen);
+		
+		table = new JTable();
+		String Name;
+		String Stückzahl;
+		String Preis;
+		
+		Name="Name";
+		Stückzahl="Stückzahl";
+		Preis="Preis";
+		table.setModel(new DefaultTableModel(
+				
+				
+			new Object[][] {
+				{Name, Stückzahl, Preis},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"Name", "St\u00FCckzahl", "Preis"
+			}
+		));
+		table.getColumnModel().getColumn(0).setPreferredWidth(457);
+		table.setBounds(22, 224, 772, 320);
+		contentPane.add(table);
+		
+		JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
+		btnHinzufgen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnHinzufgen.setBounds(542, 98, 140, 30);
+		contentPane.add(btnHinzufgen);
+		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
+		
+		contentPane.add(btnPizzaHinzufgen);
+		
+		Choice Getränke_Liste = new Choice();
+		Getränke_Liste.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+		Getränke_Liste.setBounds(478, 72, 250, 20);
+		contentPane.add(Getränke_Liste);
+		
+		Choice Pizza_Liste = new Choice();
+		Pizza_Liste.setBounds(22, 72, 250, 20);
+		contentPane.add(Pizza_Liste);
+		
+		JButton btnEigenePizzaErstellen = new JButton("Eigene Pizza erstellen");
+		btnEigenePizzaErstellen.setBounds(307, 147, 140, 30);
+		contentPane.add(btnEigenePizzaErstellen);
+		
+		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
+		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
+		contentPane.add(btnBetellungAbgeben);
+		
+		JPanel Zwischenpreis = new JPanel();
+		Zwischenpreis.setBackground(SystemColor.activeCaptionText);
+		Zwischenpreis.setForeground(SystemColor.textHighlight);
+		Zwischenpreis.setBounds(614, 552, 180, 30);
+		contentPane.add(Zwischenpreis);
+		
+		JSpinner MengePizza = new JSpinner();
+		MengePizza.setBounds(289, 72, 29, 20);
+		contentPane.add(MengePizza);
+		
+		JSpinner MengeGetränke = new JSpinner();
+		MengeGetränke.setBounds(749, 72, 29, 20);
+		contentPane.add(MengeGetränke);
+		
+		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
+		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
+		contentPane.add(btnAktuelleAuswahlEntfernen);
 		
 		
 	}

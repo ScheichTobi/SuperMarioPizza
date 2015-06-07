@@ -77,7 +77,7 @@ public class GUI_EigenePizza extends JFrame {
 		chb_Rucola.setBounds(495, 302, 97, 23);
 		EigenePizzaGui.add(chb_Rucola);
 		
-		JLabel lblGrundprei = new JLabel("Grundprei\u00DF  5,-\u20AC + 0,30 \u20AC je Zutat");
+		JLabel lblGrundprei = new JLabel("Grundpreis  5,-\u20AC + 0,30 \u20AC je Zutat");
 		lblGrundprei.setFont(new Font("Constantia", Font.ITALIC, 20));
 		lblGrundprei.setForeground(Color.RED);
 		lblGrundprei.setBounds(152, 39, 360, 23);
@@ -99,7 +99,7 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(lblAktuellerPrei);
 		
 		JButton btnWeiter = new JButton("Hinzuf\u00FCgen");
-		btnWeiter.setFont(new Font("Constantia", Font.ITALIC, 11));
+		btnWeiter.setFont(new Font("Constantia", Font.ITALIC, 15));
 		btnWeiter.setBounds(586, 415, 224, 56);
 		EigenePizzaGui.add(btnWeiter);
 		

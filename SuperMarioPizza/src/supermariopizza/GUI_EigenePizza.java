@@ -18,7 +18,7 @@ public class GUI_EigenePizza extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel EigenePizzaGui;
-	private JTextField txt_pizzaname;
+	static JTextField txt_pizzaname;
 
 
 	static JCheckBox chb_zwiebeln = new JCheckBox("Zwiebeln");
@@ -31,6 +31,7 @@ public class GUI_EigenePizza extends JFrame {
 	static JCheckBox chb_peperoni = new JCheckBox("Peperoni");
 	static JCheckBox chb_ananas = new JCheckBox("Ananas");
 	static JCheckBox chb_rucola = new JCheckBox("Rucola");
+	static JSpinner sp_pizzamenge = new JSpinner();
 	
 	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -112,12 +113,27 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(lbl_pizzapreis);
 		
 		JButton btn_hinzufuegen = new JButton("Hinzuf\u00FCgen");
+		btn_hinzufuegen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int anzahl = 0;
+				String[] zutaten;
+				double preis = 0;
+				String name = null;
+				
+				anzahl = Eigene_Pizza.AnzahlErmitteln();
+				zutaten = Eigene_Pizza.ZutatenErmitteln();
+				preis = Eigene_Pizza.PreisErmitteln();
+				name = Eigene_Pizza.NameErmitteln();
+				
+				Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
+			}
+		});
 		
 		btn_hinzufuegen.setFont(new Font("Constantia", Font.ITALIC, 15));
 		btn_hinzufuegen.setBounds(586, 415, 224, 58);
 		EigenePizzaGui.add(btn_hinzufuegen);
 		
-		JSpinner sp_pizzamenge = new JSpinner();
+		
 		sp_pizzamenge.setBounds(263, 377, 29, 20);
 		EigenePizzaGui.add(sp_pizzamenge);
 		
@@ -126,9 +142,9 @@ public class GUI_EigenePizza extends JFrame {
 		lbl_pizzamenge.setBounds(264, 347, 46, 14);
 		EigenePizzaGui.add(lbl_pizzamenge);
 		
-		JButton btnNewButton = new JButton("Zur\u00FCck");
-		btnNewButton.setFont(new Font("Constantia", Font.ITALIC, 15));
-		btnNewButton.setBounds(24, 415, 224, 58);
-		EigenePizzaGui.add(btnNewButton);
+		JButton btn_zurueck = new JButton("Zur\u00FCck");
+		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));
+		btn_zurueck.setBounds(24, 415, 224, 58);
+		EigenePizzaGui.add(btn_zurueck);
 	}
 }

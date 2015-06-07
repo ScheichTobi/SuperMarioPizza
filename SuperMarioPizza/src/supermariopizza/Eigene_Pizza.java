@@ -1,5 +1,7 @@
 package supermariopizza;
 
+import java.text.DecimalFormat;
+
 
 public class Eigene_Pizza extends Pizza{
 	//Konstruktor
@@ -22,34 +24,105 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)zutatenmenge ++;
 			
-		System.out.println(zutatenmenge);
+		String ananas = "ananas";
+		String zwiebeln = "zwiebeln";
+		String pilze = "pilze";
+		String schinken = "schinken";
+		String salami = "salami";
+		String sardellen = "sardellen";
+		String peperoni = "peperoni";
+		String rucola = "rucola";
+		String meeresfruechte = "meeresfruechte";
+		String paprika = "paprika";
 		
 		
 		
 		
 		
-		String[] zutaten = new String [zutatenmenge];//TODO Anzahl der Zutaten ermitteln
+		String[] zutaten = new String [zutatenmenge];
 		
 		for (int i = 0; i < zutaten.length; i++) {
+			if(GUI_EigenePizza.chb_ananas.isSelected()== true){
+				zutaten[i] = ananas;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true){
+				zutaten[i] = zwiebeln;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_pilze.isSelected()== true){
+				zutaten[i] = pilze;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_schinken.isSelected()== true){
+				zutaten[i] = schinken;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_salami.isSelected()== true){
+				zutaten[i] = salami;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_sardellen.isSelected()== true){
+				zutaten[i] = sardellen;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_peperoni.isSelected()== true){
+				zutaten[i] = peperoni;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_rucola.isSelected()== true){
+				zutaten[i] = rucola;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true){
+				zutaten[i] = meeresfruechte;
+				i++;
+			}
+			if(GUI_EigenePizza.chb_paprika.isSelected()== true){
+				zutaten[i] = paprika;
+				i++;
+			}
 			
-			//String string = zutaten[i]; //TODO Zutaten von Checkboxen dem ZutatenArray hinzufügen
 			
 		}
 		return zutaten;
 	}
 	
 	//Anzahl der eigenen Pizza ermitteln
-	public int AnzahlErmitteln(){
+	public static int AnzahlErmitteln(){
 		int anzahl = 0;
-		//TODO Menge aus DropList ermitteln
+		anzahl = (int) GUI_EigenePizza.sp_pizzamenge.getValue();
 		return anzahl;
 	}
 	
 	//Name der eigenen Pizza ermitteln
-	public void NameErmitteln(){
-		//TODO Name aus Textfeld ermitteln
-		
+	public static String NameErmitteln(){
+		String name = null;
+		name = GUI_EigenePizza.txt_pizzaname.getText();
+		return name;
 	}
-	
-
+	//Preis der eigenen Pizze ermitteln
+	public static double PreisErmitteln(){
+		double preis = 5;
+		if(GUI_EigenePizza.chb_ananas.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_pilze.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_schinken.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_salami.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_sardellen.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_peperoni.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_rucola.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_paprika.isSelected()== true)preis += 0.5;
+		
+		format(preis);
+		
+		return preis;
+	}
+	public static String format(double i)
+	{
+		DecimalFormat f = new DecimalFormat("#0.00");
+		double toFormat = ((double)Math.round(i*100))/100;
+		return f.format(toFormat);
+	}
 }

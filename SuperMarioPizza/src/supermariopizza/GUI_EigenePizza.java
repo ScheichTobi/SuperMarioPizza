@@ -92,7 +92,7 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(chb_Ananas);
 		
 		JCheckBox chb_Rucola = new JCheckBox("Rucola");
-		chb_Rucola.setFont(new Font("Albertus Extra Bold", Font.PLAIN, 20));
+		chb_Rucola.setFont(new Font("Vijaya", Font.PLAIN, 20));
 		chb_Rucola.setBounds(495, 302, 97, 23);
 		EigenePizzaGui.add(chb_Rucola);
 		

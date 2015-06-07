@@ -18,6 +18,7 @@ import java.awt.Font;
 
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
+import javax.swing.JComboBox;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;

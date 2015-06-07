@@ -12,6 +12,7 @@ import java.io.File;
 public class GUI {
 	
 	public static Clip Mario;
+	static ArrayList <Pizza> Test = new ArrayList<Pizza>();
 	
 	public static void main(String[] args) throws Exception {
 		//Erstellung der GUI_Hauptfenster
@@ -47,10 +48,12 @@ public class GUI {
 		
 		Pizza Tonno = new Pizza("Tonno", 8, 1);
 		li_speisekarte.add(Tonno);
+		Test.add(Funghi);
 		
 		Pizza Margherita = new Pizza("Margherita", 7.50, 1);
 		li_speisekarte.add(Margherita);
 		
+				
 		//Test der enthaltenen Elemente
 		for (int i = 0; i < li_speisekarte.size(); i++){
 			System.out.println(li_speisekarte.get(i).name);

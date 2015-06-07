@@ -11,6 +11,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JSpinner;
 
 public class EigenePizzaGUI extends JFrame {
 
@@ -90,7 +91,7 @@ public class EigenePizzaGUI extends JFrame {
 		EigenePizzaGui.add(lblGrundprei);
 		
 		textField = new JTextField();
-		textField.setBounds(52, 376, 214, 51);
+		textField.setBounds(24, 377, 214, 20);
 		EigenePizzaGui.add(textField);
 		textField.setColumns(10);
 		
@@ -99,11 +100,19 @@ public class EigenePizzaGUI extends JFrame {
 		EigenePizzaGui.add(lblNameFrIhre);
 		
 		JLabel lblAktuellerPrei = new JLabel("Aktueller Prei\u00DF");
-		lblAktuellerPrei.setBounds(387, 376, 180, 23);
+		lblAktuellerPrei.setBounds(510, 376, 180, 23);
 		EigenePizzaGui.add(lblAktuellerPrei);
 		
-		JButton btnWeiter = new JButton("Weiter");
+		JButton btnWeiter = new JButton("Hinzuf\u00FCgen");
 		btnWeiter.setBounds(586, 415, 224, 56);
 		EigenePizzaGui.add(btnWeiter);
+		
+		JSpinner spinner = new JSpinner();
+		spinner.setBounds(263, 377, 29, 20);
+		EigenePizzaGui.add(spinner);
+		
+		JLabel lblMenge = new JLabel("Menge");
+		lblMenge.setBounds(264, 347, 46, 14);
+		EigenePizzaGui.add(lblMenge);
 	}
 }

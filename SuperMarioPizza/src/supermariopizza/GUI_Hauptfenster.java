@@ -177,7 +177,5 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		
 	}
-	void speisenFuellen(){
-					
-	}
+		
 }

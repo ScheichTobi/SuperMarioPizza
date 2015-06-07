@@ -47,7 +47,7 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.setLayout(null);
 		
 		JCheckBox chb_Zwiebeln = new JCheckBox("Zwiebeln");
-		chb_Zwiebeln.setFont(new Font("Albertus Extra Bold", Font.PLAIN, 20));
+		chb_Zwiebeln.setFont(new Font("Magneto", Font.PLAIN, 20));
 		chb_Zwiebeln.setBounds(94, 119, 144, 23);
 		EigenePizzaGui.add(chb_Zwiebeln);
 		

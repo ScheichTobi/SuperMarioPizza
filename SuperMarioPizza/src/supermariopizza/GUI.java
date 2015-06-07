@@ -12,7 +12,9 @@ import java.io.File;
 public class GUI {
 	
 	public static Clip Mario;
-	static ArrayList <Pizza> Test = new ArrayList<Pizza>();
+	
+	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
+	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
 	
 	public static void main(String[] args) throws Exception {
 		//Erstellung der GUI_Hauptfenster
@@ -41,15 +43,14 @@ public class GUI {
 	 */
 	//Erstellung der ArrayList in der die Gerichte stehen
 	static void erstellungSpeisekarte(){
-		ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
+		
 		
 		Pizza Funghi = new Pizza("Funghi", 7, 1);
 		li_speisekarte.add(Funghi);
 		
 		Pizza Tonno = new Pizza("Tonno", 8, 1);
 		li_speisekarte.add(Tonno);
-		Test.add(Funghi);
-		
+				
 		Pizza Margherita = new Pizza("Margherita", 7.50, 1);
 		li_speisekarte.add(Margherita);
 		
@@ -72,8 +73,7 @@ public class GUI {
 	 */
 	//Erstellung der ArrayList in der die Getränke stehen
 	static void erstellungGetraenkekarte(){
-		ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
-		
+				
 		Getränke Test = new Getränke("Test2", 15, 1);
 		//TODO Menge im Sinne von Anzahl oder Literangabe? Oder sogar beides? :O Beides -> Konstr. ändern :P
 		li_getraenkekarte.add(Test);

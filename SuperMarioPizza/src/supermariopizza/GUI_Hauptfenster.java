@@ -16,6 +16,7 @@ import java.awt.Choice;
 import java.awt.EventQueue;
 import java.awt.Font;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -166,12 +167,17 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		JComboBox pizza_Liste = new JComboBox();
 		pizza_Liste.setBounds(23, 72, 256, 20);
+		pizza_Liste.addItem(GUI.li_speisekarte.get(0).name);
 		contentPane.add(pizza_Liste);
+		
 		
 		JComboBox getränke_Liste = new JComboBox();
 		getränke_Liste.setBounds(479, 72, 256, 20);
 		contentPane.add(getränke_Liste);
 		
 		
+	}
+	void speisenFuellen(){
+					
 	}
 }

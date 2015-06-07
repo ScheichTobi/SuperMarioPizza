@@ -1,6 +1,5 @@
 package supermariopizza;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,9 +11,11 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
+import java.awt.Font;
 
 public class GUI_EigenePizza extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel EigenePizzaGui;
 	private JTextField textField;
 
@@ -46,6 +47,7 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.setLayout(null);
 		
 		JCheckBox chb_Zwiebeln = new JCheckBox("Zwiebeln");
+		chb_Zwiebeln.setFont(new Font("Supercell-Magic", Font.PLAIN, 11));
 		chb_Zwiebeln.setBounds(94, 119, 97, 23);
 		EigenePizzaGui.add(chb_Zwiebeln);
 		
@@ -86,8 +88,9 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(chb_Rucola);
 		
 		JLabel lblGrundprei = new JLabel("Grundprei\u00DF  5,-\u20AC + 0,30 \u20AC je Zutat");
+		lblGrundprei.setFont(new Font("Supercell-Magic", Font.PLAIN, 11));
 		lblGrundprei.setForeground(Color.RED);
-		lblGrundprei.setBounds(284, 39, 180, 23);
+		lblGrundprei.setBounds(284, 39, 267, 23);
 		EigenePizzaGui.add(lblGrundprei);
 		
 		textField = new JTextField();

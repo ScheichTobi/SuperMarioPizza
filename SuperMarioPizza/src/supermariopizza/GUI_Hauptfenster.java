@@ -20,6 +20,10 @@ import javax.swing.ComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+import javax.swing.JList;
+import java.awt.Color;
+import javax.swing.border.CompoundBorder;
+import javax.swing.ListSelectionModel;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -108,10 +112,16 @@ public class GUI_Hauptfenster extends JFrame {
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				//TODO
 			}
 		});
 		btnHinzufgen.setBounds(542, 98, 140, 30);
 		contentPane.add(btnHinzufgen);
+		btnPizzaHinzufgen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//TODO
+			}
+		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
 		
@@ -183,7 +193,5 @@ public class GUI_Hauptfenster extends JFrame {
 		}
 		contentPane.add(getränke_Liste);
 		
-		
 	}
-		
 }

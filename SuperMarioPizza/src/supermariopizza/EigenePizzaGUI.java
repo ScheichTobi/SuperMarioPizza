@@ -99,7 +99,7 @@ public class EigenePizzaGUI extends JFrame {
 		lblNameFrIhre.setBounds(52, 343, 214, 23);
 		EigenePizzaGui.add(lblNameFrIhre);
 		
-		JLabel lblAktuellerPrei = new JLabel("Aktueller Prei\u00DF");
+		JLabel lblAktuellerPrei = new JLabel("Aktueller Preis");
 		lblAktuellerPrei.setBounds(510, 376, 180, 23);
 		EigenePizzaGui.add(lblAktuellerPrei);
 		

@@ -112,13 +112,9 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(lbl_pizzapreis);
 		
 		JButton btn_hinzufuegen = new JButton("Hinzuf\u00FCgen");
-		btn_hinzufuegen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Eigene_Pizza.ZutatenErmitteln();
-			}
-		});
+		
 		btn_hinzufuegen.setFont(new Font("Constantia", Font.ITALIC, 15));
-		btn_hinzufuegen.setBounds(586, 415, 224, 56);
+		btn_hinzufuegen.setBounds(586, 415, 224, 58);
 		EigenePizzaGui.add(btn_hinzufuegen);
 		
 		JSpinner sp_pizzamenge = new JSpinner();
@@ -129,5 +125,10 @@ public class GUI_EigenePizza extends JFrame {
 		lbl_pizzamenge.setFont(new Font("Constantia", Font.ITALIC, 11));
 		lbl_pizzamenge.setBounds(264, 347, 46, 14);
 		EigenePizzaGui.add(lbl_pizzamenge);
+		
+		JButton btnNewButton = new JButton("Zur\u00FCck");
+		btnNewButton.setFont(new Font("Constantia", Font.ITALIC, 15));
+		btnNewButton.setBounds(24, 415, 224, 58);
+		EigenePizzaGui.add(btnNewButton);
 	}
 }

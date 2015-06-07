@@ -116,15 +116,6 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		contentPane.add(btnPizzaHinzufgen);
 		
-		Choice Getränke_Liste = new Choice();
-		Getränke_Liste.setFont(new Font("Times New Roman", Font.PLAIN, 12));
-		Getränke_Liste.setBounds(478, 72, 250, 20);
-		contentPane.add(Getränke_Liste);
-		
-		Choice Pizza_Liste = new Choice();
-		Pizza_Liste.setBounds(22, 72, 250, 20);
-		contentPane.add(Pizza_Liste);
-		
 		JButton btnEigenePizzaErstellen = new JButton("Eigene Pizza erstellen");
 		btnEigenePizzaErstellen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnEigenePizzaErstellen.addActionListener(new ActionListener() {
@@ -172,6 +163,14 @@ public class GUI_Hauptfenster extends JFrame {
 		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
+		
+		JComboBox pizza_Liste = new JComboBox();
+		pizza_Liste.setBounds(23, 72, 256, 20);
+		contentPane.add(pizza_Liste);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(479, 72, 256, 20);
+		contentPane.add(comboBox);
 		
 		
 	}

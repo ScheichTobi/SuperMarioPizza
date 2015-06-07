@@ -76,13 +76,6 @@ public class GUI {
 		li_speisekarte.add(Peperoni);
 		
 				
-		//Test der enthaltenen Elemente
-		for (int i = 0; i < li_speisekarte.size(); i++){
-			System.out.println(li_speisekarte.get(i).name);
-			System.out.println(li_speisekarte.get(i).preis);
-			System.out.println(li_speisekarte.get(i).anzahl);
-			
-		}
 	}
 	
 	/**
@@ -95,16 +88,30 @@ public class GUI {
 	//Erstellung der ArrayList in der die Getränke stehen
 	static void erstellungGetraenkekarte(){
 				
-		Getränke Test = new Getränke("Test2", 15, 1);
-		//TODO Menge im Sinne von Anzahl oder Literangabe? Oder sogar beides? :O Beides -> Konstr. ändern :P
-		li_getraenkekarte.add(Test);
+		Getränke Hefeweizen  = new Getränke("Hefeweizen ", 2.70, 1);
+		li_getraenkekarte.add(Hefeweizen );
 		
-		//Test der enthaltenen Elemente
-		for (int i = 0; i < li_getraenkekarte.size(); i++){
-			System.out.println(li_getraenkekarte.get(i).name);
-			System.out.println(li_getraenkekarte.get(i).preis);
-			System.out.println(li_getraenkekarte.get(i).menge);
-		}
+		Getränke Radler   = new Getränke("Radler  ", 2.70, 1);
+		li_getraenkekarte.add(Radler  );
+		
+		Getränke Corona  = new Getränke("Corona ", 3.20, 1);
+		li_getraenkekarte.add(Corona );
+		
+		Getränke Apfelschorle   = new Getränke("Apfelschorle  ", 2.20, 1);
+		li_getraenkekarte.add(Apfelschorle  );
+		
+		Getränke Cola  = new Getränke("Cola ", 2.20, 1);
+		li_getraenkekarte.add(Cola );
+		
+		Getränke Weinschorle   = new Getränke("Weinschorle  ", 4.20, 1);
+		li_getraenkekarte.add(Weinschorle  );
+		
+		Getränke Fanta   = new Getränke("Fanta  ", 2.20, 1);
+		li_getraenkekarte.add(Fanta  );
+		
+		Getränke Sprite  = new Getränke("Sprite ", 2.20, 1);
+		li_getraenkekarte.add(Sprite );
+		
 	}
 	static void eigenePizzahinzufuegen(){
 		//Eigene_Pizza Pizza = new Eigene_Pizza(null, 0, 0);

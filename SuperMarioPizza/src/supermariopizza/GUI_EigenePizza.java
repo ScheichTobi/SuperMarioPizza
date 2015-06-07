@@ -27,7 +27,7 @@ public class GUI_EigenePizza extends JFrame {
 	static JCheckBox chb_salami = new JCheckBox("Salami");
 	static JCheckBox chb_sardellen = new JCheckBox("Sardellen");
 	static JCheckBox chb_paprika = new JCheckBox("Paprika");
-	static JCheckBox chb_meeresfrüchte = new JCheckBox("Meeresfr\u00FCchte");
+	static JCheckBox chb_meeresfruechte = new JCheckBox("Meeresfr\u00FCchte");
 	static JCheckBox chb_peperoni = new JCheckBox("Peperoni");
 	static JCheckBox chb_ananas = new JCheckBox("Ananas");
 	static JCheckBox chb_rucola = new JCheckBox("Rucola");
@@ -73,9 +73,9 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(chb_paprika);
 		
 		
-		chb_meeresfrüchte.setFont(new Font("Constantia", Font.ITALIC, 20));
-		chb_meeresfrüchte.setBounds(495, 159, 180, 23);
-		EigenePizzaGui.add(chb_meeresfrüchte);
+		chb_meeresfruechte.setFont(new Font("Constantia", Font.ITALIC, 20));
+		chb_meeresfruechte.setBounds(495, 159, 180, 23);
+		EigenePizzaGui.add(chb_meeresfruechte);
 		
 		
 		chb_peperoni.setFont(new Font("Constantia", Font.ITALIC, 20));
@@ -120,9 +120,15 @@ public class GUI_EigenePizza extends JFrame {
 				String[] zutaten;
 				String preis = null;
 				String name = null;
+				zutaten = Eigene_Pizza.ZutatenErmitteln();
+				//Auf fehler überprüfen
+				if(Eigene_Pizza.CheckForErrors() == false){
+					return;
+				}
+				
 				
 				anzahl = Eigene_Pizza.AnzahlErmitteln();
-				zutaten = Eigene_Pizza.ZutatenErmitteln();
+				
 				preis = Eigene_Pizza.PreisErmitteln();
 				name = Eigene_Pizza.NameErmitteln();
 				
@@ -141,7 +147,7 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(btn_hinzufuegen);
 		
 		
-		sp_pizzamenge.setBounds(263, 377, 29, 20);
+		sp_pizzamenge.setBounds(263, 374, 29, 36);
 		EigenePizzaGui.add(sp_pizzamenge);
 		
 		JLabel lbl_pizzamenge = new JLabel("Menge");
@@ -150,6 +156,12 @@ public class GUI_EigenePizza extends JFrame {
 		EigenePizzaGui.add(lbl_pizzamenge);
 		
 		JButton btn_zurueck = new JButton("Zur\u00FCck");
+		btn_zurueck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GUI_Hauptfenster.frame.setVisible(false);
+				GUI_Hauptfenster.frame.dispose();
+			}
+		});
 		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));
 		btn_zurueck.setBounds(24, 415, 224, 58);
 		EigenePizzaGui.add(btn_zurueck);

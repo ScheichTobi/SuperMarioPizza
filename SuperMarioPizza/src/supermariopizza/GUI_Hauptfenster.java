@@ -69,7 +69,6 @@ public class GUI_Hauptfenster extends JFrame {
 				"Name", "St\u00FCckzahl", "Preis"
 			}
 		) {
-			private static final long serialVersionUID = 1L;
 			boolean[] columnEditables = new boolean[] {
 				false, false, false
 			};
@@ -77,7 +76,10 @@ public class GUI_Hauptfenster extends JFrame {
 				return columnEditables[column];
 			}
 		});
+		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(2).setResizable(false);
 		table.setBounds(22, 224, 772, 320);
 		contentPane.add(table);
 		
@@ -105,6 +107,20 @@ public class GUI_Hauptfenster extends JFrame {
 		btnEigenePizzaErstellen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Erstellung der GUI_Hauptfenster
+				
+				//Zurücksetzen des GUI_EigenePizza
+				GUI_EigenePizza.chb_ananas.setSelected(false);
+				GUI_EigenePizza.chb_zwiebeln.setSelected(false);
+				GUI_EigenePizza.chb_paprika.setSelected(false);
+				GUI_EigenePizza.chb_sardellen.setSelected(false);
+				GUI_EigenePizza.chb_meeresfruechte.setSelected(false);
+				GUI_EigenePizza.chb_schinken.setSelected(false);
+				GUI_EigenePizza.chb_peperoni.setSelected(false);
+				GUI_EigenePizza.chb_salami.setSelected(false);
+				GUI_EigenePizza.chb_rucola.setSelected(false);
+				GUI_EigenePizza.chb_pilze.setSelected(false);
+				GUI_EigenePizza.sp_pizzamenge.setValue(1);
+				
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {

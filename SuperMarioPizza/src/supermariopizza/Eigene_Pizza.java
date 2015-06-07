@@ -2,8 +2,13 @@ package supermariopizza;
 
 import java.text.DecimalFormat;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 
 public class Eigene_Pizza extends Pizza{
+	private static int zutatenmenge;
+	
 	//Konstruktor
 	public Eigene_Pizza(String name, String preis, int anzahl, String[] zutaten) {
 		super(name, preis, anzahl);
@@ -11,7 +16,7 @@ public class Eigene_Pizza extends Pizza{
 	
 	//Zutaten ermitteln
 	public static String[] ZutatenErmitteln(){
-		int zutatenmenge = 0;
+		
 		
 		if(GUI_EigenePizza.chb_ananas.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)zutatenmenge ++;
@@ -21,7 +26,7 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_sardellen.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_peperoni.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_rucola.isSelected()== true)zutatenmenge ++;
-		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)zutatenmenge ++;
+		if(GUI_EigenePizza.chb_meeresfruechte.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)zutatenmenge ++;
 			
 		String ananas = "ananas";
@@ -74,7 +79,7 @@ public class Eigene_Pizza extends Pizza{
 				zutaten[i] = rucola;
 				i++;
 			}
-			if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true){
+			if(GUI_EigenePizza.chb_meeresfruechte.isSelected()== true){
 				zutaten[i] = meeresfruechte;
 				i++;
 			}
@@ -112,7 +117,7 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_sardellen.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_peperoni.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_rucola.isSelected()== true)preis += 0.5;
-		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)preis += 0.5;
+		if(GUI_EigenePizza.chb_meeresfruechte.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)preis += 0.5;
 		
 		String preis2 = String.valueOf(preis);
@@ -129,4 +134,24 @@ public class Eigene_Pizza extends Pizza{
 		double toFormat = ((double)Math.round(i*100))/100;
 		return f.format(toFormat);
 	}
+	public static Boolean CheckForErrors(){
+		//Fehlerüberprüfung
+		
+		//JSpinner kleiner als 1
+		if((int)GUI_EigenePizza.sp_pizzamenge.getValue() < 1){
+			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		//Keinen Namen eingegeben
+		if(GUI_EigenePizza.txt_pizzaname.getText().equals("") == true) {
+			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen ihrer Pizza einen Namen geben", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		if(zutatenmenge == 0){
+			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen eine Zutat auswählen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+			return false;
+		}
+		return true;
+	}
+	
 }

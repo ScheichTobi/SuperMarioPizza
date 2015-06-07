@@ -3,7 +3,14 @@ package supermariopizza;
 
 public class Eigene_Pizza extends Pizza{
 
-	public Eigene_Pizza(String name, double preis, int anzahl) {
+	
+	
+	
+	
+	
+	
+	
+	public Eigene_Pizza(String name, double preis, int anzahl, String[] zutaten) {
 		super(name, preis, anzahl);
 	}
 	

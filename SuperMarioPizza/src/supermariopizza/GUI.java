@@ -51,8 +51,29 @@ public class GUI {
 		Pizza Tonno = new Pizza("Tonno", 8, 1);
 		li_speisekarte.add(Tonno);
 				
-		Pizza Margherita = new Pizza("Margherita", 7.50, 1);
+		Pizza Margherita = new Pizza("Margherita", 5, 1);
 		li_speisekarte.add(Margherita);
+		
+		Pizza Mozzarella = new Pizza("Mozzarella", 8.20, 1);
+		li_speisekarte.add(Mozzarella);
+		
+		Pizza Prosciutto = new Pizza("Prosciutto", 13.50, 1);
+		li_speisekarte.add(Prosciutto);
+
+		Pizza Vegetarier = new Pizza("Vegetarier", 7.50, 1);
+		li_speisekarte.add(Vegetarier);
+		
+		Pizza Hawaii = new Pizza("Hawaii", 9.70, 1);
+		li_speisekarte.add(Hawaii);
+		
+		Pizza Siciliana  = new Pizza("Siciliana ", 7.50, 1);
+		li_speisekarte.add(Siciliana );
+		
+		Pizza Salami = new Pizza("Salami", 9.20, 1);
+		li_speisekarte.add(Salami);
+		
+		Pizza Peperoni = new Pizza("Peperoni", 8.90, 1);
+		li_speisekarte.add(Peperoni);
 		
 				
 		//Test der enthaltenen Elemente

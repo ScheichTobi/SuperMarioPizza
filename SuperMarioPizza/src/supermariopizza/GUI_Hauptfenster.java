@@ -103,12 +103,14 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(table);
 		
 		JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
+		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		btnHinzufgen.setBounds(542, 98, 140, 30);
 		contentPane.add(btnHinzufgen);
+		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
 		
 		contentPane.add(btnPizzaHinzufgen);
@@ -123,6 +125,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(Pizza_Liste);
 		
 		JButton btnEigenePizzaErstellen = new JButton("Eigene Pizza erstellen");
+		btnEigenePizzaErstellen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnEigenePizzaErstellen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Erstellung der GUI_Hauptfenster
@@ -138,10 +141,11 @@ public class GUI_Hauptfenster extends JFrame {
 				});
 			}
 		});
-		btnEigenePizzaErstellen.setBounds(307, 147, 140, 30);
+		btnEigenePizzaErstellen.setBounds(302, 147, 150, 30);
 		contentPane.add(btnEigenePizzaErstellen);
 		
 		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
+		btnBetellungAbgeben.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnBetellungAbgeben.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
@@ -159,10 +163,12 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(MengeGetränke);
 		
 		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
+		btnAktuelleAuswahlEntfernen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
 		
-		JLabel lblNewLabel = new JLabel("Zwischenprei\u00DF\r\n");
+		JLabel lblNewLabel = new JLabel("Zwischenpreis\r\n");
+		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
 		

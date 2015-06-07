@@ -32,7 +32,7 @@ public class GUI_EigenePizza extends JFrame {
 	static JCheckBox chb_ananas = new JCheckBox("Ananas");
 	static JCheckBox chb_rucola = new JCheckBox("Rucola");
 	static JSpinner sp_pizzamenge = new JSpinner();
-	static JLabel lbl_pizzapreisanzeige = new JLabel("0\u20AC");
+	static JLabel lbl_pizzapreisanzeige = new JLabel("5\u20AC");
 	
 	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

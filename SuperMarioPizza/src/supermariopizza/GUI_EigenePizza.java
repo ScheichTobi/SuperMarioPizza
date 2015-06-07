@@ -32,6 +32,7 @@ public class GUI_EigenePizza extends JFrame {
 	static JCheckBox chb_ananas = new JCheckBox("Ananas");
 	static JCheckBox chb_rucola = new JCheckBox("Rucola");
 	static JSpinner sp_pizzamenge = new JSpinner();
+	static JLabel lbl_pizzapreisanzeige = new JLabel("0\u20AC");
 	
 	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,7 +92,7 @@ public class GUI_EigenePizza extends JFrame {
 		chb_rucola.setBounds(495, 302, 97, 23);
 		EigenePizzaGui.add(chb_rucola);
 		
-		JLabel lbl_ueberschrift = new JLabel("Grundpreis  5,-\u20AC + 0,30 \u20AC je Zutat");
+		JLabel lbl_ueberschrift = new JLabel("Grundpreis  5,-\u20AC + 0,50 \u20AC je Zutat");
 		lbl_ueberschrift.setFont(new Font("Constantia", Font.ITALIC, 20));
 		lbl_ueberschrift.setForeground(Color.RED);
 		lbl_ueberschrift.setBounds(152, 39, 360, 23);
@@ -146,5 +147,9 @@ public class GUI_EigenePizza extends JFrame {
 		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));
 		btn_zurueck.setBounds(24, 415, 224, 58);
 		EigenePizzaGui.add(btn_zurueck);
+		lbl_pizzapreisanzeige.setFont(new Font("Constantia", Font.PLAIN, 20));
+		lbl_pizzapreisanzeige.setBounds(629, 358, 85, 36);
+		
+		EigenePizzaGui.add(lbl_pizzapreisanzeige);
 	}
 }

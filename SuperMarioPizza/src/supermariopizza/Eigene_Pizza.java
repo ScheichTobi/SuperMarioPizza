@@ -103,7 +103,7 @@ public class Eigene_Pizza extends Pizza{
 	}
 	//Preis der eigenen Pizze ermitteln
 	public static double PreisErmitteln(){
-		double preis = 5;
+		double preis = 5.0;
 		if(GUI_EigenePizza.chb_ananas.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_pilze.isSelected()== true)preis += 0.5;
@@ -115,8 +115,10 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_meeresfrüchte.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)preis += 0.5;
 		
-		format(preis);
+		String preis2 = String.valueOf(preis);
+		preis2 = format(preis);
 		
+		GUI_EigenePizza.lbl_pizzapreisanzeige.setText(preis2 + "€");
 		return preis;
 	}
 	public static String format(double i)

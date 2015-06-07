@@ -165,14 +165,22 @@ public class GUI_Hauptfenster extends JFrame {
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
 		
-		JComboBox pizza_Liste = new JComboBox();
+		JComboBox <String> pizza_Liste = new JComboBox <String>();
 		pizza_Liste.setBounds(23, 72, 256, 20);
-		pizza_Liste.addItem(GUI.li_speisekarte.get(0).name);
+	// füllen der JComboBox pizza_Liste
+		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
+			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
+		}
+		
 		contentPane.add(pizza_Liste);
 		
 		
-		JComboBox getränke_Liste = new JComboBox();
+		JComboBox <String>getränke_Liste = new JComboBox<String>();
 		getränke_Liste.setBounds(479, 72, 256, 20);
+	// füllen der JComboBox getränke Liste
+		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
+			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
+		}
 		contentPane.add(getränke_Liste);
 		
 		

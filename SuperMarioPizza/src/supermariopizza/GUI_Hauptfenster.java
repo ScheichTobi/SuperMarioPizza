@@ -5,18 +5,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JScrollPane;
-import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Choice;
-import java.awt.Button;
 import java.awt.Font;
 import java.awt.SystemColor;
 import javax.swing.JSpinner;
+import javax.swing.JLabel;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -134,12 +131,6 @@ public class GUI_Hauptfenster extends JFrame {
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
 		contentPane.add(btnBetellungAbgeben);
 		
-		JPanel Zwischenpreis = new JPanel();
-		Zwischenpreis.setBackground(SystemColor.activeCaptionText);
-		Zwischenpreis.setForeground(SystemColor.textHighlight);
-		Zwischenpreis.setBounds(614, 552, 180, 30);
-		contentPane.add(Zwischenpreis);
-		
 		JSpinner MengePizza = new JSpinner();
 		MengePizza.setBounds(289, 72, 29, 20);
 		contentPane.add(MengePizza);
@@ -151,6 +142,10 @@ public class GUI_Hauptfenster extends JFrame {
 		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
+		
+		JLabel lblNewLabel = new JLabel("Zwischenprei\u00DF\r\n");
+		lblNewLabel.setBounds(666, 555, 128, 37);
+		contentPane.add(lblNewLabel);
 		
 		
 	}

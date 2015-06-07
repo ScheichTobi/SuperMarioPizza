@@ -1,7 +1,10 @@
 package supermariopizza;
 
 import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.BooleanControl;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
@@ -80,27 +83,38 @@ public class GUI {
 		}
 	}
 	static void eigenePizzahinzufuegen(){
-		Eigene_Pizza Pizza = new Eigene_Pizza(null, 0, 0);
+		//Eigene_Pizza Pizza = new Eigene_Pizza(null, 0, 0);
 		
 		//TODO ausgewählte Zutaten ermitteln
 		//String[] li_Zutaten;
 		//li_Zutaten = Pizza.ZutatenErmitteln();
 		
 		//TODO ausgewählte Menge ermitteln
-		Pizza.AnzahlErmitteln();
+		//Pizza.AnzahlErmitteln();
 		
 		//TODO ausgewählten Namen ermitteln
-		Pizza.NameErmitteln();
+		//Pizza.NameErmitteln();
 		
 	
 	}
 	public static void sound() throws Exception{
+			//Musik erstellen
             try {
                 File MarioMusik = new File("SuperMarioSound.wav");
                 Mario = AudioSystem.getClip();
                 Mario.open(AudioSystem.getAudioInputStream(MarioMusik));
                 Mario.loop(Clip.LOOP_CONTINUOUSLY);
-               
+            //Lautstärke
+                FloatControl gainControl = (FloatControl) Mario.getControl(FloatControl.Type.MASTER_GAIN);
+                    double gain = .08D;
+                    float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                    gainControl.setValue(dB);
+
+                    BooleanControl muteControl = (BooleanControl) Mario
+                        .getControl(BooleanControl.Type.MUTE);
+                    muteControl.setValue(true);
+
+                    muteControl.setValue(false);
                 }catch (IOException e){}      
 	}	
 }

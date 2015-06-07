@@ -13,7 +13,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
 
-public class EigenePizzaGUI extends JFrame {
+public class GUI_EigenePizza extends JFrame {
 
 	private JPanel EigenePizzaGui;
 	private JTextField textField;
@@ -25,7 +25,7 @@ public class EigenePizzaGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EigenePizzaGUI frame = new EigenePizzaGUI();
+					GUI_EigenePizza frame = new GUI_EigenePizza();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class EigenePizzaGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EigenePizzaGUI() {
+	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 538);
 		EigenePizzaGui = new JPanel();

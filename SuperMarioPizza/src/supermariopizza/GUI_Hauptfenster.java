@@ -168,9 +168,9 @@ public class GUI_Hauptfenster extends JFrame {
 		pizza_Liste.setBounds(23, 72, 256, 20);
 		contentPane.add(pizza_Liste);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(479, 72, 256, 20);
-		contentPane.add(comboBox);
+		JComboBox getränke_Liste = new JComboBox();
+		getränke_Liste.setBounds(479, 72, 256, 20);
+		contentPane.add(getränke_Liste);
 		
 		
 	}

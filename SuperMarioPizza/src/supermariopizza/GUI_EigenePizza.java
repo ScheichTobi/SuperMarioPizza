@@ -45,45 +45,45 @@ public class GUI_EigenePizza extends JFrame {
 		setContentPane(EigenePizzaGui);
 		EigenePizzaGui.setLayout(null);
 		
-		JCheckBox Zutat1 = new JCheckBox("New check box");
-		Zutat1.setBounds(94, 119, 97, 23);
-		EigenePizzaGui.add(Zutat1);
+		JCheckBox chb_Zwiebeln = new JCheckBox("Zwiebeln");
+		chb_Zwiebeln.setBounds(94, 119, 97, 23);
+		EigenePizzaGui.add(chb_Zwiebeln);
 		
-		JCheckBox Zutat2 = new JCheckBox("New check box");
-		Zutat2.setBounds(94, 159, 97, 23);
-		EigenePizzaGui.add(Zutat2);
+		JCheckBox chb_Pilze = new JCheckBox("Pilze");
+		chb_Pilze.setBounds(94, 159, 97, 23);
+		EigenePizzaGui.add(chb_Pilze);
 		
-		JCheckBox Zutat3 = new JCheckBox("New check box");
-		Zutat3.setBounds(94, 205, 97, 23);
-		EigenePizzaGui.add(Zutat3);
+		JCheckBox chb_Schinken = new JCheckBox("Schinken");
+		chb_Schinken.setBounds(94, 205, 97, 23);
+		EigenePizzaGui.add(chb_Schinken);
 		
-		JCheckBox Zutat4 = new JCheckBox("New check box");
-		Zutat4.setBounds(94, 251, 97, 23);
-		EigenePizzaGui.add(Zutat4);
+		JCheckBox chb_Salami = new JCheckBox("Salami");
+		chb_Salami.setBounds(94, 251, 97, 23);
+		EigenePizzaGui.add(chb_Salami);
 		
-		JCheckBox Zutat5 = new JCheckBox("New check box");
-		Zutat5.setBounds(94, 302, 97, 23);
-		EigenePizzaGui.add(Zutat5);
+		JCheckBox chb_Sardellen = new JCheckBox("Sardellen");
+		chb_Sardellen.setBounds(94, 302, 97, 23);
+		EigenePizzaGui.add(chb_Sardellen);
 		
-		JCheckBox Zutat6 = new JCheckBox("New check box");
-		Zutat6.setBounds(495, 119, 97, 23);
-		EigenePizzaGui.add(Zutat6);
+		JCheckBox chb_Paprika = new JCheckBox("Paprika");
+		chb_Paprika.setBounds(495, 119, 97, 23);
+		EigenePizzaGui.add(chb_Paprika);
 		
-		JCheckBox Zutat7 = new JCheckBox("New check box");
-		Zutat7.setBounds(495, 159, 97, 23);
-		EigenePizzaGui.add(Zutat7);
+		JCheckBox chb_Meeresfrüchte = new JCheckBox("Meeresfr\u00FCchte");
+		chb_Meeresfrüchte.setBounds(495, 159, 97, 23);
+		EigenePizzaGui.add(chb_Meeresfrüchte);
 		
-		JCheckBox Zutat8 = new JCheckBox("New check box");
-		Zutat8.setBounds(495, 205, 97, 23);
-		EigenePizzaGui.add(Zutat8);
+		JCheckBox chb_Peperoni = new JCheckBox("Peperoni");
+		chb_Peperoni.setBounds(495, 205, 97, 23);
+		EigenePizzaGui.add(chb_Peperoni);
 		
-		JCheckBox Zutat9 = new JCheckBox("New check box");
-		Zutat9.setBounds(495, 251, 97, 23);
-		EigenePizzaGui.add(Zutat9);
+		JCheckBox chb_Ananas = new JCheckBox("Ananas");
+		chb_Ananas.setBounds(495, 251, 97, 23);
+		EigenePizzaGui.add(chb_Ananas);
 		
-		JCheckBox Zutat10 = new JCheckBox("New check box");
-		Zutat10.setBounds(495, 302, 97, 23);
-		EigenePizzaGui.add(Zutat10);
+		JCheckBox chb_Rucola = new JCheckBox("Rucola");
+		chb_Rucola.setBounds(495, 302, 97, 23);
+		EigenePizzaGui.add(chb_Rucola);
 		
 		JLabel lblGrundprei = new JLabel("Grundprei\u00DF  5,-\u20AC + 0,30 \u20AC je Zutat");
 		lblGrundprei.setForeground(Color.RED);

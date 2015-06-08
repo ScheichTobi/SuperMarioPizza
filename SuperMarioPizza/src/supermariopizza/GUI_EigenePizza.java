@@ -230,13 +230,13 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		EigenePizzaGui.add(btn_hinzufuegen);
 		
 		
-		sp_pizzamenge.setBounds(256, 437, 29, 52);
+		sp_pizzamenge.setBounds(319, 443, 29, 36);
 		EigenePizzaGui.add(sp_pizzamenge);
 		
 		JLabel lbl_pizzamenge = new JLabel("Menge:");
 		lbl_pizzamenge.setForeground(Color.DARK_GRAY);
 		lbl_pizzamenge.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 20));
-		lbl_pizzamenge.setBounds(134, 447, 77, 26);
+		lbl_pizzamenge.setBounds(216, 447, 77, 26);
 		EigenePizzaGui.add(lbl_pizzamenge);
 		
 		JButton btn_zurueck = new JButton("Zur\u00FCck");
@@ -247,7 +247,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 			}
 		});
 		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));
-		btn_zurueck.setBounds(405, 463, 91, 36);
+		btn_zurueck.setBounds(0, 463, 91, 36);
 		EigenePizzaGui.add(btn_zurueck);
 		lbl_pizzapreisanzeige.setForeground(Color.BLUE);
 		lbl_pizzapreisanzeige.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 24));

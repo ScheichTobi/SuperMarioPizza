@@ -17,6 +17,8 @@ import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -62,6 +64,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnMusikNeuAbspielen);
 		
 		table = new JTable();
+		table.setBackground(Color.WHITE);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
@@ -83,7 +86,7 @@ public class GUI_Hauptfenster extends JFrame {
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.getColumnModel().getColumn(1).setResizable(false);
 		table.getColumnModel().getColumn(2).setResizable(false);
-		table.setBounds(22, 224, 772, 320);
+		table.setBounds(22, 224, 772, 15);
 		contentPane.add(table);
 		
 		JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");

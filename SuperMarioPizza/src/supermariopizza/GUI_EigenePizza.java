@@ -216,6 +216,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 				name = Eigene_Pizza.NameErmitteln();
 				
 				Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
+				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
 				model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
 				

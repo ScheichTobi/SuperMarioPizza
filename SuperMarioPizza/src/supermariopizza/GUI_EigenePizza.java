@@ -296,7 +296,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		EigenePizzaGui.add(lbl_foto);
 		
 		JLabel lblenthltTomaten = new JLabel("(Enth\u00E4lt Tomaten + K\u00E4se)");
-		lblenthltTomaten.setBounds(473, 49, 124, 14);
+		lblenthltTomaten.setBounds(457, 48, 147, 14);
 		EigenePizzaGui.add(lblenthltTomaten);
 		
 	}

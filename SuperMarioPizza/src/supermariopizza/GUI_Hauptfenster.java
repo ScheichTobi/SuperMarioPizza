@@ -105,6 +105,9 @@ public class GUI_Hauptfenster extends JFrame {
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TODO
+				for(int i = 0; i < getränke_Liste.getItemCount(); i++){
+					System.out.println(getränke_Liste.getItemAt(i));
+				}
 				int auswahl = getränke_Liste.getSelectedIndex();
 				int anzahl = (int)MengeGetränke.getValue();
 				if(anzahl < 1){
@@ -115,6 +118,7 @@ public class GUI_Hauptfenster extends JFrame {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl + "€"});
 				
+				ZwischenpreisRechnung();
 			}
 		});
 		btnHinzufgen.setBounds(542, 98, 140, 30);
@@ -122,6 +126,9 @@ public class GUI_Hauptfenster extends JFrame {
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TODO
+				for(int i = 0; i < pizza_Liste.getItemCount(); i++){
+					System.out.println(pizza_Liste.getItemAt(i));
+				}
 				int auswahl = pizza_Liste.getSelectedIndex();
 				int anzahl = (int)MengePizza.getValue();
 				if(anzahl < 1){
@@ -132,6 +139,7 @@ public class GUI_Hauptfenster extends JFrame {
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_speisekarte.get(auswahl).preis)) * anzahl + "€"});
 				
+				ZwischenpreisRechnung();
 			}
 		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));

@@ -74,6 +74,9 @@ public class GUI {
 		Pizza Peperoni = new Pizza("Peperoni", "8.90", 1);
 		li_speisekarte.add(Peperoni);
 		
+		for(int i = 0; i < li_speisekarte.size(); i++){
+			System.out.println(li_speisekarte.get(i).name);
+		}
 				
 	}
 	
@@ -110,6 +113,10 @@ public class GUI {
 		
 		Getränke Sprite  = new Getränke("Sprite ", "2.20", 1);
 		li_getraenkekarte.add(Sprite );
+		
+		for(int i = 0; i < li_getraenkekarte.size(); i++){
+			System.out.println(li_getraenkekarte.get(i).name);
+		}
 		
 	}
 	static void eigenePizzahinzufuegen(){

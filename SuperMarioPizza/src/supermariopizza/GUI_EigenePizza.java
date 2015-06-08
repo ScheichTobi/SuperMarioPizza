@@ -3,18 +3,25 @@ package supermariopizza;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+
 import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JSpinner;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
-public class GUI_EigenePizza extends JFrame {
+public class GUI_EigenePizza extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel EigenePizzaGui;
@@ -32,7 +39,8 @@ public class GUI_EigenePizza extends JFrame {
 	static JCheckBox chb_ananas = new JCheckBox("Ananas");
 	static JCheckBox chb_rucola = new JCheckBox("Rucola");
 	static JSpinner sp_pizzamenge = new JSpinner();
-	static JLabel lbl_pizzapreisanzeige = new JLabel("5\u20AC");
+	static JLabel lbl_pizzapreisanzeige = new JLabel("5,00\u20AC");
+	
 	
 	public GUI_EigenePizza() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -42,6 +50,64 @@ public class GUI_EigenePizza extends JFrame {
 		setContentPane(EigenePizzaGui);
 		EigenePizzaGui.setLayout(null);
 		
+		chb_ananas.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_rucola.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_meeresfruechte.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_schinken.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_peperoni.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_paprika.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_pilze.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_salami.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_sardellen.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		chb_zwiebeln.addItemListener(new ItemListener() {
+		      public void itemStateChanged(ItemEvent e) {
+		        Eigene_Pizza.PreisErmitteln();
+		      }
+		    });
+		ChangeListener listener = new ChangeListener() {
+		      public void stateChanged(ChangeEvent e) {
+		    	Eigene_Pizza.AnzahlErmitteln();
+		        Eigene_Pizza.PreisErmitteln();
+		    }
+
+		};
+		sp_pizzamenge.addChangeListener(listener);
 		
 		chb_zwiebeln.setFont(new Font("Constantia", Font.ITALIC, 20));
 		chb_zwiebeln.setBounds(94, 119, 144, 23);
@@ -169,5 +235,13 @@ public class GUI_EigenePizza extends JFrame {
 		lbl_pizzapreisanzeige.setBounds(629, 358, 85, 36);
 		
 		EigenePizzaGui.add(lbl_pizzapreisanzeige);
+		
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

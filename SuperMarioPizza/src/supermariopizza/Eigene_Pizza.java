@@ -1,6 +1,9 @@
 package supermariopizza;
 
+
+
 import java.text.DecimalFormat;
+
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -8,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class Eigene_Pizza extends Pizza{
 	private static int zutatenmenge;
-	static int staticanzahl;
+	static int staticanzahl = 1;
 	
 	//Konstruktor
 	public Eigene_Pizza(String name, String preis, int anzahl, String[] zutaten) {
@@ -122,7 +125,7 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_meeresfruechte.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)preis += 0.5;
 		preis *= staticanzahl;
-		staticanzahl = 0;
+		staticanzahl = 1;
 		String preis2 = String.valueOf(preis);
 		preis2 = format(preis);
 		
@@ -137,8 +140,6 @@ public class Eigene_Pizza extends Pizza{
 		double toFormat = ((double)Math.round(i*100))/100;
 		return f.format(toFormat);
 	}
-	//TODO
-	//Habe mal einen Test mit gleichen Namen gemacht... das führt zu einem Fehhler und muss abgefangen werden
 	public static Boolean CheckForErrors(){
 		//Fehlerüberprüfung
 		
@@ -152,6 +153,7 @@ public class Eigene_Pizza extends Pizza{
 			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen ihrer Pizza einen Namen geben", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
 			return false;
 		}
+		//Keine Zutat ausgewählt
 		if(zutatenmenge == 0){
 			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen eine Zutat auswählen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
 			return false;

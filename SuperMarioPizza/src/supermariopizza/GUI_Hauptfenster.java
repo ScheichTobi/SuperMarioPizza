@@ -11,10 +11,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 import java.awt.EventQueue;
 import java.awt.Font;
-
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;

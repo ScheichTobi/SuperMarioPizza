@@ -35,7 +35,7 @@ public class GUI_EigenePizza extends JFrame {
 	static JLabel lbl_pizzapreisanzeige = new JLabel("5\u20AC");
 	
 	public GUI_EigenePizza() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(500, 500, 850, 538);
 		EigenePizzaGui = new JPanel();
 		EigenePizzaGui.setBorder(new EmptyBorder(5, 5, 5, 5));

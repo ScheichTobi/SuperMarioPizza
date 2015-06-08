@@ -5,12 +5,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.EventQueue;
 import java.awt.Font;
+
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -96,6 +100,10 @@ public class GUI_Hauptfenster extends JFrame {
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TODO
+				//String name = pizza_Liste....;
+				//DefaultTableModel model = (DefaultTableModel) table.getModel();
+				//model.addRow(new Object[]{GUI.li_speisekarte.get(0).name, GUI.li_speisekarte.get(0).anzahl, GUI.li_speisekarte.get(0).preis + "€"});
+				
 			}
 		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));

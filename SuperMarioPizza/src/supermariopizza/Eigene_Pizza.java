@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 public class Eigene_Pizza extends Pizza{
 	private static int zutatenmenge;
+	static int staticanzahl;
 	
 	//Konstruktor
 	public Eigene_Pizza(String name, String preis, int anzahl, String[] zutaten) {
@@ -17,7 +18,7 @@ public class Eigene_Pizza extends Pizza{
 	//Zutaten ermitteln
 	public static String[] ZutatenErmitteln(){
 		
-		
+		zutatenmenge = 0;
 		if(GUI_EigenePizza.chb_ananas.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_zwiebeln.isSelected()== true)zutatenmenge ++;
 		if(GUI_EigenePizza.chb_pilze.isSelected()== true)zutatenmenge ++;
@@ -97,6 +98,7 @@ public class Eigene_Pizza extends Pizza{
 	public static int AnzahlErmitteln(){
 		int anzahl = 0;
 		anzahl = (int) GUI_EigenePizza.sp_pizzamenge.getValue();
+		staticanzahl = anzahl;
 		return anzahl;
 	}
 	
@@ -119,7 +121,8 @@ public class Eigene_Pizza extends Pizza{
 		if(GUI_EigenePizza.chb_rucola.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_meeresfruechte.isSelected()== true)preis += 0.5;
 		if(GUI_EigenePizza.chb_paprika.isSelected()== true)preis += 0.5;
-		
+		preis *= staticanzahl;
+		staticanzahl = 0;
 		String preis2 = String.valueOf(preis);
 		preis2 = format(preis);
 		

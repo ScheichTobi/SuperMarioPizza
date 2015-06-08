@@ -69,6 +69,7 @@ public class GUI_Hauptfenster extends JFrame {
 				"Name", "St\u00FCckzahl", "Preis"
 			}
 		) {
+			private static final long serialVersionUID = 1L;
 			boolean[] columnEditables = new boolean[] {
 				false, false, false
 			};

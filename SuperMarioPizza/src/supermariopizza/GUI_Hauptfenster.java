@@ -202,17 +202,15 @@ public class GUI_Hauptfenster extends JFrame {
 			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
 		}
 		contentPane.add(getränke_Liste);
-		
-
-		
 	}
+	
+	//Gibt ZwischenPreis in GUI_Hauptfenster an
 	public static void ZwischenpreisRechnung() {
-		int i = 0;
 		String string_preis = null;
 		double double_preis = 0;
 		double zwischensumme = 0;
 		
-		for (i=0;i<table.getRowCount() - 1;i++){
+		for (int i=0;i<table.getRowCount() - 1;i++){
 			string_preis = (String)table.getValueAt(i + 1,2);
 			double_preis = TabellenPreisUmwandeln(string_preis);
 			zwischensumme += double_preis;
@@ -220,11 +218,12 @@ public class GUI_Hauptfenster extends JFrame {
 		String zwischensumme_formatiert = String.valueOf(zwischensumme);
 		zwischensumme_formatiert = Eigene_Pizza.format(zwischensumme);
 		lblNewLabel.setText(zwischensumme_formatiert + "€");
-		
 	}
+	
+	//Konvertiert String von Tabelle in einen double-Wert z.B "6,50€" -> 6.5
 	public static double TabellenPreisUmwandeln(String param){
 		double returnwert;
-			param.substring(0,param.indexOf('€'));
+			param = param.substring(0,param.indexOf('€'));
 			param = param.replace(",",".");
 			returnwert = Double.parseDouble(param);
 		return returnwert;

@@ -37,6 +37,7 @@ public class GUI_Hauptfenster extends JFrame {
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
 	static JTable table;
 	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
+	private final JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
@@ -99,7 +100,7 @@ public class GUI_Hauptfenster extends JFrame {
 		table.setBounds(22, 224, 772, 15);
 		contentPane.add(table);
 		
-		JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
+		
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -120,8 +121,8 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				int auswahl = getränke_Liste.getSelectedIndex();
+				//TODO
+				int auswahl = pizza_Liste.getSelectedIndex();
 				int anzahl = (int)MengePizza.getValue();
 				if(anzahl < 1){
 					JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);

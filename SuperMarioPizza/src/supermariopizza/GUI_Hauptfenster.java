@@ -20,6 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 
+
+
 import java.awt.Color;
 import java.awt.SystemColor;
 
@@ -176,7 +178,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(lblNewLabel);
 			 
 		
-		
+
 		JComboBox <String> pizza_Liste = new JComboBox <String>();
 		pizza_Liste.setBounds(23, 72, 256, 20);
 	// füllen der JComboBox pizza_Liste
@@ -204,12 +206,15 @@ public class GUI_Hauptfenster extends JFrame {
 		int j=0;
 		for (i=0;i<=table.getRowCount()-1;i++){
 			j=i+1;
-			Ergebnis=table.getValueAt(j,3) + table.getValueAt(j++,3);
+			Ergebnis= (String) table.getValueAt(j,3) + (String) table.getValueAt(j++,3);
 			}
 		
 		return Ergebnis;
 	}
 		
 
-}
+
+	}
+
+
 

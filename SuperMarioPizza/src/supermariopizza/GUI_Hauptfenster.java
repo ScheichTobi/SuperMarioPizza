@@ -12,22 +12,25 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.Choice;
 import java.awt.EventQueue;
 import java.awt.Font;
 
-import javax.swing.ComboBoxModel;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
+import javax.swing.ListSelectionModel;
+
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
+	static GUI_EigenePizza frame;
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
-	private JTable table;
+	static JTable table;
 	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
 	public GUI_Hauptfenster() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,54 +67,49 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnMusikNeuAbspielen);
 		
 		table = new JTable();
-		String Name;
-		String Stückzahl;
-		String Preis;
-		
-		Name="Name";
-		Stückzahl="Stückzahl";
-		Preis="Preis";
+		table.setBackground(Color.WHITE);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DefaultTableModel(
-				
-				
 			new Object[][] {
-				{Name, Stückzahl, Preis},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
+				{"Name", "St\u00FCckzahl", "Preis"},
 			},
 			new String[] {
 				"Name", "St\u00FCckzahl", "Preis"
 			}
-		));
+		) {
+			private static final long serialVersionUID = 1L;
+			boolean[] columnEditables = new boolean[] {
+				false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
-		table.setBounds(22, 224, 772, 320);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(2).setResizable(false);
+		table.setBounds(22, 224, 772, 15);
 		contentPane.add(table);
 		
 		JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				//TODO
 			}
 		});
 		btnHinzufgen.setBounds(542, 98, 140, 30);
 		contentPane.add(btnHinzufgen);
+		btnPizzaHinzufgen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//TODO
+				//String name = pizza_Liste....;
+				//DefaultTableModel model = (DefaultTableModel) table.getModel();
+				//model.addRow(new Object[]{GUI.li_speisekarte.get(0).name, GUI.li_speisekarte.get(0).anzahl, GUI.li_speisekarte.get(0).preis + "€"});
+				
+			}
+		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
 		
@@ -122,10 +120,24 @@ public class GUI_Hauptfenster extends JFrame {
 		btnEigenePizzaErstellen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Erstellung der GUI_Hauptfenster
+				
+				//Zurücksetzen des GUI_EigenePizza
+				GUI_EigenePizza.chb_ananas.setSelected(false);
+				GUI_EigenePizza.chb_zwiebeln.setSelected(false);
+				GUI_EigenePizza.chb_paprika.setSelected(false);
+				GUI_EigenePizza.chb_sardellen.setSelected(false);
+				GUI_EigenePizza.chb_meeresfruechte.setSelected(false);
+				GUI_EigenePizza.chb_schinken.setSelected(false);
+				GUI_EigenePizza.chb_peperoni.setSelected(false);
+				GUI_EigenePizza.chb_salami.setSelected(false);
+				GUI_EigenePizza.chb_rucola.setSelected(false);
+				GUI_EigenePizza.chb_pilze.setSelected(false);
+				GUI_EigenePizza.sp_pizzamenge.setValue(1);
+				
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							GUI_EigenePizza frame = new GUI_EigenePizza();
+							frame = new GUI_EigenePizza();
 							frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -139,11 +151,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
 		btnBetellungAbgeben.setFont(new Font("Constantia", Font.ITALIC, 12));
-		btnBetellungAbgeben.addActionListener(new ActionListener() {
-			
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
 		contentPane.add(btnBetellungAbgeben);
 		
@@ -160,22 +168,43 @@ public class GUI_Hauptfenster extends JFrame {
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
 		
-		JLabel lblNewLabel = new JLabel("Zwischenpreis\r\n");
+		String Zwischenpreis;
+		JLabel lblNewLabel = new JLabel(Zwischenpreis);
+		int i;
+		for (i=0;i<=table.getRowCount();i++){
+			int j;
+			j=i+1;
+			Zwischenpreis=(String) table.getValueAt(j,3 )+(String) table.getValueAt(j++,3 );	
+		}
 		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
 		
-		JComboBox pizza_Liste = new JComboBox();
+	
+		
+		
+		JComboBox <String> pizza_Liste = new JComboBox <String>();
 		pizza_Liste.setBounds(23, 72, 256, 20);
-		pizza_Liste.addItem(GUI.li_speisekarte.get(0).name);
+	// füllen der JComboBox pizza_Liste
+		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
+			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
+		}
+		
 		contentPane.add(pizza_Liste);
 		
 		
-		JComboBox getränke_Liste = new JComboBox();
+		JComboBox <String>getränke_Liste = new JComboBox<String>();
 		getränke_Liste.setBounds(479, 72, 256, 20);
+	// füllen der JComboBox getränke Liste
+		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
+			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
+		}
 		contentPane.add(getränke_Liste);
 		
+
 		
 	}
 		
+
 }
+

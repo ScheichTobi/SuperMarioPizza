@@ -9,7 +9,7 @@ package supermariopizza;
 public class Getränke extends Bestellung{
 	double menge;										// Angabe des Getränke Vollumens
 	
-	Getränke(String name, double preis, double menge) {
+	Getränke(String name, String preis, double menge) {
 		super(name, preis);
 		this.menge = menge;
 	}

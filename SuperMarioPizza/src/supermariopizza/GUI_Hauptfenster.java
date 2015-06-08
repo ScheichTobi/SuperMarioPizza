@@ -24,6 +24,7 @@ import java.awt.Color;
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
+	static JComboBox <String> pizza_Liste = new JComboBox <String>();
 	
 	private JPanel contentPane;
 	static GUI_EigenePizza frame;
@@ -105,9 +106,9 @@ public class GUI_Hauptfenster extends JFrame {
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TODO
-				//String name = pizza_Liste....;
-				//DefaultTableModel model = (DefaultTableModel) table.getModel();
-				//model.addRow(new Object[]{GUI.li_speisekarte.get(0).name, GUI.li_speisekarte.get(0).anzahl, GUI.li_speisekarte.get(0).preis + "€"});
+				int auswahl = pizza_Liste.getSelectedIndex();
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, GUI.li_speisekarte.get(auswahl).anzahl, GUI.li_speisekarte.get(auswahl).preis + "€"});
 				
 			}
 		});
@@ -178,7 +179,7 @@ public class GUI_Hauptfenster extends JFrame {
 			 
 		
 
-		JComboBox <String> pizza_Liste = new JComboBox <String>();
+		
 		pizza_Liste.setBounds(23, 72, 256, 20);
 	// füllen der JComboBox pizza_Liste
 		for(int i = 0; i < GUI.li_speisekarte.size(); i++){

@@ -168,19 +168,13 @@ public class GUI_Hauptfenster extends JFrame {
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
 		
-		String Zwischenpreis;
+		String Zwischenpreis= new String(ZwischenpreisRechnung()); 
 		JLabel lblNewLabel = new JLabel(Zwischenpreis);
-		int i;
-		for (i=0;i<=table.getRowCount();i++){
-			int j;
-			j=i+1;
-			Zwischenpreis=(String) table.getValueAt(j,3 )+(String) table.getValueAt(j++,3 );	
-		}
+		
 		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
-		
-	
+			 
 		
 		
 		JComboBox <String> pizza_Liste = new JComboBox <String>();
@@ -203,6 +197,17 @@ public class GUI_Hauptfenster extends JFrame {
 		
 
 		
+	}
+	private String ZwischenpreisRechnung() {
+		int Ergebnis=0;
+		int i;
+		int j=0;
+		for (i=0;i<=table.getRowCount()-1;i++){
+			j=i+1;
+			Ergebnis=table.getValueAt(j,3) + table.getValueAt(j++,3);
+			}
+		
+		return Ergebnis;
 	}
 		
 

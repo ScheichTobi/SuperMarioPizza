@@ -230,7 +230,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		EigenePizzaGui.add(btn_hinzufuegen);
 		
 		
-		sp_pizzamenge.setBounds(319, 443, 29, 36);
+		sp_pizzamenge.setBounds(303, 443, 45, 36);
 		EigenePizzaGui.add(sp_pizzamenge);
 		
 		JLabel lbl_pizzamenge = new JLabel("Menge:");

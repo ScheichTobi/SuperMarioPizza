@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 public class Eigene_Pizza extends Pizza{
 	private static int zutatenmenge;
 	static int staticanzahl = 1;
-	
 	//Konstruktor
 	public Eigene_Pizza(String name, String preis, int anzahl, String[] zutaten) {
 		super(name, preis, anzahl);

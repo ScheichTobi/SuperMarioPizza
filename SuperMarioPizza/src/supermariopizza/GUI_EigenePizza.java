@@ -220,6 +220,8 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
 				model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
 				
+				GUI_Hauptfenster.ZwischenpreisRechnung();
+				
 				GUI_Hauptfenster.frame.setVisible(false);
 				GUI_Hauptfenster.frame.dispose();
 				

@@ -22,6 +22,10 @@ import javax.swing.ListSelectionModel;
 
 
 
+
+
+
+
 import java.awt.Color;
 import java.awt.SystemColor;
 
@@ -34,6 +38,8 @@ public class GUI_Hauptfenster extends JFrame {
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
 	static JTable table;
 	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
+	private static JLabel lblNewLabel = new JLabel();
+	
 	public GUI_Hauptfenster() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
@@ -169,10 +175,11 @@ public class GUI_Hauptfenster extends JFrame {
 		btnAktuelleAuswahlEntfernen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
+		lblNewLabel.setText("0,00\u20AC");
 		
 		
-		JLabel lblNewLabel = new JLabel(ZwischenpreisRechnung());		
-		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
+				
+		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 20));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
 			 
@@ -199,21 +206,28 @@ public class GUI_Hauptfenster extends JFrame {
 
 		
 	}
-	private String ZwischenpreisRechnung() {
-		String Ergebnis="0";
+	public static void ZwischenpreisRechnung() {
+		int i = 0;
+		String string_preis = null;
+		double double_preis = 0;
+		double zwischensumme = 0;
 		
+		for (i=0;i<table.getRowCount() - 1;i++){
+			string_preis = (String)table.getValueAt(i + 1,2);
+			double_preis = TabellenPreisUmwandeln(string_preis);
+			zwischensumme += double_preis;
+		}
+		String zwischensumme_formatiert = String.valueOf(zwischensumme);
+		zwischensumme_formatiert = Eigene_Pizza.format(zwischensumme);
+		lblNewLabel.setText(zwischensumme_formatiert + "€");
 		
-		for (int i=2;i<=table.getRowCount()-1;i++){
-		
-			Ergebnis= (String) table.getValueAt(i,3) + (String) table.getValueAt(i++,3);
-			}
-		
-		return Ergebnis;
 	}
-		
-
-
+	public static double TabellenPreisUmwandeln(String param){
+		double returnwert;
+			param.substring(0,param.indexOf('€'));
+			param = param.replace(",",".");
+			returnwert = Double.parseDouble(param);
+		return returnwert;
 	}
-
-
+}
 

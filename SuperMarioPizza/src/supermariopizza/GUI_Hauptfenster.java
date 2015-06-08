@@ -170,9 +170,8 @@ public class GUI_Hauptfenster extends JFrame {
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
 		
-		String Zwischenpreis= new String(ZwischenpreisRechnung()); 
-		JLabel lblNewLabel = new JLabel(Zwischenpreis);
 		
+		JLabel lblNewLabel = new JLabel(ZwischenpreisRechnung());		
 		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 12));
 		lblNewLabel.setBounds(666, 555, 128, 37);
 		contentPane.add(lblNewLabel);
@@ -202,11 +201,11 @@ public class GUI_Hauptfenster extends JFrame {
 	}
 	private String ZwischenpreisRechnung() {
 		String Ergebnis="0";
-		int i;
-		int j=0;
-		for (i=0;i<=table.getRowCount()-1;i++){
-			j=i+1;
-			Ergebnis= (String) table.getValueAt(j,3) + (String) table.getValueAt(j++,3);
+		
+		
+		for (int i=2;i<=table.getRowCount()-1;i++){
+		
+			Ergebnis= (String) table.getValueAt(i,3) + (String) table.getValueAt(i++,3);
 			}
 		
 		return Ergebnis;

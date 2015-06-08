@@ -15,16 +15,21 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.EventQueue;
 import java.awt.Font;
 
+import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
+
 import java.awt.Color;
 
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
 	static JComboBox <String> pizza_Liste = new JComboBox <String>();
+	JSpinner MengePizza = new JSpinner();
+	static JComboBox <String>getränke_Liste = new JComboBox<String>();
+	JSpinner MengeGetränke = new JSpinner();
 	
 	private JPanel contentPane;
 	static GUI_EigenePizza frame;
@@ -99,16 +104,32 @@ public class GUI_Hauptfenster extends JFrame {
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TODO
+				int auswahl = getränke_Liste.getSelectedIndex();
+				int anzahl = (int)MengeGetränke.getValue();
+				if(anzahl < 1){
+					JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens ein Getränk bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+				DefaultTableModel model = (DefaultTableModel) table.getModel();
+				model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl + "€"});
+				
 			}
 		});
 		btnHinzufgen.setBounds(542, 98, 140, 30);
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//TODO
-				int auswahl = pizza_Liste.getSelectedIndex();
+				
+				int auswahl = getränke_Liste.getSelectedIndex();
+				int anzahl = (int)MengePizza.getValue();
+				if(anzahl < 1){
+					JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+					return;
+				}
+				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, GUI.li_speisekarte.get(auswahl).anzahl, GUI.li_speisekarte.get(auswahl).preis + "€"});
+				model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_speisekarte.get(auswahl).preis)) * anzahl + "€"});
 				
 			}
 		});
@@ -157,11 +178,11 @@ public class GUI_Hauptfenster extends JFrame {
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
 		contentPane.add(btnBetellungAbgeben);
 		
-		JSpinner MengePizza = new JSpinner();
+		
 		MengePizza.setBounds(289, 72, 29, 20);
 		contentPane.add(MengePizza);
 		
-		JSpinner MengeGetränke = new JSpinner();
+		
 		MengeGetränke.setBounds(749, 72, 29, 20);
 		contentPane.add(MengeGetränke);
 		
@@ -189,7 +210,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(pizza_Liste);
 		
 		
-		JComboBox <String>getränke_Liste = new JComboBox<String>();
+		
 		getränke_Liste.setBounds(479, 72, 256, 20);
 	// füllen der JComboBox getränke Liste
 		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){

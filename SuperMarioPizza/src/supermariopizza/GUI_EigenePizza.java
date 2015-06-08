@@ -28,10 +28,10 @@ import javax.swing.JSeparator;
 public class GUI_EigenePizza extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
+	
+	//Erstellung der GUI-Komponenten
 	private JPanel EigenePizzaGui;
 	static JTextField txt_pizzaname;
-
-
 	static JCheckBox chb_zwiebeln = new JCheckBox("Zwiebeln");
 	static JCheckBox chb_pilze = new JCheckBox("Pilze");
 	static JCheckBox chb_schinken = new JCheckBox("Schinken");
@@ -45,7 +45,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 	static JSpinner sp_pizzamenge = new JSpinner();
 	static JLabel lbl_pizzapreisanzeige = new JLabel("5,00\u20AC");
 	
-	
+	//Konstruktor
 	public GUI_EigenePizza() {
 		setTitle("Eigene Pizza erstellen");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -55,6 +55,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		setContentPane(EigenePizzaGui);
 		EigenePizzaGui.setLayout(null);
 		
+		//Item-Listener für Checkboxen erstellen
 		chb_ananas.addItemListener(new ItemListener() {
 		      public void itemStateChanged(ItemEvent e) {
 		    	  Eigene_Pizza.AnzahlErmitteln();
@@ -115,15 +116,17 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		    	  Eigene_Pizza.PreisErmitteln();
 		      }
 		    });
+		//Change-Listener für JSpinner erstellen
 		ChangeListener listener = new ChangeListener() {
 		      public void stateChanged(ChangeEvent e) {
 		    	  Eigene_Pizza.AnzahlErmitteln();
 		    	  Eigene_Pizza.PreisErmitteln();
 		    }
-
 		};
 		sp_pizzamenge.addChangeListener(listener);
 		
+		
+		//Eigenschaften der Checkboxen setzen
 		chb_zwiebeln.setFont(new Font("Constantia", Font.ITALIC, 20));
 		chb_zwiebeln.setBounds(55, 82, 109, 23);
 		EigenePizzaGui.add(chb_zwiebeln);
@@ -173,6 +176,8 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		chb_rucola.setBounds(224, 251, 97, 23);
 		EigenePizzaGui.add(chb_rucola);
 		
+		
+		//Erstellung von JLabeln,Eigenschaften setzen
 		JLabel lbl_ueberschrift = new JLabel("Grundpreis  5\u20AC + 0,50 \u20AC je Zutat");
 		lbl_ueberschrift.setFont(new Font("Constantia", Font.BOLD, 22));
 		lbl_ueberschrift.setForeground(Color.RED);
@@ -182,8 +187,8 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		txt_pizzaname = new JTextField();
 		txt_pizzaname.setFont(new Font("Constantia", Font.PLAIN, 14));
 		txt_pizzaname.setBounds(69, 357, 224, 22);
-		EigenePizzaGui.add(txt_pizzaname);
 		txt_pizzaname.setColumns(10);
+		EigenePizzaGui.add(txt_pizzaname);
 		
 		JLabel lbl_pizzaname = new JLabel("Name f\u00FCr ihre Pizza eingeben:");
 		lbl_pizzaname.setForeground(Color.DARK_GRAY);
@@ -196,42 +201,56 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		lbl_pizzapreis.setBounds(438, 361, 180, 41);
 		EigenePizzaGui.add(lbl_pizzapreis);
 		
+		
+		//Erstellung von Buttons,Setzen von Eigenschaften und Erstellung von Action-Listenern
 		JButton btn_hinzufuegen = new JButton("Zur Bestellliste hinzuf\u00FCgen");
 		btn_hinzufuegen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				//Variablen einer eigenen Pizza definieren
 				int anzahl = 0;
 				String[] zutaten;
 				String preis = null;
 				String name = null;
+				
+				//Checkboxen überprüfen
 				zutaten = Eigene_Pizza.ZutatenErmitteln();
-				//Auf fehler überprüfen
+				
+				//Auf korrekte Eingabe überprüfen
 				if(Eigene_Pizza.CheckForErrors() == false){
 					return;
 				}
 				
-				
+				//Anzahl der selbst erstellen Pizza ermitteln
 				anzahl = Eigene_Pizza.AnzahlErmitteln();
 				
+				//Preis der selbst erstellten Pizza ermitteln
 				preis = Eigene_Pizza.PreisErmitteln();
+				
+				//Name der erstellen Pizza ermitteln
 				name = Eigene_Pizza.NameErmitteln();
 				
+				//Eigene Pizza erstellen
 				Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
+				
+				//Erweitern der Tabelle im GUI_Hauptfenster um eine Zeile für den neuen Eintrag
 				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+				
+				//Pizza in die Tabelle einfügen
 				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
 				model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
 				
+				//Preis im GUI_Hauptfenster aktualisieren
 				GUI_Hauptfenster.ZwischenpreisRechnung();
 				
+				//GUI_EigenePizza schließen
 				GUI_Hauptfenster.frame.setVisible(false);
 				GUI_Hauptfenster.frame.dispose();
-				
 			}
 		});
 		
 		btn_hinzufuegen.setFont(new Font("Constantia", Font.ITALIC, 15));
 		btn_hinzufuegen.setBounds(586, 415, 224, 58);
 		EigenePizzaGui.add(btn_hinzufuegen);
-		
 		
 		sp_pizzamenge.setBounds(303, 443, 45, 36);
 		EigenePizzaGui.add(sp_pizzamenge);
@@ -302,8 +321,6 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		EigenePizzaGui.add(lblenthltTomaten);
 		
 	}
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

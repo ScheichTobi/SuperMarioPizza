@@ -19,15 +19,8 @@ import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
-
-
-
-
-
-
-
 import java.awt.Color;
-import java.awt.SystemColor;
+
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;

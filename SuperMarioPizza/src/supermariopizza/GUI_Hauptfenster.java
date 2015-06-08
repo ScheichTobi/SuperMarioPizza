@@ -201,7 +201,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 	}
 	private String ZwischenpreisRechnung() {
-		int Ergebnis=0;
+		String Ergebnis="0";
 		int i;
 		int j=0;
 		for (i=0;i<=table.getRowCount()-1;i++){

@@ -134,6 +134,8 @@ public class Eigene_Pizza extends Pizza{
 		double toFormat = ((double)Math.round(i*100))/100;
 		return f.format(toFormat);
 	}
+	//TODO
+	//Habe mal einen Test mit gleichen Namen gemacht... das führt zu einem Fehhler und muss abgefangen werden
 	public static Boolean CheckForErrors(){
 		//Fehlerüberprüfung
 		

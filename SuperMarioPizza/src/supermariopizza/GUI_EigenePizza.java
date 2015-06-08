@@ -176,7 +176,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		JLabel lbl_ueberschrift = new JLabel("Grundpreis  5\u20AC + 0,50 \u20AC je Zutat");
 		lbl_ueberschrift.setFont(new Font("Constantia", Font.BOLD, 22));
 		lbl_ueberschrift.setForeground(Color.RED);
-		lbl_ueberschrift.setBounds(464, 30, 335, 23);
+		lbl_ueberschrift.setBounds(473, 30, 335, 23);
 		EigenePizzaGui.add(lbl_ueberschrift);
 		
 		txt_pizzaname = new JTextField();
@@ -294,6 +294,10 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		JLabel lbl_foto = new JLabel(new ImageIcon("gif_pizza.gif"));
 		lbl_foto.setBounds(430, 82, 380, 250);
 		EigenePizzaGui.add(lbl_foto);
+		
+		JLabel lblenthltTomaten = new JLabel("(Enth\u00E4lt Tomaten + K\u00E4se)");
+		lblenthltTomaten.setBounds(473, 49, 124, 14);
+		EigenePizzaGui.add(lblenthltTomaten);
 		
 	}
 

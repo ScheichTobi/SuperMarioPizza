@@ -169,6 +169,25 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(MengeGetränke);
 		
 		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
+		btnAktuelleAuswahlEntfernen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Entfernt Eintrag aus Liste
+				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
+				if(GUI_Hauptfenster.table.getSelectedRow() == -1){
+					if(GUI_Hauptfenster.table.getRowCount() == 0){
+						
+						JOptionPane.showMessageDialog(new JFrame(), "Die Liste is leer", "Halt Stop", JOptionPane.WARNING_MESSAGE);
+						
+					}else{ 
+						JOptionPane.showMessageDialog(new JFrame(), "Sie müssen einen Eintrag auswählen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);	
+					}
+						
+				}else{
+					model.removeRow(table.getSelectedRow());
+				}
+			}
+			
+		});
 		btnAktuelleAuswahlEntfernen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
 		contentPane.add(btnAktuelleAuswahlEntfernen);

@@ -226,7 +226,10 @@ public class GUI_Hauptfenster extends JFrame {
 			returnwert = Double.parseDouble(param);
 		return returnwert;
 	}
-	
+	/** pizzaHinzufügen()
+	 * die ausgewählte Pizza soll in die Tabelle eingefügt werden	 
+	 * @autor Yannik
+	 */
 	void pizzaHinzufügen(){
 		//TODO
 		for(int i = 0; i < pizza_Liste.getItemCount(); i++){
@@ -243,8 +246,12 @@ public class GUI_Hauptfenster extends JFrame {
 		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_speisekarte.get(auswahl).preis)) * anzahl + "€"});
 		
 	}
-	
+	/** getränkeHinzufügen
+	 * das ausgewählte Getränk soll in die Tabelle eingefügt werden
+	 * @autor Yannik
+	 */
 	void getränkeHinzufügen(){
+		//TODO
 		for(int i = 0; i < getränke_Liste.getItemCount(); i++){
 			System.out.println(getränke_Liste.getItemAt(i));
 		}

@@ -206,7 +206,12 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		btn_hinzufuegen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Fügt erstellte Pizza hinzu
-				Eigene_Pizza.PizzaHinzufuegen();
+				try {
+					Eigene_Pizza.PizzaHinzufuegen();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		

@@ -5,6 +5,8 @@ import java.text.DecimalFormat;
 
 
 
+
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -176,7 +178,7 @@ public class Eigene_Pizza extends Pizza{
 		}
 		return true;
 	}
-	public static void PizzaHinzufuegen(){
+	public static void PizzaHinzufuegen() throws Exception{
 		//Variablen einer eigenen Pizza definieren
 		int anzahl = 0;
 		String[] zutaten;
@@ -212,6 +214,9 @@ public class Eigene_Pizza extends Pizza{
 		
 		//Preis im GUI_Hauptfenster aktualisieren
 		GUI_Hauptfenster.ZwischenpreisRechnung();
+		
+		//hinzufuegensound
+		GUI.hinzufuegensound();
 		
 		//GUI_EigenePizza schlieﬂen
 		GUI_Hauptfenster.frame.setVisible(false);

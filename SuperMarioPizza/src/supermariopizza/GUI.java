@@ -4,13 +4,15 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.BooleanControl;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
 import java.io.File;
 public class GUI {
 	
-	public static Clip Mario;
+	public static Clip sound_background;
+	public static Clip sound_hinzufuegen;
 	
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
@@ -28,7 +30,7 @@ public class GUI {
 			}
 		});
 		//Musik abspielen
-		sound();
+		backgroundsound();
 		
 		erstellungSpeisekarte();
 		erstellungGetraenkekarte();
@@ -119,25 +121,46 @@ public class GUI {
 		}
 		
 	}
-	public static void sound() throws Exception{
+	public static void backgroundsound() throws Exception{
 			//Musik erstellen
             try {
-                File MarioMusik = new File("SuperMarioSound.wav");
-                Mario = AudioSystem.getClip();
-                Mario.open(AudioSystem.getAudioInputStream(MarioMusik));
-                Mario.loop(Clip.LOOP_CONTINUOUSLY);
+                File backgroundsound = new File("backgroundsound.wav");
+                sound_background = AudioSystem.getClip();
+                sound_background.open(AudioSystem.getAudioInputStream(backgroundsound));
+                sound_background.loop(Clip.LOOP_CONTINUOUSLY);
             //Lautstärke
-                FloatControl gainControl = (FloatControl) Mario.getControl(FloatControl.Type.MASTER_GAIN);
+                FloatControl gainControl = (FloatControl) sound_background.getControl(FloatControl.Type.MASTER_GAIN);
                     double gain = .08D;
                     float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
                     gainControl.setValue(dB);
 
-                    BooleanControl muteControl = (BooleanControl) Mario
+                    BooleanControl muteControl = (BooleanControl) sound_background
                         .getControl(BooleanControl.Type.MUTE);
                     muteControl.setValue(true);
 
                     muteControl.setValue(false);
                 }catch (IOException e){}      
-	}	
+	}
+	public static void hinzufuegensound() throws Exception{
+		//Musik erstellen
+        try {
+            File hinzufuegensound = new File("hinzufuegensound.wav");
+            sound_hinzufuegen = AudioSystem.getClip();
+            sound_hinzufuegen.open(AudioSystem.getAudioInputStream(hinzufuegensound));
+            sound_hinzufuegen.start();
+        //Lautstärke
+            FloatControl gainControl = (FloatControl) sound_hinzufuegen.getControl(FloatControl.Type.MASTER_GAIN);
+                double gain = .08D;
+                float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+
+                BooleanControl muteControl = (BooleanControl) sound_hinzufuegen
+                    .getControl(BooleanControl.Type.MUTE);
+                muteControl.setValue(true);
+
+                muteControl.setValue(false);
+            }catch (IOException e){}      
+		
+	}
 }
 

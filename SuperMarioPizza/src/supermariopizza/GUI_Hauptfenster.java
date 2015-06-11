@@ -51,8 +51,8 @@ public class GUI_Hauptfenster extends JFrame {
 		btnMusikStoppen.setBounds(158, 646, 150, 15);
 		btnMusikStoppen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GUI.Mario.close();
-				GUI.Mario.stop();
+				GUI.sound_background.close();
+				GUI.sound_background.stop();
 				btnMusikStoppen.setEnabled(false);
 				btnMusikNeuAbspielen.setEnabled(true);
 			}
@@ -67,7 +67,7 @@ public class GUI_Hauptfenster extends JFrame {
 				btnMusikNeuAbspielen.setEnabled(false);
 				btnMusikStoppen.setEnabled(true);
 				try {
-					GUI.sound();
+					GUI.backgroundsound();
 				} catch (Exception e1) {}
 			}
 		});

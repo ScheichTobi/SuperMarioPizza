@@ -23,6 +23,8 @@ import javax.swing.ListSelectionModel;
 
 import java.awt.Color;
 
+import javax.swing.SpinnerNumberModel;
+
 
 public class GUI_Hauptfenster extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -104,7 +106,12 @@ public class GUI_Hauptfenster extends JFrame {
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				getränkeHinzufügen();
+				try {
+					getränkeHinzufügen();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				ZwischenpreisRechnung();
 			}
 		});
@@ -112,7 +119,12 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				pizzaHinzufügen();
+				try {
+					pizzaHinzufügen();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				ZwischenpreisRechnung();
 			}
 		});
@@ -160,10 +172,12 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
 		contentPane.add(btnBetellungAbgeben);
+		MengePizza.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
 		MengePizza.setBounds(289, 72, 29, 20);
 		contentPane.add(MengePizza);
+		MengeGetränke.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
 		MengeGetränke.setBounds(749, 72, 29, 20);
@@ -225,8 +239,9 @@ public class GUI_Hauptfenster extends JFrame {
 	/** pizzaHinzufügen()
 	 * die ausgewählte Pizza soll in die Tabelle eingefügt werden	 
 	 * @author Yannik
+	 *  
 	 */
-	void pizzaHinzufügen(){
+	void pizzaHinzufügen() throws Exception{
 		int auswahl = pizza_Liste.getSelectedIndex();
 		int anzahl = (int)MengePizza.getValue();
 		if(anzahl < 1){
@@ -236,13 +251,14 @@ public class GUI_Hauptfenster extends JFrame {
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_speisekarte.get(auswahl).preis)) * anzahl) + "€"});
-		
+		GUI.hinzufuegensound();
 	}
 	/** getränkeHinzufügen
 	 * das ausgewählte Getränk soll in die Tabelle eingefügt werden
 	 * @author Yannik 
+	 * 
 	 */
-	void getränkeHinzufügen(){
+	void getränkeHinzufügen() throws Exception{
 		int auswahl = getränke_Liste.getSelectedIndex();
 		int anzahl = (int)MengeGetränke.getValue();
 		if(anzahl < 1){
@@ -252,7 +268,7 @@ public class GUI_Hauptfenster extends JFrame {
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl) + "€"});
-		
+		GUI.hinzufuegensound();
 	}
 	/** speisenLaden
 	 * die Speisen aus der Liste sollen in die JComboBox geladen werden

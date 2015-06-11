@@ -23,6 +23,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
+import javax.swing.SpinnerNumberModel;
 
 public class GUI_EigenePizza extends JFrame implements ActionListener{
 
@@ -122,6 +123,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		    	  Eigene_Pizza.PreisErmitteln();
 		    }
 		};
+		sp_pizzamenge.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		sp_pizzamenge.addChangeListener(listener);
 		
 		

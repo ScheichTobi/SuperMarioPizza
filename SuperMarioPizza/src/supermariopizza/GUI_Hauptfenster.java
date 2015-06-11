@@ -25,6 +25,8 @@ import javax.swing.ListSelectionModel;
 import java.awt.Color;
 
 import javax.swing.SpinnerNumberModel;
+import javax.swing.border.LineBorder;
+import javax.swing.ScrollPaneConstants;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -44,6 +46,7 @@ public class GUI_Hauptfenster extends JFrame {
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
+		setTitle("Super Mario Pizza");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();

@@ -104,20 +104,7 @@ public class GUI_Hauptfenster extends JFrame {
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//TODO
-				for(int i = 0; i < getränke_Liste.getItemCount(); i++){
-					System.out.println(getränke_Liste.getItemAt(i));
-				}
-				int auswahl = getränke_Liste.getSelectedIndex();
-				int anzahl = (int)MengeGetränke.getValue();
-				if(anzahl < 1){
-					JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens ein Getränk bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
-					return;
-				}
-				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl + "€"});
-				
+				getränkeHinzufügen();
 				ZwischenpreisRechnung();
 			}
 		});
@@ -125,20 +112,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//TODO
-				for(int i = 0; i < pizza_Liste.getItemCount(); i++){
-					System.out.println(pizza_Liste.getItemAt(i));
-				}
-				int auswahl = pizza_Liste.getSelectedIndex();
-				int anzahl = (int)MengePizza.getValue();
-				if(anzahl < 1){
-					JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
-					return;
-				}
-				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
-				DefaultTableModel model = (DefaultTableModel) table.getModel();
-				model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_speisekarte.get(auswahl).preis)) * anzahl + "€"});
-				
+				pizzaHinzufügen();
 				ZwischenpreisRechnung();
 			}
 		});
@@ -251,6 +225,39 @@ public class GUI_Hauptfenster extends JFrame {
 			param = param.replace(",",".");
 			returnwert = Double.parseDouble(param);
 		return returnwert;
+	}
+	
+	void pizzaHinzufügen(){
+		//TODO
+		for(int i = 0; i < pizza_Liste.getItemCount(); i++){
+			System.out.println(pizza_Liste.getItemAt(i));
+		}
+		int auswahl = pizza_Liste.getSelectedIndex();
+		int anzahl = (int)MengePizza.getValue();
+		if(anzahl < 1){
+			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
+		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_speisekarte.get(auswahl).preis)) * anzahl + "€"});
+		
+	}
+	
+	void getränkeHinzufügen(){
+		for(int i = 0; i < getränke_Liste.getItemCount(); i++){
+			System.out.println(getränke_Liste.getItemAt(i));
+		}
+		int auswahl = getränke_Liste.getSelectedIndex();
+		int anzahl = (int)MengeGetränke.getValue();
+		if(anzahl < 1){
+			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens ein Getränk bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
+		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl + "€"});
+		
 	}
 }
 

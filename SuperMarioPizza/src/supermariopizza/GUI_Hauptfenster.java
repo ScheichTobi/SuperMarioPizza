@@ -27,6 +27,7 @@ import java.awt.Color;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.border.LineBorder;
 import javax.swing.ScrollPaneConstants;
+import java.awt.Toolkit;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -46,6 +47,7 @@ public class GUI_Hauptfenster extends JFrame {
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
 		setTitle("Super Mario Pizza");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 700);

@@ -186,9 +186,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		pizza_Liste.setBounds(23, 72, 256, 20);
 	// füllen der JComboBox pizza_Liste
-		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
-			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
-		}
+		speisenLaden();
 		
 		contentPane.add(pizza_Liste);
 		
@@ -196,9 +194,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		getränke_Liste.setBounds(479, 72, 256, 20);
 	// füllen der JComboBox getränke Liste
-		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
-			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
-		}
+		getränkeLaden();
 		contentPane.add(getränke_Liste);
 	}
 	
@@ -228,7 +224,7 @@ public class GUI_Hauptfenster extends JFrame {
 	}
 	/** pizzaHinzufügen()
 	 * die ausgewählte Pizza soll in die Tabelle eingefügt werden	 
-	 * @autor Yannik
+	 * @author Yannik
 	 */
 	void pizzaHinzufügen(){
 		//TODO
@@ -248,7 +244,7 @@ public class GUI_Hauptfenster extends JFrame {
 	}
 	/** getränkeHinzufügen
 	 * das ausgewählte Getränk soll in die Tabelle eingefügt werden
-	 * @autor Yannik
+	 * @author Yannik 
 	 */
 	void getränkeHinzufügen(){
 		//TODO
@@ -265,6 +261,24 @@ public class GUI_Hauptfenster extends JFrame {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Integer.parseInt((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl + "€"});
 		
+	}
+	/** speisenLaden
+	 * die Speisen aus der Liste sollen in die JComboBox geladen werden
+	 * @author Yannik
+	 */
+	void speisenLaden(){
+		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
+			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
+		}
+	}
+	/** getränkeLaden
+	 * die Getränke aus der Liste sollen in die JComboBox geladen werden
+	 * @author Yannik
+	 */
+	void getränkeLaden(){
+		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
+			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
+		}
 	}
 }
 

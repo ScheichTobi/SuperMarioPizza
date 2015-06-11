@@ -195,9 +195,7 @@ public class GUI_Hauptfenster extends JFrame {
 		table.setBackground(Color.WHITE);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				,
-			},
+			new Object[][] {,},
 			new String[] {
 				"Name", "St\u00FCckzahl", "Preis"
 			}

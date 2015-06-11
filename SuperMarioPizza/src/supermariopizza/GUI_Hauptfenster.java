@@ -184,6 +184,7 @@ public class GUI_Hauptfenster extends JFrame {
 						
 				}else{
 					model.removeRow(table.getSelectedRow());
+					GUI_Hauptfenster.ZwischenpreisRechnung();
 				}
 			}
 			
@@ -249,8 +250,8 @@ public class GUI_Hauptfenster extends JFrame {
 		double double_preis = 0;
 		double zwischensumme = 0;
 		
-		for (int i=0;i<table.getRowCount() - 1;i++){
-			string_preis = (String)table.getValueAt(i + 1,2);
+		for (int i=-1;i<table.getRowCount()-1;i++){
+			string_preis = (String)table.getValueAt(i+1,2);
 			double_preis = TabellenPreisUmwandeln(string_preis);
 			zwischensumme += double_preis;
 		}

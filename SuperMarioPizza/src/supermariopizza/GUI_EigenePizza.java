@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
@@ -206,45 +205,8 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		JButton btn_hinzufuegen = new JButton("Zur Bestellliste hinzuf\u00FCgen");
 		btn_hinzufuegen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Variablen einer eigenen Pizza definieren
-				int anzahl = 0;
-				String[] zutaten;
-				String preis = null;
-				String name = null;
-				
-				//Checkboxen überprüfen
-				zutaten = Eigene_Pizza.ZutatenErmitteln();
-				
-				//Auf korrekte Eingabe überprüfen
-				if(Eigene_Pizza.CheckForErrors() == false){
-					return;
-				}
-				
-				//Anzahl der selbst erstellen Pizza ermitteln
-				anzahl = Eigene_Pizza.AnzahlErmitteln();
-				
-				//Preis der selbst erstellten Pizza ermitteln
-				preis = Eigene_Pizza.PreisErmitteln();
-				
-				//Name der erstellen Pizza ermitteln
-				name = Eigene_Pizza.NameErmitteln();
-				
-				//Eigene Pizza erstellen
-				Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
-				
-				//Erweitern der Tabelle im GUI_Hauptfenster um eine Zeile für den neuen Eintrag
-				GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
-				
-				//Pizza in die Tabelle einfügen
-				DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
-				model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
-				
-				//Preis im GUI_Hauptfenster aktualisieren
-				GUI_Hauptfenster.ZwischenpreisRechnung();
-				
-				//GUI_EigenePizza schließen
-				GUI_Hauptfenster.frame.setVisible(false);
-				GUI_Hauptfenster.frame.dispose();
+				//Fügt erstellte Pizza hinzu
+				Eigene_Pizza.PizzaHinzufuegen();
 			}
 		});
 		
@@ -264,8 +226,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		JButton btn_zurueck = new JButton("Zur\u00FCck");
 		btn_zurueck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GUI_Hauptfenster.frame.setVisible(false);
-				GUI_Hauptfenster.frame.dispose();
+				Eigene_Pizza.FensterSchliessen();
 			}
 		});
 		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));

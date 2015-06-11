@@ -3,8 +3,11 @@ package supermariopizza;
 import java.text.DecimalFormat;
 
 
+
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Eigene_Pizza extends Pizza{
 	
@@ -172,6 +175,51 @@ public class Eigene_Pizza extends Pizza{
 			return false;
 		}
 		return true;
+	}
+	public static void PizzaHinzufuegen(){
+		//Variablen einer eigenen Pizza definieren
+		int anzahl = 0;
+		String[] zutaten;
+		String preis = null;
+		String name = null;
+		
+		//Checkboxen überprüfen
+		zutaten = Eigene_Pizza.ZutatenErmitteln();
+		
+		//Auf korrekte Eingabe überprüfen
+		if(Eigene_Pizza.CheckForErrors() == false){
+			return;
+		}
+		
+		//Anzahl der selbst erstellen Pizza ermitteln
+		anzahl = Eigene_Pizza.AnzahlErmitteln();
+		
+		//Preis der selbst erstellten Pizza ermitteln
+		preis = Eigene_Pizza.PreisErmitteln();
+		
+		//Name der erstellen Pizza ermitteln
+		name = Eigene_Pizza.NameErmitteln();
+		
+		//Eigene Pizza erstellen
+		Eigene_Pizza Pizza = new Eigene_Pizza(name, preis, anzahl, zutaten);
+		
+		//Erweitern der Tabelle im GUI_Hauptfenster um eine Zeile für den neuen Eintrag
+		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+		
+		//Pizza in die Tabelle einfügen
+		DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
+		model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
+		
+		//Preis im GUI_Hauptfenster aktualisieren
+		GUI_Hauptfenster.ZwischenpreisRechnung();
+		
+		//GUI_EigenePizza schließen
+		GUI_Hauptfenster.frame.setVisible(false);
+		GUI_Hauptfenster.frame.dispose();
+	}
+	public static void FensterSchliessen(){
+		GUI_Hauptfenster.frame.setVisible(false);
+		GUI_Hauptfenster.frame.dispose();
 	}
 	
 }

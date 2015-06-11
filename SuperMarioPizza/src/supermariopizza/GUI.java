@@ -44,13 +44,13 @@ public class GUI {
 	static void erstellungSpeisekarte(){
 		
 		
-		Pizza Funghi = new Pizza("Funghi", "7", 1);
+		Pizza Funghi = new Pizza("Funghi", "7.00", 1);
 		li_speisekarte.add(Funghi);
 		
-		Pizza Tonno = new Pizza("Tonno", "8", 1);
+		Pizza Tonno = new Pizza("Tonno", "8.00", 1);
 		li_speisekarte.add(Tonno);
 				
-		Pizza Margherita = new Pizza("Margherita", "5", 1);
+		Pizza Margherita = new Pizza("Margherita", "5.00", 1);
 		li_speisekarte.add(Margherita);
 		
 		Pizza Mozzarella = new Pizza("Mozzarella", "8.20", 1);

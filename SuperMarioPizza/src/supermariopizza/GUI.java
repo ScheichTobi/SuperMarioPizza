@@ -73,11 +73,7 @@ public class GUI {
 		
 		Pizza Peperoni = new Pizza("Peperoni", "8.90", 1);
 		li_speisekarte.add(Peperoni);
-		
-		for(int i = 0; i < li_speisekarte.size(); i++){
-			System.out.println(li_speisekarte.get(i).name);
-		}
-				
+					
 	}
 	
 	/**
@@ -113,11 +109,22 @@ public class GUI {
 		
 		Getränke Sprite  = new Getränke("Sprite ", "2.20", 1);
 		li_getraenkekarte.add(Sprite );
+						
+	}
+	static void eigenePizzahinzufuegen(){
+		//Eigene_Pizza Pizza = new Eigene_Pizza(null, 0, 0);
 		
-		for(int i = 0; i < li_getraenkekarte.size(); i++){
-			System.out.println(li_getraenkekarte.get(i).name);
-		}
+		//TODO ausgewählte Zutaten ermitteln
+		//String[] li_Zutaten;
+		//li_Zutaten = Pizza.ZutatenErmitteln();
 		
+		//TODO ausgewählte Menge ermitteln
+		//Pizza.AnzahlErmitteln();
+		
+		//TODO ausgewählten Namen ermitteln
+		//Pizza.NameErmitteln();
+		
+	
 	}
 	public static void sound() throws Exception{
 			//Musik erstellen

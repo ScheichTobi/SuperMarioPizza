@@ -186,7 +186,7 @@ public class GUI {
             sound_remove.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_remove.getControl(FloatControl.Type.MASTER_GAIN);
-                double gain = .08D;
+                double gain = .3D;
                 float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
                 gainControl.setValue(dB);
 

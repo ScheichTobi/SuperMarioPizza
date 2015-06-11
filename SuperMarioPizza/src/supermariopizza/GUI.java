@@ -19,7 +19,7 @@ public class GUI {
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
 	
-	public static void main(String[] args) throws Exception {
+	public static void FensterOeffnen throws Exception {
 		//Erstellung der GUI_Hauptfenster
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

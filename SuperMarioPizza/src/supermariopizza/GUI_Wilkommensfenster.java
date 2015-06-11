@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Wilkommensfenster extends JFrame {
 
@@ -17,7 +19,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void Wilkommen() {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -57,6 +59,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 		contentPane.add(lblDannDrckenSie);
 		
 		JButton btnWeiter = new JButton("Weiter");
+		btnWeiter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				GUI.;
+			}
+		});
 		btnWeiter.setBounds(170, 185, 89, 23);
 		contentPane.add(btnWeiter);
 	}

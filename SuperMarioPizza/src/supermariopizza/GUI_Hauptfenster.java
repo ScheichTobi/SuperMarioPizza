@@ -16,6 +16,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -75,32 +76,6 @@ public class GUI_Hauptfenster extends JFrame {
 		});
 		btnMusikNeuAbspielen.setBounds(0, 646, 150, 15);
 		contentPane.add(btnMusikNeuAbspielen);
-		
-		table = new JTable();
-		table.setBackground(Color.WHITE);
-		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Name", "St\u00FCckzahl", "Preis"},
-			},
-			new String[] {
-				"Name", "St\u00FCckzahl", "Preis"
-			}
-		) {
-			private static final long serialVersionUID = 1L;
-			boolean[] columnEditables = new boolean[] {
-				false, false, false
-			};
-			public boolean isCellEditable(int row, int column) {
-				return columnEditables[column];
-			}
-		});
-		table.getColumnModel().getColumn(0).setResizable(false);
-		table.getColumnModel().getColumn(0).setPreferredWidth(457);
-		table.getColumnModel().getColumn(1).setResizable(false);
-		table.getColumnModel().getColumn(2).setResizable(false);
-		table.setBounds(22, 224, 772, 15);
-		contentPane.add(table);
 		
 		
 		btnHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
@@ -210,6 +185,35 @@ public class GUI_Hauptfenster extends JFrame {
 	// füllen der JComboBox getränke Liste
 		getränkeLaden();
 		contentPane.add(getränke_Liste);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(22, 190, 756, 354);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setBackground(Color.WHITE);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				,
+			},
+			new String[] {
+				"Name", "St\u00FCckzahl", "Preis"
+			}
+		) {
+			private static final long serialVersionUID = 1L;
+			boolean[] columnEditables = new boolean[] {
+				false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(0).setResizable(false);
+		table.getColumnModel().getColumn(0).setPreferredWidth(457);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(2).setResizable(false);
 	}
 	
 	//Gibt ZwischenPreis in GUI_Hauptfenster an

@@ -13,6 +13,7 @@ public class GUI {
 	
 	public static Clip sound_background;
 	public static Clip sound_hinzufuegen;
+	public static Clip sound_bestellen;
 	
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
@@ -147,6 +148,27 @@ public class GUI {
                 gainControl.setValue(dB);
 
                 BooleanControl muteControl = (BooleanControl) sound_hinzufuegen
+                    .getControl(BooleanControl.Type.MUTE);
+                muteControl.setValue(true);
+
+                muteControl.setValue(false);
+            }catch (IOException e){}      
+		
+	}
+	public static void bestellennsound() throws Exception{
+		//Musik erstellen
+        try {
+            File bestellensound = new File("bestellensound.wav");
+            sound_bestellen = AudioSystem.getClip();
+            sound_bestellen.open(AudioSystem.getAudioInputStream(bestellensound));
+            sound_bestellen.start();
+        //Lautstärke
+            FloatControl gainControl = (FloatControl) sound_hinzufuegen.getControl(FloatControl.Type.MASTER_GAIN);
+                double gain = .08D;
+                float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+
+                BooleanControl muteControl = (BooleanControl) sound_bestellen
                     .getControl(BooleanControl.Type.MUTE);
                 muteControl.setValue(true);
 

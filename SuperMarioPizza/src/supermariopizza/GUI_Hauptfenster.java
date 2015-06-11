@@ -143,6 +143,16 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnEigenePizzaErstellen);
 		
 		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
+		btnBetellungAbgeben.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					GUI.bestellennsound();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnBetellungAbgeben.setFont(new Font("Constantia", Font.ITALIC, 12));
 		
 		btnBetellungAbgeben.setBounds(627, 620, 197, 30);

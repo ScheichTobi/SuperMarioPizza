@@ -146,7 +146,7 @@ public class GUI_Hauptfenster extends JFrame {
 		btnBetellungAbgeben.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					GUI.bestellennsound();
+					GUI.bestellensound();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -185,6 +185,9 @@ public class GUI_Hauptfenster extends JFrame {
 				}else{
 					model.removeRow(table.getSelectedRow());
 					GUI_Hauptfenster.ZwischenpreisRechnung();
+					try {
+						GUI.removesound();
+					} catch (Exception e) {}
 				}
 			}
 			

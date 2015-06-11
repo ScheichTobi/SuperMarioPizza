@@ -14,6 +14,7 @@ public class GUI {
 	public static Clip sound_background;
 	public static Clip sound_hinzufuegen;
 	public static Clip sound_bestellen;
+	public static Clip sound_remove;
 	
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
@@ -155,7 +156,7 @@ public class GUI {
             }catch (IOException e){}      
 		
 	}
-	public static void bestellennsound() throws Exception{
+	public static void bestellensound() throws Exception{
 		//Musik erstellen
         try {
             File bestellensound = new File("bestellensound.wav");
@@ -163,12 +164,33 @@ public class GUI {
             sound_bestellen.open(AudioSystem.getAudioInputStream(bestellensound));
             sound_bestellen.start();
         //Lautstärke
-            FloatControl gainControl = (FloatControl) sound_hinzufuegen.getControl(FloatControl.Type.MASTER_GAIN);
+            FloatControl gainControl = (FloatControl) sound_bestellen.getControl(FloatControl.Type.MASTER_GAIN);
                 double gain = .08D;
                 float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
                 gainControl.setValue(dB);
 
                 BooleanControl muteControl = (BooleanControl) sound_bestellen
+                    .getControl(BooleanControl.Type.MUTE);
+                muteControl.setValue(true);
+
+                muteControl.setValue(false);
+            }catch (IOException e){}      
+		
+	}
+	public static void removesound() throws Exception{
+		//Musik erstellen
+        try {
+            File removesound = new File("removesound.wav");
+            sound_remove = AudioSystem.getClip();
+            sound_remove.open(AudioSystem.getAudioInputStream(removesound));
+            sound_remove.start();
+        //Lautstärke
+            FloatControl gainControl = (FloatControl) sound_remove.getControl(FloatControl.Type.MASTER_GAIN);
+                double gain = .08D;
+                float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+
+                BooleanControl muteControl = (BooleanControl) sound_remove
                     .getControl(BooleanControl.Type.MUTE);
                 muteControl.setValue(true);
 

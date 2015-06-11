@@ -165,7 +165,7 @@ public class GUI {
             sound_bestellen.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_bestellen.getControl(FloatControl.Type.MASTER_GAIN);
-                double gain = .08D;
+                double gain = .25D;
                 float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
                 gainControl.setValue(dB);
 

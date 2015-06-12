@@ -81,6 +81,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 					e2.printStackTrace();
 				}
 				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+				try {
 					GUI.fensteroeffnen();
 				} catch (Exception e1) {}
 				frame.setVisible(false);

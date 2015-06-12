@@ -13,6 +13,8 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Color;
 
 public class GUI_Wilkommensfenster extends JFrame {
 
@@ -37,6 +39,8 @@ public class GUI_Wilkommensfenster extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Wilkommensfenster() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
+		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 450, 300);
 		contentPane = new JPanel();
@@ -45,7 +49,8 @@ public class GUI_Wilkommensfenster extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("\t\t\t\t\t\t\tWilkommen bei Super Mario Pizza");
-		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 25));
+		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 25));
 		lblNewLabel.setBounds(25, 21, 399, 57);
 		contentPane.add(lblNewLabel);
 		

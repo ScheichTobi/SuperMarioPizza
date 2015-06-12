@@ -282,7 +282,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		separator_4.setBounds(0, 421, 403, 16);
 		EigenePizzaGui.add(separator_4);
 		
-		JLabel lbl_foto = new JLabel(new ImageIcon("gif_pizza.gif"));
+		JLabel lbl_foto = new JLabel(new ImageIcon("Bilder/gif_pizza.gif"));
 		lbl_foto.setBounds(430, 82, 380, 250);
 		EigenePizzaGui.add(lbl_foto);
 		

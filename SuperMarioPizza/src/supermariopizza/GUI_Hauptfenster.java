@@ -25,8 +25,6 @@ import javax.swing.ListSelectionModel;
 import java.awt.Color;
 
 import javax.swing.SpinnerNumberModel;
-import javax.swing.border.LineBorder;
-import javax.swing.ScrollPaneConstants;
 import java.awt.Toolkit;
 
 

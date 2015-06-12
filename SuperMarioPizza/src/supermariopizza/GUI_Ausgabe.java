@@ -1,6 +1,5 @@
 package supermariopizza;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -16,6 +15,7 @@ import java.awt.Toolkit;
 
 public class GUI_Ausgabe extends JFrame {
 
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	static JTable table1;
 

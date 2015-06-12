@@ -2,6 +2,10 @@ package supermariopizza;
 
 import java.awt.EventQueue;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.BooleanControl;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,8 +19,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import java.awt.Color;
+import java.io.File;
+import java.io.IOException;
 
 public class GUI_Wilkommensfenster extends JFrame {
+	public static Clip sound_weiter;
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -68,6 +75,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					weitersound();
+				} catch (Exception e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+				try {
 					GUI.fensteroeffnen();
 				} catch (Exception e1) {}
 				frame.setVisible(false);
@@ -78,4 +91,26 @@ public class GUI_Wilkommensfenster extends JFrame {
 		btnWeiter.setBounds(170, 185, 89, 23);
 		contentPane.add(btnWeiter);
 	}
+	public static void weitersound() throws Exception{
+		//Musik erstellen
+        try {
+            File weitersound = new File("weitersound.wav");
+            sound_weiter = AudioSystem.getClip();
+            sound_weiter.open(AudioSystem.getAudioInputStream(weitersound));
+            sound_weiter.start();
+        //Lautstärke
+            FloatControl gainControl = (FloatControl) sound_weiter.getControl(FloatControl.Type.MASTER_GAIN);
+                double gain = .25D;
+                float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+
+                BooleanControl muteControl = (BooleanControl) sound_weiter
+                    .getControl(BooleanControl.Type.MUTE);
+                muteControl.setValue(true);
+
+                muteControl.setValue(false);
+            }catch (IOException e){}      
+		
+	}
+
 }

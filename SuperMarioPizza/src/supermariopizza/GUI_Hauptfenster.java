@@ -50,7 +50,7 @@ public class GUI_Hauptfenster extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
 		setTitle("Super Mario Pizza");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 500, 850, 700);
+		setBounds(300, 20, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

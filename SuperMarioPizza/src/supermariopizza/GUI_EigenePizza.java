@@ -51,7 +51,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
 		setTitle("Eigene Pizza erstellen");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(500, 500, 850, 538);
+		setBounds(300, 20, 850, 538);
 		EigenePizzaGui = new JPanel();
 		EigenePizzaGui.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(EigenePizzaGui);

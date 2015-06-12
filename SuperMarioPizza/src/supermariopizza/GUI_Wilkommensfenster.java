@@ -19,12 +19,13 @@ public class GUI_Wilkommensfenster extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private static GUI_Wilkommensfenster frame;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_Wilkommensfenster frame = new GUI_Wilkommensfenster();
+					frame = new GUI_Wilkommensfenster();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +39,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 	 */
 	public GUI_Wilkommensfenster() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(300, 20, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -62,13 +63,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 		JButton btnWeiter = new JButton("Weiter");
 		btnWeiter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				try {
 					GUI.fensteroeffnen();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				} catch (Exception e1) {}
+				frame.setVisible(false);
+				frame.dispose();
+				
 			}
 		});
 		btnWeiter.setBounds(170, 185, 89, 23);

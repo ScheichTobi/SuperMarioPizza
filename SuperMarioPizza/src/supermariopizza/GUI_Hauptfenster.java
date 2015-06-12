@@ -39,6 +39,7 @@ public class GUI_Hauptfenster extends JFrame {
 	
 	private JPanel contentPane;
 	static GUI_EigenePizza frame;
+	static GUI_Hauptfenster frame2;
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
 	static JTable table;

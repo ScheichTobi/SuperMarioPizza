@@ -46,7 +46,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Wilkommensfenster() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
 		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 450, 300);
@@ -58,7 +58,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 		JLabel lblNewLabel = new JLabel("\t\t\t\t\t\t\tWilkommen bei Super Mario Pizza");
 		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel.setBounds(25, 21, 399, 57);
+		lblNewLabel.setBounds(10, 21, 414, 57);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblWollenSieEine = new JLabel("Wollen sie eine Bestellung t\u00E4tigen?");
@@ -100,7 +100,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 	public static void weitersound() throws Exception{
 		//Musik erstellen
         try {
-            File weitersound = new File("weitersound.wav");
+            File weitersound = new File("Sounds/weitersound.wav");
             sound_weiter = AudioSystem.getClip();
             sound_weiter.open(AudioSystem.getAudioInputStream(weitersound));
             sound_weiter.start();

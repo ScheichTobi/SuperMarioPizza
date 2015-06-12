@@ -46,7 +46,7 @@ public class GUI_Hauptfenster extends JFrame {
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
 		setTitle("Super Mario Pizza");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 850, 700);

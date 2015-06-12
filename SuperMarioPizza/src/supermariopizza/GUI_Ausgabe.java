@@ -39,7 +39,7 @@ public class GUI_Ausgabe extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Ausgabe() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("facemario.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();

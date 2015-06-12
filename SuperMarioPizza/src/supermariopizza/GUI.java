@@ -118,7 +118,7 @@ public class GUI {
 	public static void backgroundsound() throws Exception{
 			//Musik erstellen
             try {
-                File backgroundsound = new File("backgroundsound.wav");
+                File backgroundsound = new File("Sounds/backgroundsound.wav");
                 sound_background = AudioSystem.getClip();
                 sound_background.open(AudioSystem.getAudioInputStream(backgroundsound));
                 sound_background.loop(Clip.LOOP_CONTINUOUSLY);
@@ -138,7 +138,7 @@ public class GUI {
 	public static void hinzufuegensound() throws Exception{
 		//Musik erstellen
         try {
-            File hinzufuegensound = new File("hinzufuegensound.wav");
+            File hinzufuegensound = new File("Sounds/hinzufuegensound.wav");
             sound_hinzufuegen = AudioSystem.getClip();
             sound_hinzufuegen.open(AudioSystem.getAudioInputStream(hinzufuegensound));
             sound_hinzufuegen.start();
@@ -159,7 +159,7 @@ public class GUI {
 	public static void bestellensound() throws Exception{
 		//Musik erstellen
         try {
-            File bestellensound = new File("bestellensound.wav");
+            File bestellensound = new File("Sounds/bestellensound.wav");
             sound_bestellen = AudioSystem.getClip();
             sound_bestellen.open(AudioSystem.getAudioInputStream(bestellensound));
             sound_bestellen.start();
@@ -180,7 +180,7 @@ public class GUI {
 	public static void removesound() throws Exception{
 		//Musik erstellen
         try {
-            File removesound = new File("removesound.wav");
+            File removesound = new File("Sounds/removesound.wav");
             sound_remove = AudioSystem.getClip();
             sound_remove.open(AudioSystem.getAudioInputStream(removesound));
             sound_remove.start();

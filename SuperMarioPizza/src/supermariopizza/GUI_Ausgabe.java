@@ -55,7 +55,7 @@ public class GUI_Ausgabe extends JFrame {
 	scrollPane.setBounds(66, 104, 758, 427);
 	contentPane.add(scrollPane);
 	
-	table1 = new JTable();
+	table1 = new JTable();	
 	scrollPane.setViewportView(table1);
 	table1.setBackground(Color.WHITE);
 	table1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -74,6 +74,17 @@ public class GUI_Ausgabe extends JFrame {
 		}
 	});
 	
+	GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(), (int)GUI_Ausgabe.table1.getBounds().getHeight() + GUI_Ausgabe.table1.getRowHeight());
+	DefaultTableModel model = (DefaultTableModel) table1.getModel();
+	
+	for(int i=0;i<GUI.li_Rechnung.size();i++){
+		
+		model.addRow(new Object[]{GUI.li_Rechnung.get(i)});//, Eigene_Pizza.format(Double.parseDouble((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl) + "€"});
+		
+		
+	}
+	
+		
 	JLabel label = new JLabel("");
 	label.setBounds(636, 542, 159, 37);
 	contentPane.add(label);

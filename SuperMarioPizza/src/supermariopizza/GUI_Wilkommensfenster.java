@@ -57,10 +57,10 @@ public class GUI_Wilkommensfenster extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\t\t\t\t\t\t\tWilkommen bei Super Mario Pizza");
+		JLabel lblNewLabel = new JLabel("\t\t\t\t\t\t\tWillkommen bei Super Mario Pizza");
 		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 25));
-		lblNewLabel.setBounds(10, 21, 414, 57);
+		lblNewLabel.setBounds(32, 21, 414, 57);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblWollenSieEine = new JLabel("Wollen sie eine Bestellung t\u00E4tigen?");
@@ -96,7 +96,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 				
 			}
 		});
-		btnWeiter.setBounds(170, 185, 89, 23);
+		btnWeiter.setBounds(186, 184, 89, 23);
 		contentPane.add(btnWeiter);
 		
 		JLabel MarioL = new JLabel("");

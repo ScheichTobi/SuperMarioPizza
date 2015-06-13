@@ -207,14 +207,10 @@ public class Eigene_Pizza extends Pizza{
 		
 		//Erweitern der Tabelle im GUI_Hauptfenster um eine Zeile für den neuen Eintrag
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
-		GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(),(int)GUI_Ausgabe.table1.getBounds().getHeight()+GUI_Ausgabe.table1.getRowHeight());
 		
 		//Pizza in die Tabelle einfügen
 		DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
-		DefaultTableModel model1 = (DefaultTableModel) GUI_Ausgabe.table1.getModel();
-
 		model.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
-		model1.addRow(new Object[]{Pizza.name, Pizza.anzahl, Pizza.preis + "€"});
 		
 		//Preis im GUI_Hauptfenster aktualisieren
 		GUI_Hauptfenster.ZwischenpreisRechnung();

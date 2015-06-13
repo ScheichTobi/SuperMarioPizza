@@ -303,6 +303,7 @@ public class GUI_Hauptfenster extends JFrame {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_speisekarte.get(auswahl).preis)) * anzahl) + "€"});
 		GUI.hinzufuegensound();
+		GUI.li_Rechnung.add(GUI.li_speisekarte.get(auswahl));
 		for(int i=0;i<GUI.li_Rechnung.size();i++){
 			System.out.println(GUI.li_Rechnung.get(i).name);
 		}

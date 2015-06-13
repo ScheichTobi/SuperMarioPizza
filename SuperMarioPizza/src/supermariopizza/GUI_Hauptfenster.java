@@ -141,6 +141,7 @@ public class GUI_Hauptfenster extends JFrame {
 							frame = new GUI_EigenePizza();
 							frame.setVisible(true);
 						} catch (Exception e) {
+							
 							e.printStackTrace();
 						}
 					}
@@ -299,6 +300,7 @@ public class GUI_Hauptfenster extends JFrame {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_speisekarte.get(auswahl).preis)) * anzahl) + "€"});
 		GUI.hinzufuegensound();
+		System.out.println(GUI.li_Rechnung.get(0).name);
 	}
 	/** getränkeHinzufügen
 	 * das ausgewählte Getränk soll in die Tabelle eingefügt werden
@@ -313,6 +315,7 @@ public class GUI_Hauptfenster extends JFrame {
 			return;
 		}
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
+		GUI.li_Rechnung.add(GUI.li_getraenkekarte.get(auswahl));
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl) + "€"});
 		GUI.hinzufuegensound();

@@ -21,6 +21,7 @@ import java.awt.Toolkit;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 
 public class GUI_Wilkommensfenster extends JFrame {
 	public static Clip sound_weiter;
@@ -49,8 +50,9 @@ public class GUI_Wilkommensfenster extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
 		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(300, 20, 450, 300);
+		setBounds(300, 20, 494, 341);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -63,12 +65,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 		
 		JLabel lblWollenSieEine = new JLabel("Wollen sie eine Bestellung t\u00E4tigen?");
 		lblWollenSieEine.setFont(new Font("Constantia", Font.ITALIC, 14));
-		lblWollenSieEine.setBounds(91, 89, 215, 24);
+		lblWollenSieEine.setBounds(131, 89, 215, 24);
 		contentPane.add(lblWollenSieEine);
 		
 		JLabel lblDannDrckenSie = new JLabel("Dann dr\u00FCcken sie auf Weiter");
 		lblDannDrckenSie.setFont(new Font("Constantia", Font.PLAIN, 14));
-		lblDannDrckenSie.setBounds(104, 124, 190, 14);
+		lblDannDrckenSie.setBounds(146, 127, 190, 14);
 		contentPane.add(lblDannDrckenSie);
 		
 		JButton btnWeiter = new JButton("Weiter");
@@ -96,6 +98,16 @@ public class GUI_Wilkommensfenster extends JFrame {
 		});
 		btnWeiter.setBounds(170, 185, 89, 23);
 		contentPane.add(btnWeiter);
+		
+		JLabel MarioL = new JLabel("");
+		MarioL.setIcon(new ImageIcon("Bilder\\MarioL.JPEG"));
+		MarioL.setBounds(0, 93, 160, 209);
+		contentPane.add(MarioL);
+		
+		JLabel MarioR = new JLabel("");
+		MarioR.setIcon(new ImageIcon("Bilder\\MarioR.JPEG"));
+		MarioR.setBounds(318, 93, 160, 209);
+		contentPane.add(MarioR);
 	}
 	public static void weitersound() throws Exception{
 		//Musik erstellen
@@ -118,5 +130,4 @@ public class GUI_Wilkommensfenster extends JFrame {
             }catch (IOException e){}      
 		
 	}
-
 }

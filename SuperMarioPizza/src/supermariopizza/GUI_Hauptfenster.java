@@ -102,6 +102,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				try {
 					pizzaHinzufügen();
 				} catch (Exception e) {
@@ -110,6 +111,7 @@ public class GUI_Hauptfenster extends JFrame {
 				}
 				ZwischenpreisRechnung();
 			}
+			
 		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
@@ -300,7 +302,9 @@ public class GUI_Hauptfenster extends JFrame {
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_speisekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_speisekarte.get(auswahl).preis)) * anzahl) + "€"});
 		GUI.hinzufuegensound();
-		System.out.println(GUI.li_Rechnung.get(0).name);
+		for(int i;i<GUI_Hauptfenster.table.getRowCount();i++){
+			System.out.println(GUI.li_Rechnung.get(i).name);
+		}
 	}
 	/** getränkeHinzufügen
 	 * das ausgewählte Getränk soll in die Tabelle eingefügt werden

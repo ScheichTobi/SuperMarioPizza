@@ -11,7 +11,9 @@ import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
+
 import java.awt.Toolkit;
+import java.net.URL;
 
 public class GUI_Ausgabe extends JFrame {
 
@@ -39,7 +41,9 @@ public class GUI_Ausgabe extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Ausgabe() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL resource = loader.getResource("Bilder/facemario.png");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();

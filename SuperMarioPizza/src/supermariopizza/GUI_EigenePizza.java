@@ -24,7 +24,9 @@ import java.awt.event.ItemListener;
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
 import javax.swing.SpinnerNumberModel;
+
 import java.awt.Toolkit;
+import java.net.URL;
 
 public class GUI_EigenePizza extends JFrame implements ActionListener{
 
@@ -48,7 +50,9 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 	
 	//Konstruktor
 	public GUI_EigenePizza() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL resource = loader.getResource("Bilder/facemario.png");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
 		setTitle("Eigene Pizza erstellen");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(300, 20, 850, 538);
@@ -282,7 +286,8 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		separator_4.setBounds(0, 421, 403, 16);
 		EigenePizzaGui.add(separator_4);
 		
-		JLabel lbl_foto = new JLabel(new ImageIcon("Bilder/gif_pizza.gif"));
+		URL resource2 = loader.getResource("Bilder/gif_pizza.gif");
+		JLabel lbl_foto = new JLabel(new ImageIcon(resource2));
 		lbl_foto.setBounds(430, 82, 380, 250);
 		EigenePizzaGui.add(lbl_foto);
 		

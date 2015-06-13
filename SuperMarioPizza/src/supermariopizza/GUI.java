@@ -8,7 +8,7 @@ import javax.sound.sampled.FloatControl;
 import java.awt.*;
 import java.io.*;
 import java.util.*;
-import java.io.File;
+import java.net.URL;
 public class GUI {
 	
 	public static Clip sound_background;
@@ -118,9 +118,10 @@ public class GUI {
 	public static void backgroundsound() throws Exception{
 			//Musik erstellen
             try {
-                File backgroundsound = new File("Sounds/backgroundsound.wav");
+            	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            	URL resource = loader.getResource("Sounds/backgroundsound.wav");
                 sound_background = AudioSystem.getClip();
-                sound_background.open(AudioSystem.getAudioInputStream(backgroundsound));
+                sound_background.open(AudioSystem.getAudioInputStream(resource));
                 sound_background.loop(Clip.LOOP_CONTINUOUSLY);
             //Lautstärke
                 FloatControl gainControl = (FloatControl) sound_background.getControl(FloatControl.Type.MASTER_GAIN);
@@ -138,9 +139,10 @@ public class GUI {
 	public static void hinzufuegensound() throws Exception{
 		//Musik erstellen
         try {
-            File hinzufuegensound = new File("Sounds/hinzufuegensound.wav");
+        	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        	URL resource = loader.getResource("Sounds/hinzufuegensound.wav");
             sound_hinzufuegen = AudioSystem.getClip();
-            sound_hinzufuegen.open(AudioSystem.getAudioInputStream(hinzufuegensound));
+            sound_hinzufuegen.open(AudioSystem.getAudioInputStream(resource));
             sound_hinzufuegen.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_hinzufuegen.getControl(FloatControl.Type.MASTER_GAIN);
@@ -159,9 +161,10 @@ public class GUI {
 	public static void bestellensound() throws Exception{
 		//Musik erstellen
         try {
-            File bestellensound = new File("Sounds/bestellensound.wav");
+        	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        	URL resource = loader.getResource("Sounds/bestellensound.wav");
             sound_bestellen = AudioSystem.getClip();
-            sound_bestellen.open(AudioSystem.getAudioInputStream(bestellensound));
+            sound_bestellen.open(AudioSystem.getAudioInputStream(resource));
             sound_bestellen.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_bestellen.getControl(FloatControl.Type.MASTER_GAIN);
@@ -180,9 +183,10 @@ public class GUI {
 	public static void removesound() throws Exception{
 		//Musik erstellen
         try {
-            File removesound = new File("Sounds/removesound.wav");
+        	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        	URL resource = loader.getResource("Sounds/removesound.wav");
             sound_remove = AudioSystem.getClip();
-            sound_remove.open(AudioSystem.getAudioInputStream(removesound));
+            sound_remove.open(AudioSystem.getAudioInputStream(resource));
             sound_remove.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_remove.getControl(FloatControl.Type.MASTER_GAIN);

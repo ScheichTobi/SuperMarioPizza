@@ -19,8 +19,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import java.awt.Color;
-import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 public class GUI_Wilkommensfenster extends JFrame {
@@ -47,7 +48,9 @@ public class GUI_Wilkommensfenster extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Wilkommensfenster() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL resource3 = loader.getResource("Bilder/facemario.png");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(resource3));
 		setTitle("Willkommen");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 494, 341);
@@ -100,21 +103,24 @@ public class GUI_Wilkommensfenster extends JFrame {
 		contentPane.add(btnWeiter);
 		
 		JLabel MarioL = new JLabel("");
-		MarioL.setIcon(new ImageIcon("Bilder\\MarioL.JPEG"));
+    	URL resource = loader.getResource("Bilder/MarioL.JPEG");
+		MarioL.setIcon(new ImageIcon(resource));
 		MarioL.setBounds(0, 93, 160, 209);
 		contentPane.add(MarioL);
 		
 		JLabel MarioR = new JLabel("");
-		MarioR.setIcon(new ImageIcon("Bilder\\MarioR.JPEG"));
+    	URL resource2 = loader.getResource("Bilder/MarioR.JPEG");
+		MarioR.setIcon(new ImageIcon(resource2));
 		MarioR.setBounds(318, 93, 160, 209);
 		contentPane.add(MarioR);
 	}
 	public static void weitersound() throws Exception{
 		//Musik erstellen
         try {
-            File weitersound = new File("Sounds/weitersound.wav");
+        	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        	URL resource = loader.getResource("Sounds/weitersound.wav");
             sound_weiter = AudioSystem.getClip();
-            sound_weiter.open(AudioSystem.getAudioInputStream(weitersound));
+            sound_weiter.open(AudioSystem.getAudioInputStream(resource));
             sound_weiter.start();
         //Lautstärke
             FloatControl gainControl = (FloatControl) sound_weiter.getControl(FloatControl.Type.MASTER_GAIN);

@@ -25,7 +25,9 @@ import javax.swing.ListSelectionModel;
 import java.awt.Color;
 
 import javax.swing.SpinnerNumberModel;
+
 import java.awt.Toolkit;
+import java.net.URL;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -46,7 +48,9 @@ public class GUI_Hauptfenster extends JFrame {
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Bilder/facemario.png"));
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL resource = loader.getResource("Bilder/facemario.png");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
 		setTitle("Super Mario Pizza");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 850, 700);

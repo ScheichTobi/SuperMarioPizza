@@ -32,6 +32,7 @@ import javax.swing.JSeparator;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -320,6 +321,11 @@ public class GUI_Hauptfenster extends JFrame {
 		lblwhlenSieIhre.setFont(new Font("Constantia", Font.PLAIN, 13));
 		lblwhlenSieIhre.setBounds(583, 189, 222, 18);
 		contentPane.add(lblwhlenSieIhre);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaOfen.jpg")));
+		label.setBounds(367, 560, 176, 90);
+		contentPane.add(label);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.getColumnModel().getColumn(1).setResizable(false);

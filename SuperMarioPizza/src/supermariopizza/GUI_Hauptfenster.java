@@ -28,6 +28,7 @@ import javax.swing.SpinnerNumberModel;
 
 import java.awt.Toolkit;
 import java.net.URL;
+import javax.swing.JSeparator;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -43,11 +44,12 @@ public class GUI_Hauptfenster extends JFrame {
 	JButton btnMusikStoppen = new JButton("Musik stoppen");
 	JButton btnMusikNeuAbspielen = new JButton("Musik neu abspielen");
 	static JTable table;
-	private final JButton btnPizzaHinzufgen = new JButton("Pizza hinzuf\u00FCgen");
-	private final JButton btnHinzufgen = new JButton("Getränk Hinzuf\u00FCgen");
+	private final JButton btnPizzaHinzufgen = new JButton("Hinzuf\u00FCgen");
+	private final JButton btnHinzufgen = new JButton("Hinzuf\u00FCgen");
 	private static JLabel lblNewLabel = new JLabel();
 	
 	public GUI_Hauptfenster() {
+		setBackground(Color.WHITE);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
@@ -98,7 +100,7 @@ public class GUI_Hauptfenster extends JFrame {
 				ZwischenpreisRechnung();
 			}
 		});
-		btnHinzufgen.setBounds(542, 98, 140, 30);
+		btnHinzufgen.setBounds(335, 220, 140, 43);
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -114,11 +116,11 @@ public class GUI_Hauptfenster extends JFrame {
 			
 		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
-		btnPizzaHinzufgen.setBounds(75, 98, 140, 30);
+		btnPizzaHinzufgen.setBounds(60, 220, 140, 43);
 		
 		contentPane.add(btnPizzaHinzufgen);
 		
-		JButton btnEigenePizzaErstellen = new JButton("Eigene Pizza erstellen");
+		JButton btnEigenePizzaErstellen = new JButton("Erstellen");
 		btnEigenePizzaErstellen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnEigenePizzaErstellen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -150,10 +152,10 @@ public class GUI_Hauptfenster extends JFrame {
 				});
 			}
 		});
-		btnEigenePizzaErstellen.setBounds(302, 147, 150, 30);
+		btnEigenePizzaErstellen.setBounds(659, 188, 140, 43);
 		contentPane.add(btnEigenePizzaErstellen);
 		
-		JButton btnBetellungAbgeben = new JButton("Betellung abgeben");
+		JButton btnBetellungAbgeben = new JButton("Weiter\r\n");
 		btnBetellungAbgeben.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -168,19 +170,19 @@ public class GUI_Hauptfenster extends JFrame {
 							
 							
 			}
-		});		btnBetellungAbgeben.setFont(new Font("Constantia", Font.ITALIC, 12));
+		});		btnBetellungAbgeben.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 20));
 		
-		btnBetellungAbgeben.setBounds(627, 620, 197, 30);
+		btnBetellungAbgeben.setBounds(627, 603, 197, 47);
 		contentPane.add(btnBetellungAbgeben);
 		MengePizza.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
-		MengePizza.setBounds(289, 72, 29, 20);
+		MengePizza.setBounds(231, 188, 29, 20);
 		contentPane.add(MengePizza);
 		MengeGetränke.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
-		MengeGetränke.setBounds(749, 72, 29, 20);
+		MengeGetränke.setBounds(506, 188, 29, 20);
 		contentPane.add(MengeGetränke);
 		
 		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
@@ -210,20 +212,21 @@ public class GUI_Hauptfenster extends JFrame {
 			
 		});
 		btnAktuelleAuswahlEntfernen.setFont(new Font("Constantia", Font.ITALIC, 12));
-		btnAktuelleAuswahlEntfernen.setBounds(22, 555, 280, 30);
+		btnAktuelleAuswahlEntfernen.setBounds(35, 516, 239, 43);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
+		lblNewLabel.setForeground(Color.BLUE);
 		lblNewLabel.setText("0,00\u20AC");
 		
 		
 				
-		lblNewLabel.setFont(new Font("Constantia", Font.ITALIC, 20));
-		lblNewLabel.setBounds(666, 555, 128, 37);
+		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 27));
+		lblNewLabel.setBounds(662, 555, 128, 37);
 		contentPane.add(lblNewLabel);
 			 
 		
 
 		
-		pizza_Liste.setBounds(23, 72, 256, 20);
+		pizza_Liste.setBounds(60, 188, 161, 20);
 	// füllen der JComboBox pizza_Liste
 		speisenLaden();
 		
@@ -231,13 +234,13 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		
 		
-		getränke_Liste.setBounds(479, 72, 256, 20);
+		getränke_Liste.setBounds(335, 189, 161, 20);
 	// füllen der JComboBox getränke Liste
 		getränkeLaden();
 		contentPane.add(getränke_Liste);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(22, 190, 756, 354);
+		scrollPane.setBounds(35, 317, 764, 198);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -258,6 +261,27 @@ public class GUI_Hauptfenster extends JFrame {
 				return columnEditables[column];
 			}
 		});
+		
+		JLabel lblPizzaHinzufgen = new JLabel("Pizza hinzuf\u00FCgen:");
+		lblPizzaHinzufgen.setForeground(Color.BLACK);
+		lblPizzaHinzufgen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
+		lblPizzaHinzufgen.setBounds(60, 145, 156, 29);
+		contentPane.add(lblPizzaHinzufgen);
+		
+		JLabel lblGetrnkHinzufgen = new JLabel("Getr\u00E4nk hinzuf\u00FCgen:");
+		lblGetrnkHinzufgen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
+		lblGetrnkHinzufgen.setBounds(333, 145, 202, 29);
+		contentPane.add(lblGetrnkHinzufgen);
+		
+		JLabel lblEigenePizzaErstellen = new JLabel("Eigene Pizza erstellen:");
+		lblEigenePizzaErstellen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
+		lblEigenePizzaErstellen.setBounds(627, 145, 187, 29);
+		contentPane.add(lblEigenePizzaErstellen);
+		
+		JLabel lblGesamtpreis = new JLabel("Gesamtpreis:");
+		lblGesamtpreis.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 20));
+		lblGesamtpreis.setBounds(528, 557, 128, 37);
+		contentPane.add(lblGesamtpreis);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.getColumnModel().getColumn(1).setResizable(false);

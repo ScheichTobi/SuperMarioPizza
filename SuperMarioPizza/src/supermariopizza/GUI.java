@@ -19,7 +19,6 @@ public class GUI {
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
 	static ArrayList <Bestellung> li_Rechnung = new ArrayList <Bestellung>();
-	//static ArrayList <Anzahl> li_Mengen = new ArrayList <Anzahl>();
 	
 	public static void fensteroeffnen() throws Exception{
 		//Erstellung der GUI_Hauptfenster

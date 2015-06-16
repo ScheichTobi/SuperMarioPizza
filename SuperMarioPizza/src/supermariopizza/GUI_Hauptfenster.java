@@ -29,6 +29,9 @@ import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JSeparator;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.SwingConstants;
 
 
 public class GUI_Hauptfenster extends JFrame {
@@ -47,6 +50,10 @@ public class GUI_Hauptfenster extends JFrame {
 	private final JButton btnPizzaHinzufgen = new JButton("Hinzuf\u00FCgen");
 	private final JButton btnHinzufgen = new JButton("Hinzuf\u00FCgen");
 	private static JLabel lblNewLabel = new JLabel();
+	private final JSeparator separator_1 = new JSeparator();
+	private final JSeparator separator_2 = new JSeparator();
+	private final JSeparator separator_3 = new JSeparator();
+	private final JSeparator separator_4 = new JSeparator();
 	
 	public GUI_Hauptfenster() {
 		setBackground(Color.WHITE);
@@ -100,7 +107,7 @@ public class GUI_Hauptfenster extends JFrame {
 				ZwischenpreisRechnung();
 			}
 		});
-		btnHinzufgen.setBounds(335, 220, 140, 43);
+		btnHinzufgen.setBounds(293, 220, 140, 43);
 		contentPane.add(btnHinzufgen);
 		btnPizzaHinzufgen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -116,7 +123,7 @@ public class GUI_Hauptfenster extends JFrame {
 			
 		});
 		btnPizzaHinzufgen.setFont(new Font("Constantia", Font.ITALIC, 12));
-		btnPizzaHinzufgen.setBounds(60, 220, 140, 43);
+		btnPizzaHinzufgen.setBounds(23, 220, 140, 43);
 		
 		contentPane.add(btnPizzaHinzufgen);
 		
@@ -152,7 +159,7 @@ public class GUI_Hauptfenster extends JFrame {
 				});
 			}
 		});
-		btnEigenePizzaErstellen.setBounds(659, 188, 140, 43);
+		btnEigenePizzaErstellen.setBounds(583, 220, 140, 43);
 		contentPane.add(btnEigenePizzaErstellen);
 		
 		JButton btnBetellungAbgeben = new JButton("Weiter\r\n");
@@ -172,17 +179,17 @@ public class GUI_Hauptfenster extends JFrame {
 			}
 		});		btnBetellungAbgeben.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 20));
 		
-		btnBetellungAbgeben.setBounds(627, 603, 197, 47);
+		btnBetellungAbgeben.setBounds(595, 583, 204, 47);
 		contentPane.add(btnBetellungAbgeben);
 		MengePizza.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
-		MengePizza.setBounds(231, 188, 29, 20);
+		MengePizza.setBounds(194, 188, 29, 20);
 		contentPane.add(MengePizza);
 		MengeGetränke.setModel(new SpinnerNumberModel(new Integer(1), new Integer(1), null, new Integer(1)));
 		
 		
-		MengeGetränke.setBounds(506, 188, 29, 20);
+		MengeGetränke.setBounds(464, 188, 29, 20);
 		contentPane.add(MengeGetränke);
 		
 		JButton btnAktuelleAuswahlEntfernen = new JButton("Aktuelle Auswahl entfernen");
@@ -220,13 +227,13 @@ public class GUI_Hauptfenster extends JFrame {
 		
 				
 		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 27));
-		lblNewLabel.setBounds(662, 555, 128, 37);
+		lblNewLabel.setBounds(730, 535, 128, 37);
 		contentPane.add(lblNewLabel);
 			 
 		
 
 		
-		pizza_Liste.setBounds(60, 188, 161, 20);
+		pizza_Liste.setBounds(23, 189, 161, 20);
 	// füllen der JComboBox pizza_Liste
 		speisenLaden();
 		
@@ -234,7 +241,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		
 		
-		getränke_Liste.setBounds(335, 189, 161, 20);
+		getränke_Liste.setBounds(293, 188, 161, 20);
 	// füllen der JComboBox getränke Liste
 		getränkeLaden();
 		contentPane.add(getränke_Liste);
@@ -265,23 +272,54 @@ public class GUI_Hauptfenster extends JFrame {
 		JLabel lblPizzaHinzufgen = new JLabel("Pizza hinzuf\u00FCgen:");
 		lblPizzaHinzufgen.setForeground(Color.BLACK);
 		lblPizzaHinzufgen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
-		lblPizzaHinzufgen.setBounds(60, 145, 156, 29);
+		lblPizzaHinzufgen.setBounds(23, 145, 156, 29);
 		contentPane.add(lblPizzaHinzufgen);
 		
 		JLabel lblGetrnkHinzufgen = new JLabel("Getr\u00E4nk hinzuf\u00FCgen:");
 		lblGetrnkHinzufgen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
-		lblGetrnkHinzufgen.setBounds(333, 145, 202, 29);
+		lblGetrnkHinzufgen.setBounds(293, 145, 202, 29);
 		contentPane.add(lblGetrnkHinzufgen);
 		
 		JLabel lblEigenePizzaErstellen = new JLabel("Eigene Pizza erstellen:");
 		lblEigenePizzaErstellen.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 18));
-		lblEigenePizzaErstellen.setBounds(627, 145, 187, 29);
+		lblEigenePizzaErstellen.setBounds(583, 145, 187, 29);
 		contentPane.add(lblEigenePizzaErstellen);
 		
 		JLabel lblGesamtpreis = new JLabel("Gesamtpreis:");
 		lblGesamtpreis.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 20));
-		lblGesamtpreis.setBounds(528, 557, 128, 37);
+		lblGesamtpreis.setBounds(595, 537, 128, 37);
 		contentPane.add(lblGesamtpreis);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(246, 93, 216, -58);
+		contentPane.add(separator);
+		separator_1.setForeground(Color.BLACK);
+		separator_1.setBackground(Color.BLACK);
+		separator_1.setOrientation(SwingConstants.VERTICAL);
+		separator_1.setBounds(265, 123, 15, 164);
+		
+		contentPane.add(separator_1);
+		separator_2.setForeground(Color.BLACK);
+		separator_2.setBackground(Color.BLACK);
+		separator_2.setBounds(0, 123, 834, 20);
+		
+		contentPane.add(separator_2);
+		separator_3.setOrientation(SwingConstants.VERTICAL);
+		separator_3.setForeground(Color.BLACK);
+		separator_3.setBackground(Color.BLACK);
+		separator_3.setBounds(528, 123, 15, 164);
+		
+		contentPane.add(separator_3);
+		separator_4.setForeground(Color.BLACK);
+		separator_4.setBackground(Color.BLACK);
+		separator_4.setBounds(0, 286, 834, 20);
+		
+		contentPane.add(separator_4);
+		
+		JLabel lblwhlenSieIhre = new JLabel("(W\u00E4hlen Sie ihre eigenen Zutaten aus)");
+		lblwhlenSieIhre.setFont(new Font("Constantia", Font.PLAIN, 13));
+		lblwhlenSieIhre.setBounds(583, 189, 222, 18);
+		contentPane.add(lblwhlenSieIhre);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.getColumnModel().getColumn(1).setResizable(false);

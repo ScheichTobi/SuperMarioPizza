@@ -323,8 +323,8 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(lblwhlenSieIhre);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaOfen.jpg")));
-		label.setBounds(367, 560, 176, 90);
+		label.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaOfen.JPEG")));
+		label.setBounds(454, 516, 131, 127);
 		contentPane.add(label);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);

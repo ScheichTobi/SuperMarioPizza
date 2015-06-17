@@ -362,7 +362,11 @@ public class GUI_Hauptfenster extends JFrame {
 	 *  
 	 */
 	void pizzaHinzufügen() throws Exception{
-		int auswahl = pizza_Liste.getSelectedIndex();
+		int auswahl = pizza_Liste.getSelectedIndex()-1;		//-1 da das erste Element nicht ausgewählt werden darf
+		if(auswahl<0){
+			JOptionPane.showMessageDialog(new JFrame(), "Bitte wählen sie eine Pizza aus", "Halt  Stop!", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
 		int anzahl = (int)MengePizza.getValue();
 		if(anzahl < 1){
 			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
@@ -403,6 +407,9 @@ public class GUI_Hauptfenster extends JFrame {
 	 * @author Yannik
 	 */
 	void speisenLaden(){
+		Pizza PizzaAuswahl = new Pizza("Bitte wählen sie eine Pizza aus", "", 1);
+		pizza_Liste.addItem(PizzaAuswahl.name);
+		
 		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
 			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
 		}

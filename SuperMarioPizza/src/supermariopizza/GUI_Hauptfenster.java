@@ -368,10 +368,7 @@ public class GUI_Hauptfenster extends JFrame {
 			return;
 		}
 		int anzahl = (int)MengePizza.getValue();
-		if(anzahl < 1){
-			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens eine Pizza bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
-			return;
-		}
+		
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 		GUI.li_Rechnung.add(GUI.li_speisekarte.get(auswahl));
 		
@@ -395,10 +392,7 @@ public class GUI_Hauptfenster extends JFrame {
 			return;
 		}
 		int anzahl = (int)MengeGetränke.getValue();
-		if(anzahl < 1){
-			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens ein Getränk bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
-			return;
-		}
+		
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 		GUI.li_Rechnung.add(GUI.li_getraenkekarte.get(auswahl));
 		DefaultTableModel model = (DefaultTableModel) table.getModel();

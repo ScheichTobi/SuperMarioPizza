@@ -48,6 +48,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Wilkommensfenster() {
+		setResizable(false);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource3 = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource3));

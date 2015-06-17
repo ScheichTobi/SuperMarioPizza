@@ -50,6 +50,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 	
 	//Konstruktor
 	public GUI_EigenePizza() {
+		setResizable(false);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
@@ -272,7 +273,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBackground(Color.BLACK);
 		separator_2.setForeground(Color.BLACK);
-		separator_2.setBounds(401, 343, 433, 22);
+		separator_2.setBounds(401, 343, 443, 22);
 		EigenePizzaGui.add(separator_2);
 		
 		JSeparator separator_3 = new JSeparator();

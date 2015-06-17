@@ -57,6 +57,7 @@ public class GUI_Hauptfenster extends JFrame {
 	private final JSeparator separator_4 = new JSeparator();
 	
 	public GUI_Hauptfenster() {
+		setResizable(false);
 		setBackground(Color.WHITE);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource = loader.getResource("Bilder/facemario.png");
@@ -302,7 +303,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(separator_1);
 		separator_2.setForeground(Color.BLACK);
 		separator_2.setBackground(Color.BLACK);
-		separator_2.setBounds(0, 123, 834, 20);
+		separator_2.setBounds(0, 123, 844, 20);
 		
 		contentPane.add(separator_2);
 		separator_3.setOrientation(SwingConstants.VERTICAL);
@@ -313,7 +314,7 @@ public class GUI_Hauptfenster extends JFrame {
 		contentPane.add(separator_3);
 		separator_4.setForeground(Color.BLACK);
 		separator_4.setBackground(Color.BLACK);
-		separator_4.setBounds(0, 286, 834, 20);
+		separator_4.setBounds(0, 286, 844, 20);
 		
 		contentPane.add(separator_4);
 		

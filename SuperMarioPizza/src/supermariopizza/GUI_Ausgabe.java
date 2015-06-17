@@ -41,6 +41,7 @@ public class GUI_Ausgabe extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Ausgabe() {
+		setResizable(false);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));

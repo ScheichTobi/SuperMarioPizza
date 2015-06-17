@@ -362,7 +362,7 @@ public class GUI_Hauptfenster extends JFrame {
 	 *  
 	 */
 	void pizzaHinzufügen() throws Exception{
-		int auswahl = pizza_Liste.getSelectedIndex()-1;		//-1 da das erste Element nicht ausgewählt werden darf
+		int auswahl = pizza_Liste.getSelectedIndex() - 1;		//-1 da das erste Element nicht ausgewählt werden darf
 		if(auswahl<0){
 			JOptionPane.showMessageDialog(new JFrame(), "Bitte wählen sie eine Pizza aus", "Halt  Stop!", JOptionPane.WARNING_MESSAGE);
 			return;
@@ -389,7 +389,11 @@ public class GUI_Hauptfenster extends JFrame {
 	 * 
 	 */
 	void getränkeHinzufügen() throws Exception{
-		int auswahl = getränke_Liste.getSelectedIndex();
+		int auswahl = getränke_Liste.getSelectedIndex() - 1; //-1 da das erste Element nicht ausgewählt werden soll
+		if(auswahl<0){
+			JOptionPane.showMessageDialog(new JFrame(), "Bitte wählen sie ein Getränk aus", "Halt  Stop!", JOptionPane.WARNING_MESSAGE);
+			return;
+		}
 		int anzahl = (int)MengeGetränke.getValue();
 		if(anzahl < 1){
 			JOptionPane.showMessageDialog(new JFrame(), "Sie müssen mindestens ein Getränk bestellen", "Halt Stop!", JOptionPane.WARNING_MESSAGE);
@@ -419,6 +423,9 @@ public class GUI_Hauptfenster extends JFrame {
 	 * @author Yannik
 	 */
 	void getränkeLaden(){
+		Getränke GetraenkeAuswahl = new Getränke("Bitte wählen sie ein Getränk", "0.00", 0.00);
+		getränke_Liste.addItem(GetraenkeAuswahl.name);
+		
 		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
 			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
 		}

@@ -405,7 +405,7 @@ public class GUI_Hauptfenster extends JFrame {
 	 * @author Yannik
 	 */
 	void speisenLaden(){
-		Pizza PizzaAuswahl = new Pizza("--Bitte wählen sie--", "", 1);
+		Pizza PizzaAuswahl = new Pizza("-- Bitte wählen sie --", "", 1);
 		pizza_Liste.addItem(PizzaAuswahl.name);
 		
 		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
@@ -417,7 +417,7 @@ public class GUI_Hauptfenster extends JFrame {
 	 * @author Yannik
 	 */
 	void getränkeLaden(){
-		Getränke GetraenkeAuswahl = new Getränke("--Bitte wählen sie--", "0.00", 0.00);
+		Getränke GetraenkeAuswahl = new Getränke("-- Bitte wählen sie --", "0.00", 0.00);
 		getränke_Liste.addItem(GetraenkeAuswahl.name);
 		
 		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){

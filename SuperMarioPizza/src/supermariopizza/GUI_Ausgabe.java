@@ -46,7 +46,7 @@ public class GUI_Ausgabe extends JFrame {
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		URL resource = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -83,9 +83,9 @@ public class GUI_Ausgabe extends JFrame {
 	GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(), (int)GUI_Ausgabe.table1.getBounds().getHeight() + GUI_Ausgabe.table1.getRowHeight());
 	DefaultTableModel model = (DefaultTableModel) table1.getModel();
 	
-	for(int i=0;i<GUI_Hauptfenster.table.getColumnCount();i++){
+	for(int i=-1;i<GUI_Hauptfenster.table.getRowCount()-1;i++){
 		
-		model.addRow(new Object[]{GUI_Hauptfenster.table.getValueAt(i,0),GUI_Hauptfenster.table.getValueAt(i,1),GUI_Hauptfenster.table.getValueAt(i, 2)});
+		model.addRow(new Object[]{GUI_Hauptfenster.table.getValueAt(i+1,0),GUI_Hauptfenster.table.getValueAt(i+1,1),GUI_Hauptfenster.table.getValueAt(i+1, 2)});
 		
 		
 	}

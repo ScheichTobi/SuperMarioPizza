@@ -102,7 +102,7 @@ public class GUI {
 		Getr‰nke ApfelschorleKlein   = new Getr‰nke("Apfelschorle, 0,3l  ", "2.20", 0.3);
 		li_getraenkekarte.add(ApfelschorleKlein  );
 		
-		Getr‰nke ApfelschorleGroﬂ = new Getr‰nke("Apfelschorle, 0,5l", "3,20", 0.5);
+		Getr‰nke ApfelschorleGroﬂ = new Getr‰nke("Apfelschorle, 0,5l", "3.20", 0.5);
 		li_getraenkekarte.add(ApfelschorleGroﬂ);
 		
 		Getr‰nke ColaKlein  = new Getr‰nke("Cola, 0,3l ", "2.20", 0.3);

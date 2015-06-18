@@ -29,8 +29,6 @@ import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import java.net.URL;
 import javax.swing.JSeparator;
-import java.awt.Component;
-import javax.swing.Box;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 

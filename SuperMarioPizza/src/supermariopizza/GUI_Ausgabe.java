@@ -80,7 +80,7 @@ public class GUI_Ausgabe extends JFrame {
 	
 	for(int i=0;i<GUI.li_Rechnung.size();i++){
 		
-		model.addRow(new Object[]{GUI.li_Rechnung.get(i).name,GUI.li_Rechnung.get(i).preis});//, Eigene_Pizza.format(Double.parseDouble((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl) + "€"});
+		model.addRow(new Object[]{GUI_Hauptfenster.table.getValueAt(i,0),GUI_Hauptfenster.table.getValueAt(i,1),GUI_Hauptfenster.table.getValueAt(i, 2)});
 		
 		
 	}

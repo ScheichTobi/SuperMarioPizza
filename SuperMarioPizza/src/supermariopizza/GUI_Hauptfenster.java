@@ -396,6 +396,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		GUI_Hauptfenster.table.setSize((int)GUI_Hauptfenster.table.getBounds().getWidth(), (int)GUI_Hauptfenster.table.getBounds().getHeight() + GUI_Hauptfenster.table.getRowHeight());
 		GUI.li_Rechnung.add(GUI.li_getraenkekarte.get(auswahl));
+		GUI.li_Rechnung.add(GUI.li_getraenkekarte.get(anzahl));
 		DefaultTableModel model = (DefaultTableModel) table.getModel();
 		model.addRow(new Object[]{GUI.li_getraenkekarte.get(auswahl).name, anzahl, Eigene_Pizza.format(Double.parseDouble((GUI.li_getraenkekarte.get(auswahl).preis)) * anzahl) + "€"});
 		

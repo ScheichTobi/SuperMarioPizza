@@ -49,34 +49,34 @@ public class GUI {
 	static void erstellungSpeisekarte(){
 		
 		
-		Pizza Funghi = new Pizza("Funghi", "7.00", 1);
+		Pizza Funghi = new Pizza("Funghi", "6.00", 1);
 		li_speisekarte.add(Funghi);
 		
-		Pizza Tonno = new Pizza("Tonno", "8.00", 1);
+		Pizza Tonno = new Pizza("Tonno", "6.50", 1);
 		li_speisekarte.add(Tonno);
 				
 		Pizza Margherita = new Pizza("Margherita", "5.00", 1);
 		li_speisekarte.add(Margherita);
 		
-		Pizza Mozzarella = new Pizza("Mozzarella", "8.20", 1);
+		Pizza Mozzarella = new Pizza("Chef", "7.00", 1);
 		li_speisekarte.add(Mozzarella);
 		
-		Pizza Prosciutto = new Pizza("Prosciutto", "13.50", 1);
+		Pizza Prosciutto = new Pizza("Prosciutto", "6.00", 1);
 		li_speisekarte.add(Prosciutto);
 
-		Pizza Vegetarier = new Pizza("Vegetarier", "7.50", 1);
+		Pizza Vegetarier = new Pizza("Vegetarier", "6.50", 1);
 		li_speisekarte.add(Vegetarier);
 		
-		Pizza Hawaii = new Pizza("Hawaii", "9.70", 1);
+		Pizza Hawaii = new Pizza("Hawaii", "7.00", 1);
 		li_speisekarte.add(Hawaii);
 		
-		Pizza Siciliana  = new Pizza("Siciliana ", "7.50", 1);
+		Pizza Siciliana  = new Pizza("Siciliana ", "6.50", 1);
 		li_speisekarte.add(Siciliana );
 		
-		Pizza Salami = new Pizza("Salami", "9.20", 1);
+		Pizza Salami = new Pizza("Salami", "6.00", 1);
 		li_speisekarte.add(Salami);
 		
-		Pizza Peperoni = new Pizza("Peperoni", "8.90", 1);
+		Pizza Peperoni = new Pizza("Peperoni", "6.50", 1);
 		li_speisekarte.add(Peperoni);
 						
 	}

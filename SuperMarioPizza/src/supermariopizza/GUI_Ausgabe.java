@@ -78,7 +78,7 @@ public class GUI_Ausgabe extends JFrame {
 	GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(), (int)GUI_Ausgabe.table1.getBounds().getHeight() + GUI_Ausgabe.table1.getRowHeight());
 	DefaultTableModel model = (DefaultTableModel) table1.getModel();
 	
-	for(int i=0;i<GUI.li_Rechnung.size();i++){
+	for(int i=0;i<GUI_Hauptfenster.table.getColumnCount();i++){
 		
 		model.addRow(new Object[]{GUI_Hauptfenster.table.getValueAt(i,0),GUI_Hauptfenster.table.getValueAt(i,1),GUI_Hauptfenster.table.getValueAt(i, 2)});
 		

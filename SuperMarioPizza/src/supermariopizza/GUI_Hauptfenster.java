@@ -209,8 +209,7 @@ public class GUI_Hauptfenster extends JFrame {
 					}
 						
 				}else{
-					int index=table.getSelectedRow();
-					GUI.li_Rechnung.remove(index);
+					
 					model.removeRow(table.getSelectedRow());
 					GUI_Hauptfenster.ZwischenpreisRechnung();
 										try {

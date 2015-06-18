@@ -99,20 +99,32 @@ public class GUI {
 		Getr‰nke Corona  = new Getr‰nke("Corona ", "3.20", 1);
 		li_getraenkekarte.add(Corona );
 		
-		Getr‰nke Apfelschorle   = new Getr‰nke("Apfelschorle  ", "2.20", 1);
-		li_getraenkekarte.add(Apfelschorle  );
+		Getr‰nke ApfelschorleKlein   = new Getr‰nke("Apfelschorle, 0,3l  ", "2.20", 0.3);
+		li_getraenkekarte.add(ApfelschorleKlein  );
 		
-		Getr‰nke Cola  = new Getr‰nke("Cola ", "2.20", 1);
-		li_getraenkekarte.add(Cola );
+		Getr‰nke ApfelschorleGroﬂ = new Getr‰nke("Apfelschorle, 0,5l", "3,20", 0.5);
+		li_getraenkekarte.add(ApfelschorleGroﬂ);
+		
+		Getr‰nke ColaKlein  = new Getr‰nke("Cola, 0,3l ", "2.20", 0.3);
+		li_getraenkekarte.add(ColaKlein );
+		
+		Getr‰nke ColaGroﬂ  = new Getr‰nke("Cola, 0,5l ", "3.20", 0.5);
+		li_getraenkekarte.add(ColaGroﬂ );
 		
 		Getr‰nke Weinschorle   = new Getr‰nke("Weinschorle  ", "4.20", 1);
 		li_getraenkekarte.add(Weinschorle  );
 		
-		Getr‰nke Fanta   = new Getr‰nke("Fanta  ", "2.20", 1);
-		li_getraenkekarte.add(Fanta  );
+		Getr‰nke FantaKlein   = new Getr‰nke("Fanta, 0,3l  ", "2.20", 1);
+		li_getraenkekarte.add(FantaKlein  );
 		
-		Getr‰nke Sprite  = new Getr‰nke("Sprite ", "2.20", 1);
-		li_getraenkekarte.add(Sprite );
+		Getr‰nke FantaGroﬂ  = new Getr‰nke("Fanta, 0,5l  ", "3.20", 1);
+		li_getraenkekarte.add(FantaGroﬂ  );
+		
+		Getr‰nke SpriteKlein  = new Getr‰nke("Sprite, 0,3l ", "2.20", 1);
+		li_getraenkekarte.add(SpriteKlein );
+		
+		Getr‰nke SpriteGroﬂ  = new Getr‰nke("Sprite, 0,5l ", "3.20", 1);
+		li_getraenkekarte.add(SpriteGroﬂ );
 				
 	}
 	

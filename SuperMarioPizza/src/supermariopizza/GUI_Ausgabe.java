@@ -20,6 +20,7 @@ public class GUI_Ausgabe extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	static JTable table1;
+	static JLabel lblPreis;
 
 	/**
 	 * Launch the application.
@@ -75,6 +76,10 @@ public class GUI_Ausgabe extends JFrame {
 		}
 	});
 	
+	lblPreis = new JLabel("Preis");
+	lblPreis.setBounds(679, 542, 142, 26);
+	contentPane.add(lblPreis);
+	
 	GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(), (int)GUI_Ausgabe.table1.getBounds().getHeight() + GUI_Ausgabe.table1.getRowHeight());
 	DefaultTableModel model = (DefaultTableModel) table1.getModel();
 	
@@ -84,11 +89,6 @@ public class GUI_Ausgabe extends JFrame {
 		
 		
 	}
-	
-		
-	JLabel label = new JLabel("");
-	label.setBounds(636, 542, 159, 37);
-	contentPane.add(label);
 	table1.getColumnModel().getColumn(0).setResizable(false);
 	table1.getColumnModel().getColumn(0).setPreferredWidth(457);
 	table1.getColumnModel().getColumn(1).setResizable(false);
@@ -106,7 +106,7 @@ public class GUI_Ausgabe extends JFrame {
         		EndSumme += double_preis;
         		String zwischensumme_formatiert = String.valueOf(EndSumme);
         		zwischensumme_formatiert = Eigene_Pizza.format(EndSumme);
-        		contentPane.setToolTipText(zwischensumme_formatiert + "€");
+        		lblPreis.setText(zwischensumme_formatiert + "€");
         	}
         	
 	}

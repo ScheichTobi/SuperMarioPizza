@@ -329,8 +329,18 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/\u00DCberschrift.png")));
-		label_1.setBounds(83, 11, 640, 78);
+		label_1.setBounds(102, 11, 640, 78);
 		contentPane.add(label_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaL.png")));
+		lblNewLabel_1.setBounds(0, 0, 140, 127);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaR.png")));
+		label_2.setBounds(702, 0, 142, 121);
+		contentPane.add(label_2);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);
 		table.getColumnModel().getColumn(1).setResizable(false);

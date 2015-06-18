@@ -337,7 +337,7 @@ public class GUI_Hauptfenster extends JFrame {
 		
 		JLabel label_2 = new JLabel("");
 		label_2.setIcon(new ImageIcon(GUI_Hauptfenster.class.getResource("/Bilder/PizzaR.png")));
-		label_2.setBounds(702, 0, 142, 121);
+		label_2.setBounds(702, 0, 142, 127);
 		contentPane.add(label_2);
 		table.getColumnModel().getColumn(0).setResizable(false);
 		table.getColumnModel().getColumn(0).setPreferredWidth(457);

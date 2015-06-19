@@ -14,6 +14,13 @@ import javax.swing.JLabel;
 
 import java.awt.Toolkit;
 import java.net.URL;
+import java.awt.Font;
+
+import javax.swing.border.MatteBorder;
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Ausgabe extends JFrame {
 
@@ -49,12 +56,13 @@ public class GUI_Ausgabe extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(500, 500, 850, 700);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
 	contentPane.setLayout(null);
 	
 	JScrollPane scrollPane = new JScrollPane();
-	scrollPane.setBounds(66, 104, 758, 427);
+	scrollPane.setBounds(44, 104, 758, 427);
 	contentPane.add(scrollPane);
 	
 	table1 = new JTable();	
@@ -79,6 +87,31 @@ public class GUI_Ausgabe extends JFrame {
 	lblPreis = new JLabel("Preis");
 	lblPreis.setBounds(679, 542, 142, 26);
 	contentPane.add(lblPreis);
+	
+	JLabel lblRechnung = new JLabel("Rechnung");
+	lblRechnung.setForeground(Color.RED);
+	lblRechnung.setFont(new Font("Constantia", Font.ITALIC, 30));
+	lblRechnung.setBounds(315, 11, 177, 64);
+	contentPane.add(lblRechnung);
+	
+	JButton btnAbgeben = new JButton("Abgeben");
+	btnAbgeben.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent arg0) {
+			  GUI_Abgeben.Abgeben();
+		}});
+	btnAbgeben.setFont(new Font("Constantia", Font.ITALIC, 13));
+	btnAbgeben.setBounds(713, 637, 89, 23);
+	contentPane.add(btnAbgeben);
+	
+	JButton btnZurck = new JButton("Zur\u00FCck");
+	btnZurck.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			Eigene_Pizza.FensterSchliessen();
+		}
+	});
+	btnZurck.setFont(new Font("Constantia", Font.ITALIC, 14));
+	btnZurck.setBounds(44, 637, 102, 23);
+	contentPane.add(btnZurck);
 	
 	GUI_Ausgabe.table1.setSize((int)GUI_Ausgabe.table1.getBounds().getWidth(), (int)GUI_Ausgabe.table1.getBounds().getHeight() + GUI_Ausgabe.table1.getRowHeight());
 	DefaultTableModel model = (DefaultTableModel) table1.getModel();

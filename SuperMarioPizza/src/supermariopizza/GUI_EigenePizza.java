@@ -244,7 +244,7 @@ public class GUI_EigenePizza extends JFrame implements ActionListener{
 			}
 		});
 		btn_zurueck.setFont(new Font("Constantia", Font.ITALIC, 15));
-		btn_zurueck.setBounds(0, 463, 91, 36);
+		btn_zurueck.setBounds(38, 463, 91, 36);
 		EigenePizzaGui.add(btn_zurueck);
 		lbl_pizzapreisanzeige.setForeground(Color.BLUE);
 		lbl_pizzapreisanzeige.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 24));

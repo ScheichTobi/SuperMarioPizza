@@ -98,7 +98,11 @@ public class GUI_Ausgabe extends JFrame {
 	JButton btnAbgeben = new JButton("Abgeben");
 	btnAbgeben.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
-			  GUI_Abgeben.Abgeben();
+			//TODO
+						
+			//setVisible(false);
+			//dispose();
+			GUI_Abgeben.Abgeben();
 		}});
 	btnAbgeben.setFont(new Font("Constantia", Font.ITALIC, 13));
 	btnAbgeben.setBounds(713, 637, 89, 23);

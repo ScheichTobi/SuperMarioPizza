@@ -28,7 +28,7 @@ public class GUI_Ausgabe extends JFrame {
 	private JPanel contentPane;
 	static JTable table1;
 	static JLabel lblPreis;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -106,7 +106,8 @@ public class GUI_Ausgabe extends JFrame {
 	JButton btnZurck = new JButton("Zur\u00FCck");
 	btnZurck.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			Eigene_Pizza.FensterSchliessen();
+			setVisible(false);
+			dispose();
 		}
 	});
 	btnZurck.setFont(new Font("Constantia", Font.ITALIC, 14));

@@ -16,12 +16,10 @@ import java.awt.Toolkit;
 import java.net.URL;
 import java.awt.Font;
 
-import javax.swing.border.MatteBorder;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Window.Type;
 
 public class GUI_Ausgabe extends JFrame {
 

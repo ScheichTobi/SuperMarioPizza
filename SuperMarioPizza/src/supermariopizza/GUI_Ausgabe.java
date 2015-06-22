@@ -21,6 +21,7 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class GUI_Ausgabe extends JFrame {
 
@@ -54,7 +55,7 @@ public class GUI_Ausgabe extends JFrame {
 		URL resource = loader.getResource("Bilder/facemario.png");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(500, 500, 850, 700);
+		setBounds(300, 20, 850, 700);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));

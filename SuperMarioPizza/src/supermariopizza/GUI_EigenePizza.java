@@ -27,6 +27,7 @@ import javax.swing.SpinnerNumberModel;
 
 import java.awt.Toolkit;
 import java.net.URL;
+import java.awt.Window.Type;
 
 public class GUI_EigenePizza extends JFrame implements ActionListener{
 

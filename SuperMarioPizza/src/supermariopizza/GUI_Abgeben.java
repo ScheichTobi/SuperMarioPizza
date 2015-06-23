@@ -79,7 +79,7 @@ public class GUI_Abgeben extends JFrame {
 					e1.printStackTrace();
 				}
 				try {
-					Thread.sleep(4000);
+					Thread.sleep(2850);
 					
 				} catch (Exception e1) {
 					e1.printStackTrace();

@@ -7,12 +7,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JSeparator;
+
 import java.awt.Color;
+
 import javax.swing.ImageIcon;
 
 public class GUI_Abgeben extends JFrame {
@@ -59,6 +65,20 @@ public class GUI_Abgeben extends JFrame {
 		JButton btnEnde = new JButton("ENDE");
 		btnEnde.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				GUI.sound_background.close();
+				GUI.sound_background.stop();
+				try {
+					GUI.endesound();
+				} catch (Exception e1) {
+
+					e1.printStackTrace();
+				}
+				try {
+					Thread.sleep(4000);
+					
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 				System.exit(0);
 			}
 		});

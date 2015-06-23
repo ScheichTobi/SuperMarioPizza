@@ -15,6 +15,7 @@ public class GUI {
 	public static Clip sound_hinzufuegen;
 	public static Clip sound_bestellen;
 	public static Clip sound_remove;
+	public static Clip sound_ende;
 	
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
@@ -213,6 +214,28 @@ public class GUI {
                 gainControl.setValue(dB);
 
                 BooleanControl muteControl = (BooleanControl) sound_remove
+                    .getControl(BooleanControl.Type.MUTE);
+                muteControl.setValue(true);
+
+                muteControl.setValue(false);
+            }catch (IOException e){}      
+		
+	}
+	public static void endesound() throws Exception{
+		//Musik erstellen
+        try {
+        	ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        	URL resource = loader.getResource("Sounds/ende.wav");
+            sound_ende = AudioSystem.getClip();
+            sound_ende.open(AudioSystem.getAudioInputStream(resource));
+            sound_ende.start();
+        //Lautstärke
+            FloatControl gainControl = (FloatControl) sound_ende.getControl(FloatControl.Type.MASTER_GAIN);
+                double gain = .3D;
+                float dB = (float) (Math.log(gain) / Math.log(10.0) * 20.0);
+                gainControl.setValue(dB);
+
+                BooleanControl muteControl = (BooleanControl) sound_ende
                     .getControl(BooleanControl.Type.MUTE);
                 muteControl.setValue(true);
 

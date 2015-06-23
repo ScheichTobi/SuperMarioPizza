@@ -40,6 +40,7 @@ public class GUI_Abgeben extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI_Abgeben() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 450, 300);
 		contentPane = new JPanel();

@@ -107,13 +107,13 @@ public class GUI_Wilkommensfenster extends JFrame {
 		JLabel MarioL = new JLabel("");
     	URL resource = loader.getResource("Bilder/MarioL.JPEG");
 		MarioL.setIcon(new ImageIcon(resource));
-		MarioL.setBounds(0, 93, 160, 209);
+		MarioL.setBounds(0, 103, 160, 209);
 		contentPane.add(MarioL);
 		
 		JLabel MarioR = new JLabel("");
     	URL resource2 = loader.getResource("Bilder/MarioR.JPEG");
 		MarioR.setIcon(new ImageIcon(resource2));
-		MarioR.setBounds(318, 93, 160, 209);
+		MarioR.setBounds(328, 103, 160, 209);
 		contentPane.add(MarioR);
 	}
 	public static void weitersound() throws Exception{

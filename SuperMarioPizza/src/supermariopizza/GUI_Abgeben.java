@@ -2,6 +2,7 @@ package supermariopizza;
 
 
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,6 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 
 import java.awt.Color;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 
@@ -51,6 +53,9 @@ public class GUI_Abgeben extends JFrame {
 	public GUI_Abgeben() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL resource = loader.getResource("Bilder/facemario.png");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(resource));
 		setBounds(300, 20, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

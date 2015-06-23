@@ -59,7 +59,7 @@ public class GUI_Abgeben extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnEnde.setFont(new Font("Constantia", Font.ITALIC, 17));
+		btnEnde.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 19));
 		btnEnde.setBounds(121, 202, 175, 49);
 		contentPane.add(btnEnde);
 		

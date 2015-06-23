@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 
 import java.awt.Toolkit;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.awt.Font;
@@ -194,11 +195,23 @@ public class GUI_Ausgabe extends JFrame {
 			try {
 				rechnung.createNewFile();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
+		try {
+			FileWriter fw = new FileWriter(rechnung);
+			fw.write("Name\t\tStückzahl\t\tPreis");
+			fw.write(System.lineSeparator());
+			fw.write("---------------------------------------------------------------");
+			fw.write(System.lineSeparator());
+			for (int i = 0; i < table1.getRowCount(); i++) {
+				fw.write((String)(table1.getValueAt(i, 0)+"\t\t"+table1.getValueAt(i, 1)+"\t\t"+table1.getValueAt(i, 2)));
+				fw.write(System.lineSeparator());
+			}
+			fw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

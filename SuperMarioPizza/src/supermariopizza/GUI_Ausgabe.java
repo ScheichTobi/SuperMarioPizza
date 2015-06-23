@@ -9,10 +9,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.awt.Font;
 
@@ -24,6 +27,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 
 import java.awt.SystemColor;
+
 import javax.swing.JCheckBox;
 
 public class GUI_Ausgabe extends JFrame {
@@ -184,6 +188,16 @@ public class GUI_Ausgabe extends JFrame {
 
 	}
 	public void dokumentspeichern(){
+		File rechnung = new File(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath() + "\\rechnung.txt");
+		
+		if(!rechnung.exists()){
+			try {
+				rechnung.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 	}
 

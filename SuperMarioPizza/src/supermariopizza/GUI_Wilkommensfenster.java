@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
+import java.awt.SystemColor;
 
 public class GUI_Wilkommensfenster extends JFrame {
 	public static Clip sound_weiter;
@@ -56,7 +57,7 @@ public class GUI_Wilkommensfenster extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 20, 494, 341);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
+		contentPane.setBackground(SystemColor.menu);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -67,9 +68,9 @@ public class GUI_Wilkommensfenster extends JFrame {
 		lblNewLabel.setBounds(32, 21, 414, 57);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblWollenSieEine = new JLabel("Wollen sie eine Bestellung t\u00E4tigen?");
+		JLabel lblWollenSieEine = new JLabel("Wollen Sie eine saftige und knusprige Pizza bestellen?");
 		lblWollenSieEine.setFont(new Font("Constantia", Font.ITALIC, 14));
-		lblWollenSieEine.setBounds(131, 89, 215, 24);
+		lblWollenSieEine.setBounds(85, 89, 361, 24);
 		contentPane.add(lblWollenSieEine);
 		
 		JLabel lblDannDrckenSie = new JLabel("Dann dr\u00FCcken sie auf Weiter");

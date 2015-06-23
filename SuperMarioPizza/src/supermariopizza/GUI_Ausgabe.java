@@ -37,7 +37,7 @@ public class GUI_Ausgabe extends JFrame {
 	private JPanel contentPane;
 	static JTable table1;
 	static JLabel lblPreis;
-	private JCheckBox chckbxSpeichern;
+	static JCheckBox chckbxSpeichern;
 
 	/**
 	 * Launch the application.

@@ -47,7 +47,7 @@ public class GUI_Abgeben extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblVielenDankFr = new JLabel("Vielen dank F\u00FCr ihre Bestellung");
+		JLabel lblVielenDankFr = new JLabel("Vielen Dank f\u00FCr ihre Bestellung");
 		lblVielenDankFr.setFont(new Font("Constantia", Font.ITALIC, 26));
 		lblVielenDankFr.setBounds(35, 11, 377, 49);
 		contentPane.add(lblVielenDankFr);
@@ -59,8 +59,15 @@ public class GUI_Abgeben extends JFrame {
 			}
 		});
 		btnEnde.setFont(new Font("Constantia", Font.ITALIC, 17));
-		btnEnde.setBounds(121, 167, 175, 49);
+		btnEnde.setBounds(121, 202, 175, 49);
 		contentPane.add(btnEnde);
+		
+		JLabel lblRechnung = new JLabel("(Ihre Rechnung wurde auf dem Desktop abgelegt)");
+		if(GUI_Ausgabe.chckbxSpeichern.isSelected() == false){
+			lblRechnung.setText("");
+		}
+		lblRechnung.setFont(new Font("Constantia", Font.PLAIN, 18));
+		lblRechnung.setBounds(22, 81, 402, 23);
+		contentPane.add(lblRechnung);
 	}
-
 }

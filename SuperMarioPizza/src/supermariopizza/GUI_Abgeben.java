@@ -11,6 +11,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JSeparator;
+import java.awt.Color;
 
 public class GUI_Abgeben extends JFrame {
 
@@ -49,8 +51,8 @@ public class GUI_Abgeben extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblVielenDankFr = new JLabel("Vielen Dank f\u00FCr ihre Bestellung");
-		lblVielenDankFr.setFont(new Font("Constantia", Font.ITALIC, 26));
-		lblVielenDankFr.setBounds(35, 11, 377, 49);
+		lblVielenDankFr.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 25));
+		lblVielenDankFr.setBounds(38, 11, 366, 49);
 		contentPane.add(lblVielenDankFr);
 		
 		JButton btnEnde = new JButton("ENDE");
@@ -68,7 +70,13 @@ public class GUI_Abgeben extends JFrame {
 			lblRechnung.setText("");
 		}
 		lblRechnung.setFont(new Font("Constantia", Font.PLAIN, 18));
-		lblRechnung.setBounds(22, 81, 402, 23);
+		lblRechnung.setBounds(32, 71, 402, 23);
 		contentPane.add(lblRechnung);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.BLACK);
+		separator.setBackground(Color.BLACK);
+		separator.setBounds(38, 57, 366, 13);
+		contentPane.add(separator);
 	}
 }

@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class GUI_Abgeben extends JFrame {
 
@@ -62,7 +63,7 @@ public class GUI_Abgeben extends JFrame {
 			}
 		});
 		btnEnde.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 19));
-		btnEnde.setBounds(121, 202, 175, 49);
+		btnEnde.setBounds(141, 176, 162, 49);
 		contentPane.add(btnEnde);
 		
 		JLabel lblRechnung = new JLabel("(Ihre Rechnung wurde auf dem Desktop abgelegt)");
@@ -78,5 +79,15 @@ public class GUI_Abgeben extends JFrame {
 		separator.setBackground(Color.BLACK);
 		separator.setBounds(38, 57, 366, 13);
 		contentPane.add(separator);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
+		lblNewLabel.setBounds(0, 144, 131, 138);
+		contentPane.add(lblNewLabel);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
+		label.setBounds(313, 144, 131, 138);
+		contentPane.add(label);
 	}
 }

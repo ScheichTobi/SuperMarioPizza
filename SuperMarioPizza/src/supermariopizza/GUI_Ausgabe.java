@@ -39,6 +39,7 @@ public class GUI_Ausgabe extends JFrame {
 	static JLabel lblPreis;
 	static JCheckBox chckbxSpeichern;
 	static JLabel lblEndsumme;
+	static GUI_Ausgabe framegui_ausgabe;
 
 	/**
 	 * Launch the application.
@@ -47,8 +48,8 @@ public class GUI_Ausgabe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_Ausgabe frame = new GUI_Ausgabe();
-					frame.setVisible(true);
+					framegui_ausgabe = new GUI_Ausgabe();
+					framegui_ausgabe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -111,6 +112,8 @@ public class GUI_Ausgabe extends JFrame {
 				if (chckbxSpeichern.isSelected() == true) {
 					dokumentspeichern();
 				}
+				GUI.framegui_hauptfenster.dispose();
+				framegui_ausgabe.dispose();
 				GUI_Abgeben.Abgeben();
 			}
 		});

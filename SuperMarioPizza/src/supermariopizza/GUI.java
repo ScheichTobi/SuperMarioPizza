@@ -16,6 +16,7 @@ public class GUI {
 	public static Clip sound_bestellen;
 	public static Clip sound_remove;
 	public static Clip sound_ende;
+	static GUI_Hauptfenster framegui_hauptfenster;
 	
 	static ArrayList <Pizza> li_speisekarte = new ArrayList <Pizza>();
 	static ArrayList <Getränke> li_getraenkekarte = new ArrayList <Getränke>();
@@ -25,8 +26,8 @@ public class GUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					GUI_Hauptfenster frame = new GUI_Hauptfenster();
-					frame.setVisible(true);
+					framegui_hauptfenster = new GUI_Hauptfenster();
+					framegui_hauptfenster.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

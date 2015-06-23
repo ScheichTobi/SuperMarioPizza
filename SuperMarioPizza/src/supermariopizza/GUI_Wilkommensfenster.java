@@ -105,14 +105,12 @@ public class GUI_Wilkommensfenster extends JFrame {
 		contentPane.add(btnWeiter);
 		
 		JLabel MarioL = new JLabel("");
-    	URL resource = loader.getResource("Bilder/MarioL.JPEG");
-		MarioL.setIcon(new ImageIcon(GUI_Wilkommensfenster.class.getResource("/Bilder/MarioL.png")));
+    	MarioL.setIcon(new ImageIcon(GUI_Wilkommensfenster.class.getResource("/Bilder/MarioL.png")));
 		MarioL.setBounds(0, 103, 160, 209);
 		contentPane.add(MarioL);
 		
 		JLabel MarioR = new JLabel("");
-    	URL resource2 = loader.getResource("Bilder/MarioR.JPEG");
-		MarioR.setIcon(new ImageIcon(GUI_Wilkommensfenster.class.getResource("/Bilder/MarioR.png")));
+    	MarioR.setIcon(new ImageIcon(GUI_Wilkommensfenster.class.getResource("/Bilder/MarioR.png")));
 		MarioR.setBounds(328, 103, 160, 209);
 		contentPane.add(MarioR);
 	}

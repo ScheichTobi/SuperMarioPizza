@@ -48,34 +48,34 @@ public class GUI {
 	static void erstellungSpeisekarte(){
 		
 		
-		Pizza Funghi = new Pizza("Funghi", "6.00", 1);
+		Pizza Funghi = new Pizza("Funghi\t", "6.00", 1);
 		li_speisekarte.add(Funghi);
 		
-		Pizza Tonno = new Pizza("Tonno", "6.50", 1);
+		Pizza Tonno = new Pizza("Tonno\t", "6.50", 1);
 		li_speisekarte.add(Tonno);
 				
 		Pizza Margherita = new Pizza("Margherita", "5.00", 1);
 		li_speisekarte.add(Margherita);
 		
-		Pizza Mozzarella = new Pizza("Chef", "7.00", 1);
+		Pizza Mozzarella = new Pizza("Chef\t", "7.00", 1);
 		li_speisekarte.add(Mozzarella);
 		
-		Pizza Prosciutto = new Pizza("Prosciutto", "6.00", 1);
+		Pizza Prosciutto = new Pizza("Prosciutto\t", "6.00", 1);
 		li_speisekarte.add(Prosciutto);
 
-		Pizza Vegetarier = new Pizza("Vegetarier", "6.50", 1);
+		Pizza Vegetarier = new Pizza("Vegetarier\t", "6.50", 1);
 		li_speisekarte.add(Vegetarier);
 		
-		Pizza Hawaii = new Pizza("Hawaii", "7.00", 1);
+		Pizza Hawaii = new Pizza("Hawaii\t", "7.00", 1);
 		li_speisekarte.add(Hawaii);
 		
-		Pizza Siciliana  = new Pizza("Siciliana ", "6.50", 1);
+		Pizza Siciliana  = new Pizza("Siciliana\t", "6.50", 1);
 		li_speisekarte.add(Siciliana );
 		
-		Pizza Salami = new Pizza("Salami", "6.00", 1);
+		Pizza Salami = new Pizza("Salami\t", "6.00", 1);
 		li_speisekarte.add(Salami);
 		
-		Pizza Peperoni = new Pizza("Peperoni", "6.50", 1);
+		Pizza Peperoni = new Pizza("Peperoni\t", "6.50", 1);
 		li_speisekarte.add(Peperoni);
 						
 	}
@@ -93,10 +93,10 @@ public class GUI {
 		Getr‰nke Hefeweizen  = new Getr‰nke("Hefeweizen ", "2.70", 1);
 		li_getraenkekarte.add(Hefeweizen );
 		
-		Getr‰nke Radler   = new Getr‰nke("Radler  ", "2.70", 1);
+		Getr‰nke Radler   = new Getr‰nke("Radler\t", "2.70", 1);
 		li_getraenkekarte.add(Radler  );
 		
-		Getr‰nke Corona  = new Getr‰nke("Corona ", "3.20", 1);
+		Getr‰nke Corona  = new Getr‰nke("Corona\t", "3.20", 1);
 		li_getraenkekarte.add(Corona );
 		
 		Getr‰nke ApfelschorleKlein   = new Getr‰nke("Apfelschorle, 0,3l  ", "2.20", 0.3);
@@ -105,10 +105,10 @@ public class GUI {
 		Getr‰nke ApfelschorleGroﬂ = new Getr‰nke("Apfelschorle, 0,5l", "3.20", 0.5);
 		li_getraenkekarte.add(ApfelschorleGroﬂ);
 		
-		Getr‰nke ColaKlein  = new Getr‰nke("Cola, 0,3l ", "2.20", 0.3);
+		Getr‰nke ColaKlein  = new Getr‰nke("Cola, 0,3l\t", "2.20", 0.3);
 		li_getraenkekarte.add(ColaKlein );
 		
-		Getr‰nke ColaGroﬂ  = new Getr‰nke("Cola, 0,5l ", "3.20", 0.5);
+		Getr‰nke ColaGroﬂ  = new Getr‰nke("Cola, 0,5l\t", "3.20", 0.5);
 		li_getraenkekarte.add(ColaGroﬂ );
 		
 		Getr‰nke Weinschorle   = new Getr‰nke("Weinschorle  ", "4.20", 1);

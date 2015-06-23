@@ -206,7 +206,7 @@ public class GUI_Ausgabe extends JFrame {
 			fw.write("---------------------------------------------------------------");
 			fw.write(System.lineSeparator());
 			for (int i = 0; i < table1.getRowCount(); i++) {
-				fw.write((String)(table1.getValueAt(i, 0)+"\t\t"+table1.getValueAt(i, 1)+"\t\t\t"+table1.getValueAt(i, 2)));
+				fw.write((String)(table1.getValueAt(i, 0)+"\t\r"+table1.getValueAt(i, 1)+"\t\t"+table1.getValueAt(i, 2)));
 				fw.write(System.lineSeparator());
 			}
 			fw.write("---------------------------------------------------------------");

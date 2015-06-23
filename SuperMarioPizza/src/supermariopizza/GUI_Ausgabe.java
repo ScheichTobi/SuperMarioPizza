@@ -38,6 +38,7 @@ public class GUI_Ausgabe extends JFrame {
 	static JTable table1;
 	static JLabel lblPreis;
 	static JCheckBox chckbxSpeichern;
+	static JLabel lblEndsumme;
 
 	/**
 	 * Launch the application.
@@ -134,11 +135,11 @@ public class GUI_Ausgabe extends JFrame {
 		separator.setBounds(162, 62, 566, 8);
 		contentPane.add(separator);
 
-		JLabel label = new JLabel("");
-		label.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 28));
-		label.setBounds(490, 568, 98, 38);
-		label.setText(GUI_Hauptfenster.lblzwischensumme.getText());
-		contentPane.add(label);
+		lblEndsumme = new JLabel("");
+		lblEndsumme.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 28));
+		lblEndsumme.setBounds(490, 568, 98, 38);
+		lblEndsumme.setText(GUI_Hauptfenster.lblzwischensumme.getText());
+		contentPane.add(lblEndsumme);
 
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setForeground(Color.BLACK);
@@ -208,6 +209,9 @@ public class GUI_Ausgabe extends JFrame {
 				fw.write((String)(table1.getValueAt(i, 0)+"\t\t"+table1.getValueAt(i, 1)+"\t\t\t"+table1.getValueAt(i, 2)));
 				fw.write(System.lineSeparator());
 			}
+			fw.write("---------------------------------------------------------------");
+			fw.write(System.lineSeparator());
+			fw.write(lblPreis.getText()+"\t\t\t"+lblEndsumme.getText());
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();

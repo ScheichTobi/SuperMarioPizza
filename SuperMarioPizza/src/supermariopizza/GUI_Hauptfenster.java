@@ -48,7 +48,7 @@ public class GUI_Hauptfenster extends JFrame {
 	static JTable table;
 	private final JButton btnPizzaHinzufgen = new JButton("Hinzuf\u00FCgen");
 	private final JButton btnHinzufgen = new JButton("Hinzuf\u00FCgen");
-	private static JLabel lblNewLabel = new JLabel();
+	static JLabel lblzwischensumme = new JLabel();
 	private final JSeparator separator_1 = new JSeparator();
 	private final JSeparator separator_2 = new JSeparator();
 	private final JSeparator separator_3 = new JSeparator();
@@ -220,14 +220,14 @@ public class GUI_Hauptfenster extends JFrame {
 		btnAktuelleAuswahlEntfernen.setFont(new Font("Constantia", Font.ITALIC, 12));
 		btnAktuelleAuswahlEntfernen.setBounds(35, 516, 239, 43);
 		contentPane.add(btnAktuelleAuswahlEntfernen);
-		lblNewLabel.setForeground(Color.BLUE);
-		lblNewLabel.setText("0,00\u20AC");
+		lblzwischensumme.setForeground(Color.BLUE);
+		lblzwischensumme.setText("0,00\u20AC");
 		
 		
 				
-		lblNewLabel.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 27));
-		lblNewLabel.setBounds(730, 535, 128, 37);
-		contentPane.add(lblNewLabel);
+		lblzwischensumme.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 27));
+		lblzwischensumme.setBounds(730, 535, 128, 37);
+		contentPane.add(lblzwischensumme);
 			 
 		
 
@@ -358,7 +358,7 @@ public class GUI_Hauptfenster extends JFrame {
 		}
 		String zwischensumme_formatiert = String.valueOf(zwischensumme);
 		zwischensumme_formatiert = Eigene_Pizza.format(zwischensumme);
-		lblNewLabel.setText(zwischensumme_formatiert + "€");
+		lblzwischensumme.setText(zwischensumme_formatiert + "€");
 	}
 	
 	//Konvertiert String von Tabelle in einen double-Wert z.B "6,50€" -> 6.5

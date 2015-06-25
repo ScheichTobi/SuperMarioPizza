@@ -211,7 +211,7 @@ public class Eigene_Pizza extends Pizza{
 		
 		//Pizza in die Tabelle einfügen
 		DefaultTableModel model = (DefaultTableModel) GUI_Hauptfenster.table.getModel();
-		model.addRow(new Object[]{Pizza.getName(), Pizza.anzahl, Pizza.getPrize() + "€"});
+		model.addRow(new Object[]{Pizza.getName(), Pizza.getAnzahl(), Pizza.getPrize() + "€"});
 		
 		
 		//Preis im GUI_Hauptfenster aktualisieren

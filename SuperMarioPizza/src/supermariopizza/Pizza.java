@@ -7,10 +7,12 @@ package supermariopizza;
  */
 
 public class Pizza extends Bestellung {
-	int anzahl;
+	private int anzahl;
 	Pizza(String name, String preis, int anzahl) {
 		super(name, preis);
 		this.anzahl = anzahl;
 	}
-	
+	int getAnzahl(){
+		return anzahl;
+	}
 }

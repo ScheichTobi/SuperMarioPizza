@@ -15,5 +15,11 @@ public class Bestellung{
 		this.preis = preis;
 	}
 	
+	String getName(){
+		return name;
+	}
 	
+	String getPrize(){
+		return preis;
+	}
 }

@@ -418,10 +418,10 @@ public class GUI_Hauptfenster extends JFrame {
 	 */
 	void speisenLaden(){
 		Pizza PizzaAuswahl = new Pizza("-- Bitte wählen sie --", "", 1);
-		pizza_Liste.addItem(PizzaAuswahl.name);
+		pizza_Liste.addItem(PizzaAuswahl.getName());
 		
 		for(int i = 0; i < GUI.li_speisekarte.size(); i++){
-			pizza_Liste.addItem(GUI.li_speisekarte.get(i).name);
+			pizza_Liste.addItem(GUI.li_speisekarte.get(i).getName());
 		}
 	}
 	/** getränkeLaden
@@ -430,10 +430,10 @@ public class GUI_Hauptfenster extends JFrame {
 	 */
 	void getränkeLaden(){
 		Getränke GetraenkeAuswahl = new Getränke("-- Bitte wählen sie --", "0.00", 0.00);
-		getränke_Liste.addItem(GetraenkeAuswahl.name);
+		getränke_Liste.addItem(GetraenkeAuswahl.getName());
 		
 		for(int i = 0; i < GUI.li_getraenkekarte.size(); i++){
-			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).name);
+			getränke_Liste.addItem(GUI.li_getraenkekarte.get(i).getName());
 		}
 	}
 }

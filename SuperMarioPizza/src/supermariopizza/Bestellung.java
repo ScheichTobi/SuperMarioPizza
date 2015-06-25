@@ -7,8 +7,8 @@ package supermariopizza;
  *
  */
 public class Bestellung{
-	String preis;
-	String name;
+	private String preis;
+	private String name;
 		
 	Bestellung(String name, String preis){
 		this.name = name;

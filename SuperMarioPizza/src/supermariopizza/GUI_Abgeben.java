@@ -62,6 +62,10 @@ public class GUI_Abgeben extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblCreators = new JLabel("\u00A9 By Tobias Rackow, Daniel Vo\u00DF, Luitpold Stotzem and Yannik Fuhrmeister");
+		lblCreators.setBounds(0, 258, 444, 14);
+		contentPane.add(lblCreators);
+		
 		JLabel lblVielenDankFr = new JLabel("Vielen Dank f\u00FCr ihre Bestellung");
 		lblVielenDankFr.setFont(new Font("Constantia", Font.BOLD | Font.ITALIC, 25));
 		lblVielenDankFr.setBounds(38, 11, 366, 49);
@@ -105,14 +109,14 @@ public class GUI_Abgeben extends JFrame {
 		separator.setBounds(38, 57, 366, 13);
 		contentPane.add(separator);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
-		lblNewLabel.setBounds(0, 144, 131, 138);
-		contentPane.add(lblNewLabel);
+		JLabel lblPizza_left = new JLabel("");
+		lblPizza_left.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
+		lblPizza_left.setBounds(0, 134, 131, 138);
+		contentPane.add(lblPizza_left);
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
-		label.setBounds(313, 144, 131, 138);
-		contentPane.add(label);
+		JLabel lblPizza_right = new JLabel("");
+		lblPizza_right.setIcon(new ImageIcon(GUI_Abgeben.class.getResource("/Bilder/Pizza.png")));
+		lblPizza_right.setBounds(313, 134, 131, 138);
+		contentPane.add(lblPizza_right);
 	}
 }

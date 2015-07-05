@@ -41,9 +41,7 @@ public class GUI_Ausgabe extends JFrame {
 	static JLabel lblEndsumme;
 	static GUI_Ausgabe framegui_ausgabe;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void FensterErstellen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -57,11 +55,7 @@ public class GUI_Ausgabe extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 * 
-	 * @return
-	 */
+	
 	public GUI_Ausgabe() {
 		setResizable(false);
 		ClassLoader loader = Thread.currentThread().getContextClassLoader();

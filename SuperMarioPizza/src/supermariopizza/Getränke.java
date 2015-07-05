@@ -2,7 +2,12 @@ package supermariopizza;
 
 /**Getränke
  * Klasse für Getränke im speziellen.
- * @param String name, String preis, double menge (in l)
+ * @param name 
+ * 				name der Bestellung
+ * @param preis
+ * 				preis der Bestellung
+ * @param menge 
+ * 				größe des Getränks in (l)
  * @author Yannik
  *
  */

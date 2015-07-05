@@ -2,7 +2,10 @@ package supermariopizza;
 
 /**Bestellung
  * Klasse für die Bestellungen aller Art.
- * @param String preis, String name
+ * @param preis
+ * 				preis der Bestellung
+ * @param name
+ * 				name der Bestellung
  * @author Yannik
  *
  */

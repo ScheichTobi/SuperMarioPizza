@@ -1,7 +1,12 @@
 package supermariopizza;
 /**Pizza
  * Klasse zur speziellen Erstellung einer Pizza.
- * @param String name, String preis, int anzahl
+ * @param name 
+ * 				enthält den Namen der Pizza
+ * @param preis 
+ * 				enthält den Preis der Pizza
+ * @param anzahl 
+ * 				enthält die Anzahl der Pizzen
  * @author Yannik
  *
  */
